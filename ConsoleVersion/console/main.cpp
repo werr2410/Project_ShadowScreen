@@ -1,6 +1,6 @@
 #include <QCoreApplication>
 #include <iostream>
-#include "adress.h"
+#include "bankcard.h"
 
 using namespace ShadowScreen::Data;
 using namespace std;
@@ -9,37 +9,30 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    Adress a1("townX", "StreetX");
+    BankCard bc;
 
-    //  set
-
-//    a1.setCountry("country");
-//    a1.setTown("Town");
-//    a1.setStreet("street");
-//    a1.setNumber("number");
+    // set
+    bc.setTitle("Bank Card");
+    bc.setNumber("1234123412341234");
+    bc.setExpirationDate(QDate().currentDate().addYears(1));
 
     // get
-    cout << "Country: " << a1.getCountry().toStdString() << endl;
-    cout << "Town: " << a1.getTown().toStdString() << endl;
-    cout << "Street: " << a1.getStreet().toStdString() << endl;
-    cout << "Number " << a1.getNumber().toStdString() << endl;
+    cout << "Title: " << bc.getTitle().toStdString() << endl;
+    cout << "Number: " << bc.getNumber().toStdString() << endl;
+    cout << "Date: " << bc.getExpirationDate().toString("dd.MM.yyyy").toStdString() << endl;
 
     // prof get
-    QString str;
-    QString str1;
-    QString str11;
-    QString str111;
+    QString str, str1;
+    QDate date;
 
-    cout << "Full adress return: " << a1.getFullAdress().toStdString() << endl;
+    bc.getFullBankCard(str, str1, date);
+    cout << "prof get Title: " << str.toStdString() << endl;
+    cout << "prof get Number: " << str1.toStdString() << endl;
+    cout << "prof get Date: " << date.toString("dd.MM.yyyy").toStdString() << endl;
 
-    a1.getFullAdress(str);
-    cout << "Full adress link: " << str.toStdString() << endl;
+    // super prof get
 
-    a1.getAdress(str, str1, str11, str111);
-    cout << "prof get Country: " << str.toStdString() << endl;
-    cout << "prof get Town: " << str1.toStdString() << endl;
-    cout << "prof get Street: " << str11.toStdString() << endl;
-    cout << "prof get Number " << str111.toStdString() << endl;
+    cout << "super prof get: " << bc.getFullBankCard().toStdString() << endl;
 
     return a.exec();
 }
