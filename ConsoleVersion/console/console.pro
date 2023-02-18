@@ -10,7 +10,8 @@ CONFIG -= app_bundle
 SOURCES += \
         adress.cpp \
         bankcard.cpp \
-        main.cpp
+        main.cpp \
+        reviews.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -19,4 +20,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     adress.h \
-    bankcard.h
+    bankcard.h \
+    reviews.h

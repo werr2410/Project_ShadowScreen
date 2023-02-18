@@ -1,6 +1,6 @@
 #include <QCoreApplication>
 #include <iostream>
-#include "bankcard.h"
+#include "reviews.h"
 
 using namespace ShadowScreen::Data;
 using namespace std;
@@ -9,30 +9,20 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    BankCard bc;
+    Reviews rv;
 
     // set
-    bc.setTitle("Bank Card");
-    bc.setNumber("1234123412341234");
-    bc.setExpirationDate(QDate().currentDate().addYears(1));
+    rv.setTitle("Title");
+    rv.setDescription("Desc");
+    rv.setMark(true);
 
     // get
-    cout << "Title: " << bc.getTitle().toStdString() << endl;
-    cout << "Number: " << bc.getNumber().toStdString() << endl;
-    cout << "Date: " << bc.getExpirationDate().toString("dd.MM.yyyy").toStdString() << endl;
+    cout << "Title: " << rv.getTitle().toStdString() << endl;
+    cout << "Description: " << rv.getDescription().toStdString() << endl;
+    cout << "Mark: " << rv.getMark() << endl;
 
     // prof get
-    QString str, str1;
-    QDate date;
-
-    bc.getFullBankCard(str, str1, date);
-    cout << "prof get Title: " << str.toStdString() << endl;
-    cout << "prof get Number: " << str1.toStdString() << endl;
-    cout << "prof get Date: " << date.toString("dd.MM.yyyy").toStdString() << endl;
-
-    // super prof get
-
-    cout << "super prof get: " << bc.getFullBankCard().toStdString() << endl;
+    cout << "Prof get  reviews: " << rv.getReviews().toStdString() << endl;
 
     return a.exec();
 }
