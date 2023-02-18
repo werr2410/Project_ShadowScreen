@@ -8,6 +8,11 @@ namespace ShadowScreen {
             this->manufacturer = manufacturer;
         }
 
+        Detail::Detail(bool isArray)
+            : Detail() {
+            setIsArray(isArray);
+        }
+
         void Detail::setIsArray(bool isArray) {
             this->isArray = isArray;
         }
@@ -40,10 +45,10 @@ namespace ShadowScreen {
             this->manufacturer = manufacturer;
         }
 
-        void Detail::setManufacturer(QString manufacturer) {
-            if(this->manufacturer != nullptr) delete this->manufacturer;
-            this->manufacturer = new QString(manufacturer);
-        }
+//        void Detail::setManufacturer(QString manufacturer) {
+//            if(this->manufacturer != nullptr) delete this->manufacturer;
+//            this->manufacturer = new QString(manufacturer);
+//        }
 
         QString Detail::getManufacturer() const {
             return *manufacturer;
@@ -57,13 +62,13 @@ namespace ShadowScreen {
             return "detail";
         }
 
-        Detail &Detail::operator =(const Detail detail) {
-            if(this->manufacturer != nullptr) delete this->manufacturer;
+//        Detail &Detail::operator =(const Detail detail) {
+//            if(this->manufacturer != nullptr) delete this->manufacturer;
 
-            this->manufacturer = new QString(detail.getManufacturer());
+//            this->manufacturer = new QString(detail.getManufacturer());
 
-            return *this;
-        }
+//            return *this;
+//        }
 
     }
 }

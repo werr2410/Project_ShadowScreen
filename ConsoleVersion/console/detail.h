@@ -1,6 +1,7 @@
 #ifndef DETAIL_H
 #define DETAIL_H
 
+#pragma once
 #include <QString>
 
 namespace ShadowScreen {
@@ -16,6 +17,7 @@ namespace ShadowScreen {
             bool isArray = false;
 
             Detail(QString* manufacturer);
+            Detail(bool isArray);
 
             void setIsArray(bool isArray);
             bool getIsArray() const;
@@ -30,12 +32,13 @@ namespace ShadowScreen {
 
             virtual ~Detail();
 
-            void setManufacturer(QString manufacturer);
+            virtual void setManufacturer() = 0;
             QString getManufacturer() const;
 
             virtual QString type() const;
+            virtual void setAll() = 0;
 
-            Detail& operator =(const Detail detail);
+            //Detail& operator =(const Detail detail);
         };
     }
 }
