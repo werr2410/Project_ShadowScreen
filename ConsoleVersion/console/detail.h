@@ -35,9 +35,9 @@ namespace ShadowScreen {
             virtual void setManufacturer() = 0;
             QString getManufacturer() const;
 
-            virtual QString type() const;
+            virtual QString type() const = 0;
             virtual void setAll() = 0;
-
+            virtual QString toString() const = 0;
             //Detail& operator =(const Detail detail);
         };
     }

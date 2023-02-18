@@ -30,18 +30,26 @@ namespace ShadowScreen {
         }
 
         Detail::Detail() {
-            this->manufacturer = new QString();
+            setManufacturer(new QString());
         }
 
         Detail::~Detail() {
-            if(isArray == false)
-                delete manufacturer;
-            else
-                delete[] manufacturer;
+            if(this->manufacturer != nullptr) {
+                if(isArray == false)
+                    delete manufacturer;
+                else
+                    delete[] manufacturer;
+            }
         }
 
         void Detail::setManufacturer(QString *manufacturer) {
-            if(this->manufacturer != nullptr) delete manufacturer;
+            if(this->manufacturer != nullptr) {
+                if(isArray == false)
+                    delete manufacturer;
+                else
+                    delete[] manufacturer;
+            }
+
             this->manufacturer = manufacturer;
         }
 
@@ -58,9 +66,9 @@ namespace ShadowScreen {
                 return manufacturer;
         }
 
-        QString Detail::type() const {
-            return "detail";
-        }
+//        QString Detail::type() const {
+//            return "detail";
+//        }
 
 //        Detail &Detail::operator =(const Detail detail) {
 //            if(this->manufacturer != nullptr) delete this->manufacturer;
