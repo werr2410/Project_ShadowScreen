@@ -21,7 +21,7 @@ namespace ShadowScreen {
 
         Baseboard::Baseboard(bool autoset) : Detail(false) {
             if(autoset == true)
-                setAll();
+                Baseboard::setAll();
             else
                 setProduct(new QString());
         }
@@ -51,7 +51,7 @@ namespace ShadowScreen {
         }
 
         void Baseboard::setAll() {
-            setManufacturer();
+            Baseboard::setManufacturer();
             setProduct();
         }
 
