@@ -2,4 +2,5 @@
 
 Реализованные классы:
 
-  
+  ![image](https://user-images.githubusercontent.com/123190998/219900336-2604dc42-44c5-4529-b949-b1213e8b8f81.png)
+
