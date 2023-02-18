@@ -1,6 +1,7 @@
 #ifndef REVIEWS_H
 #define REVIEWS_H
 
+#pragma once
 #include <QString>
 
 namespace ShadowScreen {

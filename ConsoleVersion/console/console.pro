@@ -10,6 +10,7 @@ CONFIG -= app_bundle
 SOURCES += \
         adress.cpp \
         bankcard.cpp \
+        delivery.cpp \
         main.cpp \
         reviews.cpp
 
@@ -21,4 +22,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     adress.h \
     bankcard.h \
+    delivery.h \
     reviews.h

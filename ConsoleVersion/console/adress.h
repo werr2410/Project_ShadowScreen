@@ -1,6 +1,8 @@
 #ifndef ADRESS_H
 #define ADRESS_H
 
+#pragma once
+
 #include <QString>
 
 namespace ShadowScreen {

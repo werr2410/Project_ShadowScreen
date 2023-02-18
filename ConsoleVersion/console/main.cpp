@@ -1,6 +1,6 @@
 #include <QCoreApplication>
 #include <iostream>
-#include "reviews.h"
+#include "delivery.h"
 
 using namespace ShadowScreen::Data;
 using namespace std;
@@ -9,20 +9,28 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    Reviews rv;
+    Delivery dl;
 
     // set
-    rv.setTitle("Title");
-    rv.setDescription("Desc");
-    rv.setMark(true);
+    dl.setTitle("Title");
+    dl.setTypeDelivery(ShadowScreen::Data::Novaposhta);
+    dl.setAdress(Adress("street", "number"));
 
     // get
-    cout << "Title: " << rv.getTitle().toStdString() << endl;
-    cout << "Description: " << rv.getDescription().toStdString() << endl;
-    cout << "Mark: " << rv.getMark() << endl;
+    cout << "Title: "  << dl.getTitle().toStdString() << endl;
+    cout << "Type: ";
+
+    switch(dl.getTypeDelivery()) {
+    case ShadowScreen::Data::Novaposhta: cout << "Novaposhta" << endl; break;
+    case ShadowScreen::Data::Ukrposhta: cout << "Urkposhta " << endl; break;
+    case ShadowScreen::Data::Meest: cout << "Meest " << endl; break;
+    }
+
+    cout << "Adress: " << dl.getAdress().getFullAdress().toStdString() << endl;
 
     // prof get
-    cout << "Prof get  reviews: " << rv.getReviews().toStdString() << endl;
+
+    cout << "prof get: " << dl.getDelivery().toStdString() << endl;
 
     return a.exec();
 }

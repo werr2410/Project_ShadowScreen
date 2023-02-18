@@ -1,6 +1,7 @@
 #ifndef BANKCARD_H
 #define BANKCARD_H
 
+#pragma once
 #include <QDate>
 #include <QString>
 
