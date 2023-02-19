@@ -38,7 +38,7 @@ namespace ShadowScreen {
             return Detail::getManufacturer()  + " " + getName();
         }
 
-        void CPU::setAll() {
+        void CPU::init() {
             setManufacturer();
             setName();
         }

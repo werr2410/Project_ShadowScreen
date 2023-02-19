@@ -29,7 +29,7 @@ namespace ShadowScreen {
 
             virtual QString type() const = 0;
             virtual QString toString() const = 0;
-            virtual void setAll() = 0;
+            virtual void init() = 0;
         };
     }
 }

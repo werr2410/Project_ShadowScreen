@@ -14,8 +14,8 @@ int main(int argc, char *argv[]) {
     Baseboard bs;
     CPU cpu;
 
-    bs.setAll();
-    cpu.setAll();
+    bs.init();
+    cpu.init();
 
     cout << "baseboard: " <<  bs.toString().toStdString() << endl;
     cout  << "CPU: " << cpu.toString().toStdString() << endl;

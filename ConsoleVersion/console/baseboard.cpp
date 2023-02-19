@@ -15,7 +15,7 @@ namespace ShadowScreen {
 
         Baseboard::Baseboard(bool autoset)  {
             if(autoset == true)
-                Baseboard::setAll();
+                Baseboard::init();
             else {
                 setProduct("");
                 Detail::setManufacturer("");
@@ -42,7 +42,7 @@ namespace ShadowScreen {
             return getManufacturer() + " " + getProduct();
         }
 
-        void Baseboard::setAll() {
+        void Baseboard::init() {
             Baseboard::setManufacturer();
             setProduct();
         }
