@@ -1,19 +1,23 @@
 #include <QCoreApplication>
 #include <iostream>
-#include "detail.h"
+#include "baseboard.h"
 
 using namespace ShadowScreen::Compture;
+using namespace ShadowScreen::Compture::Function;
 using namespace std;
 
-int main(int argc, char *argv[])
-{
+
+int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
 
-    Detail dt;
+    Baseboard a1;
 
-    dt.setManufacturer("manufacturer");
 
-    cout << "manufacturer: " <<  dt.getManufacturer().toStdString() << endl;
+    cout << "res: " << a1.toString().toStdString() << endl;
+//    cout << getData("baseboard", "manufacturer").toStdString() << endl;
+//    cout << getData("baseboard", "product").toStdString() << endl;
+
+
 
     return a.exec();
 }

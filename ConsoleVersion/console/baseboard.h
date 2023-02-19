@@ -2,16 +2,13 @@
 #define BASEBOARD_H
 
 #include "detail.h"
+#include "ComptureFunction.h"
 
 namespace ShadowScreen {
 
     namespace Compture {
 
-        const int param_baseboard_size = 2;
-        const QString param_baseboard[param_baseboard_size]{ "Manufacturer", "Product" };
-
-        const int param_baseboard_Manufacturer = 0;
-        const int param_baseboard_Product = 1;
+        using Function::getData;
 
         class Baseboard : public Detail {
         private:
@@ -21,8 +18,8 @@ namespace ShadowScreen {
             QString* getProductPointer() const;
 
         public:
-            Baseboard(bool autoset = true);
-            Baseboard(const Baseboard& obj);
+            Baseboard();
+            //Baseboard(const Baseboard& obj);
 
             ~Baseboard();
 

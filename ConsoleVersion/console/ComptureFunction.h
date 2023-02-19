@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QFile>
+#include <QTextStream>
 
 namespace ShadowScreen {
 
@@ -23,25 +24,32 @@ namespace ShadowScreen {
                 return res;
             }
 
-            inline int removeFileIfReal(std::string filename, QFile file) {
-                if (file.isOpen())
-                    file.close();
+            inline int removeFile(QString filename) {
+                QFile file(filename);
 
-                file.open(filename);
-
-                if (file.is_open()) {
-                    file.close();
-
-                return remove(filename.c_str());
+                return file.remove();
             }
 
-                        return -1;
-            }
+            inline QString getData(QString type, QString information) {
+                QString command = getCommand(type, information);
+                QString line = "";
 
-            inline QString GetInformation(QString type, QString information) {
-                QString command =  getCommand(type, information);
+                std::system(command.toStdString().c_str());
 
+                QFile file(filename);
 
+                if(file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                    QTextStream in(&file);
+
+                    line = in.readLine();
+                    line = in.readLine();
+
+                    file.remove();
+
+                    file.close();
+                }
+
+                return line;
             }
         }
     }

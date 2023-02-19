@@ -19,19 +19,16 @@ namespace ShadowScreen {
             return product;
         }
 
-        Baseboard::Baseboard(bool autoset) : Detail(false) {
-            if(autoset == true)
-                Baseboard::setAll();
-            else
-                setProduct(new QString());
+        Baseboard::Baseboard() : Detail(false) {
+            setProduct(new QString());
         }
 
-        Baseboard::Baseboard(const Baseboard &obj) {
-           this->isArray = obj.isArray;
+//        Baseboard::Baseboard(const Baseboard &obj) {
+//           this->isArray = obj.isArray;
 
-           this->setProduct(new QString(obj.getProduct()));
-           Detail::setManufacturer(new QString(obj.getManufacturer()));
-        }
+//           this->setProduct(new QString(obj.getProduct()));
+//           Detail::setManufacturer(new QString(obj.getManufacturer()));
+//        }
 
         Baseboard::~Baseboard() {
             if(product != nullptr) {
@@ -42,17 +39,17 @@ namespace ShadowScreen {
             }
         }
 
-        void Baseboard::setManufacturer() {
-
+        void Baseboard::setManufacturer() {           
+            Detail::setManufacturer(new QString(getData("baseboard", "manufacturer")));
         }
 
         void Baseboard::setProduct() {
-
+            Baseboard::setProduct(new QString(getData("baseboard", "product")));
         }
 
         void Baseboard::setAll() {
             Baseboard::setManufacturer();
-            setProduct();
+            Baseboard::setProduct();
         }
 
         QString Baseboard::getProduct() const {
@@ -72,6 +69,8 @@ namespace ShadowScreen {
 
             this->setProduct(new QString(obj.getProduct()));
             Detail::setManufacturer(new QString(obj.getManufacturer()));
+
+            return *this;
         }
 
 
