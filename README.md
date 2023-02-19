@@ -6,3 +6,4 @@
 
 ![image](https://user-images.githubusercontent.com/123190998/219955332-140b9fd5-398d-4197-9088-994e8c5f2bed.png)
    
+[Документ 1.pdf](https://github.com/werr2410/Project_ShadowScreen/files/10777154/1.pdf)
