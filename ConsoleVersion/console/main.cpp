@@ -1,6 +1,7 @@
 #include <QCoreApplication>
 #include <iostream>
 #include "baseboard.h"
+#include "cpu.h"
 
 //using namespace ShadowScreen::Compture;
 using namespace ShadowScreen::Compture;
@@ -11,10 +12,13 @@ int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
 
     Baseboard bs;
+    CPU cpu;
 
     bs.setAll();
+    cpu.setAll();
 
-    cout << bs.toString().toStdString() << endl;
+    cout << "baseboard: " <<  bs.toString().toStdString() << endl;
+    cout  << "CPU: " << cpu.toString().toStdString() << endl;
 
     return a.exec();
 }
