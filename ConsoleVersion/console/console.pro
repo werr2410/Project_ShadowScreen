@@ -15,6 +15,7 @@ SOURCES += \
         delivery.cpp \
         detail.cpp \
         main.cpp \
+        memorychip.cpp \
         reviews.cpp
 
 # Default rules for deployment.
@@ -30,4 +31,5 @@ HEADERS += \
     cpu.h \
     delivery.h \
     detail.h \
+    memorychip.h \
     reviews.h

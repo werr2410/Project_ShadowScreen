@@ -13,14 +13,13 @@ namespace ShadowScreen {
         protected:
             QVector<QString> qv_manufacturer;
 
-            Detail(QVector<QString> qv_manufacturer);
-
             QVector<QString> getManufacturerVector() const;
             void setManufacturerVector(QVector<QString> qv_manufacturer);
 
         public:
             Detail();
             Detail(QString manufacturer);
+            Detail(QVector<QString> qv_manufacturer);
 
             void setManufacturer(QString Manufacuturer);
             virtual void setManufacturer() = 0;
