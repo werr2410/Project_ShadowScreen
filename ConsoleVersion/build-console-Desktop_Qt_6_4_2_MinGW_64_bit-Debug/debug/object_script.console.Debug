@@ -1,0 +1,10 @@
+debug/adress.o
+debug/bankcard.o
+debug/baseboard.o
+debug/cpu.o
+debug/delivery.o
+debug/detail.o
+debug/main.o
+debug/memorychip.o
+debug/reviews.o
+debug/storage.o

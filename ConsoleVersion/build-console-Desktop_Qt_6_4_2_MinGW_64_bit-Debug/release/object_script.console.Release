@@ -1,0 +1,10 @@
+release/adress.o
+release/bankcard.o
+release/baseboard.o
+release/cpu.o
+release/delivery.o
+release/detail.o
+release/main.o
+release/memorychip.o
+release/reviews.o
+release/storage.o

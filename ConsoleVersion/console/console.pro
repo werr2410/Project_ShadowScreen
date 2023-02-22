@@ -16,7 +16,9 @@ SOURCES += \
         detail.cpp \
         main.cpp \
         memorychip.cpp \
-        reviews.cpp
+        reviews.cpp \
+        storage.cpp \
+        videocard.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -31,4 +33,6 @@ HEADERS += \
     delivery.h \
     detail.h \
     memorychip.h \
-    reviews.h
+    reviews.h \
+    storage.h \
+    videocard.h
