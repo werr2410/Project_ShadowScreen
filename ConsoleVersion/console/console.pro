@@ -10,12 +10,8 @@ CONFIG -= app_bundle
 SOURCES += \
         adress.cpp \
         bankcard.cpp \
-        baseboard.cpp \
-        cpu.cpp \
         delivery.cpp \
-        detail.cpp \
         main.cpp \
-        memorychip.cpp \
         reviews.cpp
 
 # Default rules for deployment.
@@ -24,12 +20,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    ComptureFunction.h \
     adress.h \
     bankcard.h \
-    baseboard.h \
-    cpu.h \
     delivery.h \
-    detail.h \
-    memorychip.h \
     reviews.h
