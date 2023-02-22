@@ -42,7 +42,7 @@ namespace ShadowScreen {
             void setManufacturer();
             QString getManufacturer() const;
 
-            virtual void init() const = 0;
+            virtual void init() = 0;
             virtual QString toString() const = 0;
             virtual QString type() const = 0;
         };
