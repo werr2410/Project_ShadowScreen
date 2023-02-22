@@ -24,7 +24,6 @@ namespace ShadowScreen {
         private:
             QString manufacturer;
 
-            static QString getFilename();
             static bool seacrhString(QString str1, QString str2);
 
         protected:
@@ -32,6 +31,7 @@ namespace ShadowScreen {
 
             void setManufacturers(QString manufacturer);
 
+            static QString getFilename();
             static QString getType(AttributesDetail td);
             static QString getDetail(QString type, AttributesDetail detail);
             static QString getCommand(QString type);

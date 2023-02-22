@@ -8,3 +8,4 @@ release/main.o
 release/memorychip.o
 release/reviews.o
 release/storage.o
+release/videocard.o
