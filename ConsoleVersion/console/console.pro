@@ -11,6 +11,7 @@ SOURCES += \
         adress.cpp \
         bankcard.cpp \
         delivery.cpp \
+        detail.cpp \
         main.cpp \
         reviews.cpp
 
@@ -23,4 +24,5 @@ HEADERS += \
     adress.h \
     bankcard.h \
     delivery.h \
+    detail.h \
     reviews.h
