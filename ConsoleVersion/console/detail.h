@@ -30,7 +30,7 @@ namespace ShadowScreen {
         protected:
             Detail(QString manufacturer);
 
-            void setManufacturer(QString manufacturer);
+            void setManufacturers(QString manufacturer);
 
             static QString getType(AttributesDetail td);
             static QString getDetail(QString type, AttributesDetail detail);
@@ -39,7 +39,7 @@ namespace ShadowScreen {
         public:
             Detail();
 
-            void setManufacturer();
+            void setManufacturer(QString typeDetail = "baseboard");
             QString getManufacturer() const;
 
             virtual void init() = 0;

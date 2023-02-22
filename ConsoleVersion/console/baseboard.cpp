@@ -11,7 +11,7 @@ namespace ShadowScreen {
             // exe
         }
 
-        Baseboard::Baseboard() {
+        Baseboard::Baseboard() : Detail() {
             setProduct("unkown");
         }
 

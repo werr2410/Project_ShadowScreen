@@ -20,7 +20,7 @@ namespace ShadowScreen {
                 // exec
         }
 
-        void Detail::setManufacturer(QString manufacturer) {
+        void Detail::setManufacturers(QString manufacturer) {
             if(manufacturer.isEmpty() == false)
                 this->manufacturer = manufacturer;
             //else
@@ -98,8 +98,8 @@ namespace ShadowScreen {
             this->manufacturer = "unknown";
         }
 
-        void Detail::setManufacturer() {
-            setManufacturer(getDetail("baseboard", Manufacturer));
+        void Detail::setManufacturer(QString typeDetail) {
+            setManufacturers(getDetail(typeDetail, Manufacturer));
         }
 
         QString Detail::getManufacturer() const {
