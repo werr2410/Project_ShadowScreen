@@ -11,6 +11,7 @@ SOURCES += \
         adress.cpp \
         bankcard.cpp \
         baseboard.cpp \
+        compture.cpp \
         cpu.cpp \
         delivery.cpp \
         detail.cpp \
@@ -31,6 +32,7 @@ HEADERS += \
     adress.h \
     bankcard.h \
     baseboard.h \
+    compture.h \
     cpu.h \
     delivery.h \
     detail.h \
@@ -40,3 +42,6 @@ HEADERS += \
     storage.h \
     transaction.h \
     videocard.h
+
+DISTFILES += \
+    Data/Текстовый документ.txt
