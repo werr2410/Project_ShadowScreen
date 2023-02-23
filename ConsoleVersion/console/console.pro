@@ -19,6 +19,7 @@ SOURCES += \
         password.cpp \
         reviews.cpp \
         storage.cpp \
+        transaction.cpp \
         videocard.cpp
 
 # Default rules for deployment.
@@ -37,4 +38,5 @@ HEADERS += \
     password.h \
     reviews.h \
     storage.h \
+    transaction.h \
     videocard.h

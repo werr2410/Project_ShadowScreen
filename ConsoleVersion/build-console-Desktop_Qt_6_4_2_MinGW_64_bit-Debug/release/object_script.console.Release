@@ -9,4 +9,5 @@ release/memorychip.o
 release/password.o
 release/reviews.o
 release/storage.o
+release/transaction.o
 release/videocard.o
