@@ -24,3 +24,7 @@
 
 ![image](https://user-images.githubusercontent.com/123190998/220788221-3f9cf4a3-df65-4b96-8830-dabc43a729a4.png)
 ![image](https://user-images.githubusercontent.com/123190998/220788426-b217e569-b058-4797-a320-3842c765a904.png)
+
+База данных:
+
+![Untitled](https://user-images.githubusercontent.com/123190998/221052329-7481ff8f-5207-4720-b917-aba1d357ddb8.png)
