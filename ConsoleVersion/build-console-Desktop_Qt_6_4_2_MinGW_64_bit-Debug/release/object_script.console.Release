@@ -6,6 +6,7 @@ release/delivery.o
 release/detail.o
 release/main.o
 release/memorychip.o
+release/password.o
 release/reviews.o
 release/storage.o
 release/videocard.o

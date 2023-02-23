@@ -16,6 +16,7 @@ SOURCES += \
         detail.cpp \
         main.cpp \
         memorychip.cpp \
+        password.cpp \
         reviews.cpp \
         storage.cpp \
         videocard.cpp
@@ -33,6 +34,7 @@ HEADERS += \
     delivery.h \
     detail.h \
     memorychip.h \
+    password.h \
     reviews.h \
     storage.h \
     videocard.h
