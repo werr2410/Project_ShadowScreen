@@ -3,20 +3,36 @@
 #include <cstring>
 #include <string>
 
-#include "password.h"
+#include "baseboard.h"
+#include "cpu.h"
+#include "memorychip.h"
+#include "videocard.h"
+#include "storage.h"
 
 using namespace std;
-//using namespace ShadowScreen::Compture;
-using namespace ShadowScreen::UserData;
+using namespace ShadowScreen::Compture;
 
 int main(int argc, char *argv[]) {
+
     QCoreApplication a(argc, argv);
 
-    Password pass("A234dsg@#(84234ndrey12432423",  "Gorbunov");
+    Baseboard bs;
+    CPU cpu;
+    Memorychip mc;
+    Videocard vc;
+    Storage st;
 
-    cout << "without: " << pass.getPassword().toStdString() << endl;
-    cout << "password after: " << pass.getPassword("Gorbunov").toStdString() << endl;
-    cout << "line: " << "A234dsg@#(84234ndrey12432423" << endl;
+    bs.init();
+    cpu.init();
+    mc.init();
+    vc.init();
+    st.init();
+
+    cout << bs.toString().toStdString() << endl;
+    cout << cpu.toString().toStdString() << endl;
+    cout << mc.toString().toStdString() << endl;
+    cout << vc.toString().toStdString() << endl;
+    cout << st.toString().toStdString() << endl;
 
     return a.exec();
 }

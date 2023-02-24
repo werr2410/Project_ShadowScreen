@@ -1,6 +1,7 @@
 debug/adress.o
 debug/bankcard.o
 debug/baseboard.o
+debug/compture.o
 debug/cpu.o
 debug/delivery.o
 debug/detail.o

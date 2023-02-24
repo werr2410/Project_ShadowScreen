@@ -1,6 +1,7 @@
 release/adress.o
 release/bankcard.o
 release/baseboard.o
+release/compture.o
 release/cpu.o
 release/delivery.o
 release/detail.o
