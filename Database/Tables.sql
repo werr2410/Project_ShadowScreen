@@ -140,3 +140,26 @@ create table [Computer] (
 	constraint FK_Computer_Baseboard	foreign key(BaseboardId) references Baseboard(BaseboardId)
 												on delete cascade on update no action
 )
+
+create table [Chat] (
+	[ChatId]			int identity(1,1)	not null,
+	[UsernameSenderId]	int					not null,
+	[UsernameOrderId]	int					not null,
+
+	constraint FK_Chat_ChatId primary key(ChatId)
+)
+
+create table [Message] (
+	[MessageId]		int identity(1,1)	not null,
+
+	[MessageData]	nvarchar(100)		not null,
+	[Datetime]		datetime			not null	constraint DF_Message_DateTime default getdate(),
+	[IsSender]		bit					not null,
+	[IsViewed]		bit					not null	constraint DF_Message_IsViewed default 0,
+
+	[ChatId]		int					not null,
+
+	constraint PK_Message_MessageId primary key(MessageId),
+	constraint FK_Message_Chat foreign key(ChatId) references Chat(ChatId)
+								on delete no action on update no action
+)
