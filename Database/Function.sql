@@ -280,3 +280,23 @@ returns nvarchar(500) as begin
 
 	return @string
 end
+
+-- computer 
+
+go create function getComputerId(@Title nvarchar(50), @CPU int, @GPU int,
+								 @Storage int, @Memorychip int, @Baseboard int)
+returns int as begin
+	declare @id int = 0
+
+	if exists(select ComputerId from Computer
+			  where @Title = Title and @CPU = CPUId and @GPU = GPUId	
+					and @Memorychip = MemorychipId and @Storage = StorageId
+					and @Baseboard = BaseboardId) begin
+		select @id = ComputerId from Computer
+		where @Title = Title and @CPU = CPUId and @GPU = GPUId	
+			  and @Memorychip = MemorychipId and @Storage = StorageId
+			  and @Baseboard = BaseboardId
+	end					
+
+	return @id
+end

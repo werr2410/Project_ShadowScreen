@@ -182,3 +182,32 @@ go create proc addFullBaseboard -- s
 go create proc delBaseboard -- s
 @id int as
 	delete from Baseboard where BaseboardId = @id
+
+
+-- computer
+
+go create proc addComputer
+@Title nvarchar(50) = NULL,
+@CPUId int,
+@GPUId int,
+@StorageId int,
+@MemorychipId int,
+@BaseboardId int as begin
+	if exists(select CPUId from CPU where CPUId = @CPUId) and
+	   exists(select GPUId from GPU where GPUId = @GPUId) and
+	   exists(select StorageId from Storage where StorageId = @StorageId) and
+	   exists(select MemorychipId from Memorychip where MemorychipId = @MemorychipId) and
+	   exists(select BaseboardId from Baseboard where BaseboardId = @BaseboardId) begin
+
+	   insert into Computer values (@Title, @CPUId, @GPUId, @StorageId, @MemorychipId, @BaseboardId)
+
+	end else begin
+
+		print 'someone id detail not found'
+	
+	end
+end
+
+go create proc delComputer
+@id int as
+	delete from Computer where ComputerId = @id
