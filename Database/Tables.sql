@@ -112,3 +112,31 @@ create table [Storage] (
 
 	constraint FK_Storage_StorageId primary key(StorageId)
 )
+
+create table [Computer] (
+	[ComputerId]	int identity(1,1)	not null,
+	[Title]			nvarchar(50)			null,
+	
+	[CPUId]			int						null,
+	[GPUId]			int						null,
+	[StorageId]		int						null,
+	[MemorychipId]	int						null,
+	[BaseboardId]	int						null,
+
+	constraint PK_Computer_ComputerId primary key(ComputerId),
+
+	constraint FK_Computer_GPU			foreign key(GPUId) references GPU(GPUId)
+												on delete cascade on update no action,
+
+	constraint FK_Computer_CPU			foreign key(CPUId) references CPU(CPUId)
+												on delete cascade on update no action,
+
+	constraint FK_Computer_Storage		foreign key(StorageId) references Storage(StorageId)
+												on delete cascade on update no action,
+
+	constraint FK_Computer_Memorychip	foreign key(MemorychipId) references Memorychip(MemorychipId)
+												on delete cascade on update no action,
+
+	constraint FK_Computer_Baseboard	foreign key(BaseboardId) references Baseboard(BaseboardId)
+												on delete cascade on update no action
+)
