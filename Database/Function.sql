@@ -108,3 +108,175 @@ go create function DeliveryToString(@id int) returns nvarchar(200) as begin
 
 	return @string
 end
+
+-- CPU
+go create function getCPUId(@manufacture nvarchar(100), @name nvarchar(100), @Stars int, @IsSale bit) 
+returns int as begin -- s
+	declare @id int = -1
+
+	if exists(select CPUId from CPU 
+			 where Manufacturer = @manufacture and @name = [Name]
+				   and @Stars =  Stars and @isSale = IsSale) begin
+
+		select @id = CPUId from CPU 
+		where Manufacturer = @manufacture and @name = [Name]
+			  and @Stars =  Stars and @isSale = IsSale
+
+	end 
+
+	return @id
+end
+
+go create function CPUToString(@id int) returns nvarchar(400) as begin -- s
+	declare @string nvarchar(500) = ''
+
+	if exists(select CPUId from CPU where CPUId = @id) begin 
+		select @string = (Manufacturer + '  ' + [Name] + ' ' + [Description] + ' ' + CAST(Stars as nvarchar(20)))
+		from CPU
+		where CPUId = @id
+	end else begin 
+		set @string = 'cpu dont found'
+	end
+
+	return @string
+end
+
+-- GPU
+
+go create function getGPUId(@Manufacturer nvarchar(200), @description nvarchar(200), @isSale bit, @Stars int) -- s
+returns int as begin
+	declare @id int = -1
+
+	if exists(select GPUId 
+			  from GPU 
+			  where Manufacturer = @manufacturer and [Description] = @description
+					and IsSale = @isSale and @Stars = Stars) begin
+
+		select @id = GPUId 
+		from GPU
+		where Manufacturer = @manufacturer and [Description] = @description
+					and IsSale = @isSale and @Stars = Stars 
+	end
+
+	return @id
+end
+
+go create function GPUToStringById(@Id int) -- s
+returns nvarchar(500) as begin
+	declare @string nvarchar(500) = ''
+
+	if exists(select GPUId from GPU where GPUId = @id) begin 
+		select @string = (Manufacturer + ' ' + [Description] + ' ' + CAST(Stars as nvarchar(20)))
+		from GPU
+		where GPUId = @id
+	end else begin 
+		set @string = 'cpu dont found'
+	end
+
+	return @string
+end
+
+-- Baseboard
+
+go create function getBaseboardId(@Manufacturer nvarchar(200), @Product nvarchar(100), @description nvarchar(200), @isSale bit, @Stars int) -- s
+returns int as begin
+	declare @id int = -1
+
+	if exists(select BaseboardId 
+			  from Baseboard 
+			  where Manufacturer = @manufacturer and Product = @Product and [Description] = @description
+					and IsSale = @isSale and @Stars = Stars) begin
+
+		select @id = BaseboardId 
+		from Baseboard
+		where Manufacturer = @manufacturer and [Description] = @description and Product = @Product
+					and IsSale = @isSale and @Stars = Stars 
+	end
+
+	return @id
+end
+
+go create function BaseboardToStringById(@Id int) -- s
+returns nvarchar(500) as begin
+	declare @string nvarchar(500) = ''
+
+	if exists(select BaseboardId from Baseboard where BaseboardId = @id) begin 
+		select @string = (Manufacturer + ' ' +  Product + ' ' + [Description] + ' ' + CAST(Stars as nvarchar(20)))
+		from Baseboard
+		where BaseboardId = @id
+	end else begin 
+		set @string = 'cpu dont found'
+	end
+
+	return @string
+end
+
+-- Memorychip
+
+go create function getMemorychipdId(@Manufacturer nvarchar(200), @Capacity nvarchar(300), @description nvarchar(200), @isSale bit, @Stars int) -- s
+returns int as begin
+	declare @id int = -1
+
+	if exists(select MemorychipId 
+			  from Memorychip 
+			  where Manufacturer = @manufacturer and Capacity = @Capacity and [Description] = @description
+					and IsSale = @isSale and @Stars = Stars) begin
+
+		select @id = MemorychipId 
+		from Memorychip
+		where Manufacturer = @manufacturer and [Description] = @description and Capacity = @Capacity
+					and IsSale = @isSale and @Stars = Stars 
+	end
+
+	return @id
+end
+
+go create function MemorychipToStringById(@Id int) -- s
+returns nvarchar(500) as begin
+	declare @string nvarchar(500) = ''
+
+	if exists(select MemorychipId from Memorychip where MemorychipId = @id) begin 
+		select @string = (Manufacturer + ' ' +  Capacity + ' ' + [Description] + ' ' + CAST(Stars as nvarchar(20)))
+		from Memorychip
+		where MemorychipId = @id
+	end else begin 
+		set @string = 'cpu dont found'
+	end
+
+	return @string
+end
+
+-- Storage
+
+go create function getStoragedId(@Manufacturer nvarchar(400),@model nvarchar(400) , @Size nvarchar(200), @description nvarchar(200), @isSale bit, @Stars int) -- s
+returns int as begin
+	declare @id int = -1
+
+	if exists(select StorageId 
+			  from Storage 
+			  where Manufacturer = @manufacturer and Model = @model and Size = @Size and [Description] = @description
+					and IsSale = @isSale and @Stars = Stars) begin
+
+		select @id = StorageId 
+		from Storage
+		where Manufacturer = @manufacturer and Model = @model and Size = @Size and [Description] = @description
+					and IsSale = @isSale and @Stars = Stars
+	end
+
+	return @id
+end
+
+go create function StorageToStringById(@Id int) -- s
+returns nvarchar(500) as begin
+	declare @string nvarchar(500) = ''
+
+	if exists(select StorageId from Storage where StorageId = @id) begin 
+		select @string = (Manufacturer + ' ' +  Model + ' ' + Size + ' ' + [Description] + ' ' + CAST(Stars as nvarchar(20)))
+		from Storage
+		where StorageId = @id
+	end else begin 
+		set @string = 'cpu dont found'
+	end
+
+	return @string
+end

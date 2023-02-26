@@ -69,3 +69,32 @@ go create view ReviewsGreat(ReviewsId, [Description], Mark) as
 	select ReviewsId, [Description], Mark 
 	from Reviews
 	where Mark between 8 and 10
+
+-- CPU
+go create view CPUCount(amount)as
+	select count(*) as [amount]
+	from CPU
+
+-- GPU
+
+go create view GPUCount(amount) as
+	select count(*) as [amount]
+	from GPU
+
+-- Baseboard
+
+go create view BaseboardCount(amount) as
+	select count(*) as [amount]
+	from Baseboard
+
+-- Memorychip
+
+go create view MemorychipCount(amount) as
+	select COUNT(*) as [amount]  
+	from Memorychip
+
+-- Storage
+
+go create view StorageCount(amount) as
+	select count(*) as [amount]
+	from Storage
