@@ -211,3 +211,30 @@ end
 go create proc delComputer
 @id int as
 	delete from Computer where ComputerId = @id
+
+-- Chat and message  
+
+select * from [Message]
+
+go create proc addChat
+@userSenderId int,
+@userOrderId int as begin
+	if @userSenderId = @userOrderId begin
+		print 'chat dont creating'
+	end else begin 
+		insert into Chat values (@userSenderId, @userOrderId)
+	end
+end
+
+go create proc addMessageToChat
+@id int,
+@MessageData nvarchar(100),
+@IsSender bit,
+@IsViewed bit as begin
+	if exists(select ChatId from Chat where ChatId = @id) begin
+		insert into [Message] values (@MessageData, getdate(), @IsSender, @IsViewed, @id)
+	end else begin
+		print 'message dont publicate'
+	end
+end
+

@@ -300,3 +300,26 @@ returns int as begin
 
 	return @id
 end
+
+-- chat and message
+
+go create function getIdChat(@usernamesender int, @usernameorder int) 
+returns int as begin 
+	declare @id int = -1
+
+	if exists(select ChatId from Chat where UsernameOrderId  = UsernameOrderId and UsernameSenderId = @usernamesender) begin
+		select @id = ChatId from Chat where UsernameOrderId  = UsernameOrderId and UsernameSenderId = @usernamesender
+	end
+
+	return @id
+end
+
+go create function getIdMessage(@datetime datetime) returns int as begin
+	declare @id int = -1
+
+	if exists(select MessageId from [Message] where [Datetime] = @datetime) begin
+		select @id = MessageId from [Message] where [Datetime] = @datetime
+	end
+
+	return @id
+end

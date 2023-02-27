@@ -123,3 +123,20 @@ go create view FullComputer(cmpId, cmpTitle, baseId, bcdesc, bcImage, bsIsSale, 
 	inner join Storage		as stg	ON stg.StorageId   = cmp.StorageId
 	inner join Memorychip	as mc	ON mc.MemorychipId = cmp.MemorychipId
 	inner join Baseboard	as bc	ON bc.BaseboardId  = cmp.BaseboardId
+
+
+-- chat and message
+
+go create view CountMessage(amount) as
+	select count(*) as amount
+	from [Message]
+
+go create view CountChat(amount) as
+	select count(*) as amount
+	from Chat
+
+go create view CountMessageInChat(amount, chatid) as
+	select count(*) as amount, [Message].ChatId
+	from [Message]
+	inner join Chat ON [Message].ChatId = Chat.ChatId
+	group by [Message].ChatId
