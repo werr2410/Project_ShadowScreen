@@ -12,10 +12,10 @@ namespace ShadowScreen {
 
             void setPrivateProduct(QString product);
         public:
-            Baseboard(bool init);
+            Baseboard(bool isInit);
             Baseboard();
 
-            void setProduct(QString product);
+            void setProduct();
             QString getProduct() const;
 
             void init() override;

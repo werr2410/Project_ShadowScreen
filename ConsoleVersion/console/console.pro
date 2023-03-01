@@ -9,6 +9,7 @@ CONFIG -= app_bundle
 
 SOURCES += \
         Computer/baseboard.cpp \
+        Computer/cpu.cpp \
         Computer/detail.cpp \
         main.cpp
 
@@ -19,6 +20,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Computer/baseboard.h \
+    Computer/cpu.h \
     Computer/detail.h
 
 DISTFILES += \

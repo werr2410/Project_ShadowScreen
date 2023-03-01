@@ -2,8 +2,8 @@
 #define DETAIL_H
 
 #define comp_filename   "computerFile.txt"
-#define betweenString   "-(-string-)-"
-#define betweenTypes    "-(-type-)-"
+#define betweenString   " | (-string-) | "
+#define betweenTypes    " | (-type-) | "
 
 #include <QString>
 #include <QFile>
