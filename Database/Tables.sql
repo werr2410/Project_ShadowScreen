@@ -146,7 +146,12 @@ create table [Chat] (
 	[UsernameSenderId]	int					not null,
 	[UsernameOrderId]	int					not null,
 
-	constraint FK_Chat_ChatId primary key(ChatId)
+	constraint FK_Chat_ChatId primary key(ChatId),
+
+	constraint FK_Chat_User foreign key(UsernameSenderId) references [User](UserId)
+							on delete no action on update no action,
+	constraint FK_Chat_UserO foreign key(UsernameOrderId) references [User](UserId)
+							on delete no action on update no action
 )
 
 create table [Message] (
@@ -162,4 +167,94 @@ create table [Message] (
 	constraint PK_Message_MessageId primary key(MessageId),
 	constraint FK_Message_Chat foreign key(ChatId) references Chat(ChatId)
 								on delete no action on update no action
+)
+
+create table [Telegram] (
+	[TelegramId]	int identity(1,1)	not null,
+	[UserName]		nvarchar(40)		not null,
+	[ChatId]		nvarchar(30)		not null,
+	[Usercode]		nvarchar(30)			null,
+
+	constraint FK_Telegram_TelegramId primary key(TelegramId),
+	constraint UQ_Telegram_ChatId unique(UserName),
+	constraint UQ_Telegram_Usercode unique(Usercode)
+)
+
+create table [FK_User_Reviews] (
+	FKId int identity(1,1) not null,
+	UserId int null,
+	ReviewsId int null,
+
+	constraint PK_UR_FKId primary key(FKId),
+
+	constraint FK_UR_UserId foreign key(UserId) references [User](UserId)
+							on delete cascade on update no action,
+	constraint FK_UR_ReviewsId foreign key(ReviewsId) references [Reviews](ReviewsId)
+							on delete cascade on update no action
+)
+
+create table [FK_User_Delivery] (
+	FKId int identity(1,1) not null,
+
+	UserId int null,
+	DeliveryId int null,
+
+	constraint PK_UD_FKId primary key(FKId),
+
+	constraint FK_UD_UserId foreign key(UserId) references [User](UserId),
+							--on delete cascade on update no action,
+	constraint FK_UD_DeliveryId foreign key(DeliveryId) references Delivery(DeliveryId)
+							--on delete cascade on update no action
+)
+
+create table [FK_User_Bankcard] (
+	FKId int identity(1,1) not null,
+
+	UserId int null,
+	BankcardId int null,
+
+	constraint PK_UB_FKId primary key(FKId),
+
+	constraint FK_UB_UserId foreign key(UserId) references [User](UserId)
+							on delete cascade on update no action,
+	constraint FK_UB_BankcardId foreign key(BankcardId) references Bankcard(BankcardId)
+							on delete cascade on update no action
+)
+
+
+create table [User] (
+	[UserId]		int identity(1,1)	not null,
+	[Username]		nvarchar(100)		not null,
+	[Name]			nvarchar(40)		    null,
+	[Surname]		nvarchar(40)		    null,
+	[Middlename]	nvarchar(40)		    null,
+	[Numberphone]	nvarchar(12)		    null,
+	[Birthday]		date					null,
+	[StartUse]		datetime				null,
+	[HashCode]		nvarchar(100)			null,
+	[Email]			nvarchar(41)		    null,
+	[Passport]		nvarchar(40)		not null,
+	[ComputerId]	int						null,
+	[TelegramId]	int						null,
+	[AdressId]		int						null,
+
+	constraint PK_User_UserId primary key(UserId),
+	
+	constraint UQ_User_Username unique(Username),
+	constraint UQ_User_Numberphone unique(Numberphone),
+	constraint UQ_User_Email unique(Email),
+	constraint UQ_User_Telegram unique(TelegramId),
+	constraint UQ_User_HashCode unique(HashCode),
+
+	constraint CK_User_Username check(len(Username) >= 2),
+	constraint CK_User_Numberphone check(len(Numberphone) > 7),
+	constraint CK_User_Email check(len(Email) >= 6),
+	constraint CK_User_Passport check(len(Passport) > 4),
+
+	constraint FK_User_Telegram foreign key(TelegramId) references Telegram(TelegramId)
+								on delete cascade on update no action,
+	constraint FK_User_Adress foreign key(AdressId) references Adress(AdressId)
+								on delete cascade on update no action,
+	constraint FK_User_Computer foreign key(ComputerId) references Computer(ComputerId)
+								on delete cascade on update no action
 )
