@@ -11,6 +11,7 @@ SOURCES += \
         Computer/baseboard.cpp \
         Computer/cpu.cpp \
         Computer/detail.cpp \
+        Computer/gpu.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -21,7 +22,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     Computer/baseboard.h \
     Computer/cpu.h \
-    Computer/detail.h
+    Computer/detail.h \
+    Computer/gpu.h
 
 DISTFILES += \
     Data/Текстовый документ.txt
