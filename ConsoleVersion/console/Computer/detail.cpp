@@ -67,7 +67,7 @@ namespace ShadowScreen {
 
         void Detail::setManufacturer(QString typeDetail)
         {
-            setPrivateManufacturer(typeDetail);
+            setPrivateManufacturer(getDetail(typeDetail, "manufacturer"));
         }
 
         QString Detail::getManufacturer() const
