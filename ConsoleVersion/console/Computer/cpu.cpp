@@ -1,53 +1,44 @@
 #include "cpu.h"
 
-
 namespace ShadowScreen {
 
     namespace Computer {
-
-        void CPU::setPrivateName(QString name)
-        {
-            this->name = name;
-        }
-
-        CPU::CPU()
-        {
-            setPrivateManufacturer("detail dont have manufacturer");
-            setPrivateName("detail dont have manufacturer");
+        void ShadowScreen::Computer::CPU::setName(QString name) {
+            if(name.isEmpty() == false)
+                this->name = name;
         }
 
         CPU::CPU(bool isInit)
         {
             if(isInit)
-                CPU::init();
+                init();
             else
                 (*this) = CPU();
         }
 
-        void CPU::setName() {
-            setPrivateName(Detail::getDetail(CPU::type(), "Name"));
+        CPU::CPU() : Detail()  {
+            setName("unknown");
         }
 
-        QString CPU::getName() const
-        {
+        void CPU::setName() {
+            setName(Detail::getDetail(CPU::type(), Name));
+        }
+
+        QString CPU::getName() const {
             return name;
         }
 
-        void CPU::init()
-        {
-            Detail::setManufacturer(CPU::type());
+        void CPU::init() {
             setName();
+            setManufacturer(CPU::type());
         }
 
-        QString CPU::toString() const
-        {
-            return getManufacturer() + betweenTypes + name;
+        QString CPU::toString() const {
+            return getName() + " | " + getManufacturer();
         }
 
-        QString CPU::type() const
-        {
+        QString CPU::type() const {
             return "cpu";
         }
-
     }
 }

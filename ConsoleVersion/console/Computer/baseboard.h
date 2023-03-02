@@ -1,16 +1,18 @@
 #ifndef BASEBOARD_H
 #define BASEBOARD_H
 
-#include "Computer/detail.h"
+#include "detail.h"
 
 namespace ShadowScreen {
 
     namespace Computer {
 
         class Baseboard : public Detail {
+        private:
             QString product;
 
-            void setPrivateProduct(QString product);
+            void setProduct(QString product);
+
         public:
             Baseboard(bool isInit);
             Baseboard();
@@ -24,4 +26,5 @@ namespace ShadowScreen {
         };
     }
 }
+
 #endif // BASEBOARD_H

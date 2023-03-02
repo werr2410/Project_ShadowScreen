@@ -4,47 +4,44 @@ namespace ShadowScreen {
 
     namespace Computer {
 
-        void Baseboard::setPrivateProduct(QString product) {
-            this->product = product;
+        void ShadowScreen::Computer::Baseboard::setProduct(QString product) {
+            if(product.isEmpty() == false)
+                this->product = product;
+
+            // exe
         }
 
         Baseboard::Baseboard(bool isInit)
         {
             if(isInit)
-                Baseboard::init();
+                init();
             else
                 (*this) = Baseboard();
         }
 
-        Baseboard::Baseboard() {
-            setPrivateProduct("detail dont have product");
-            setPrivateManufacturer("detail dont have manufacturer");
+        Baseboard::Baseboard() : Detail() {
+            setProduct("unkown");
         }
 
         void Baseboard::setProduct() {
-            setPrivateProduct(Detail::getDetail(Baseboard::type(), "Product"));
+            setProduct(Detail::getDetail(Baseboard::type(), Product));
         }
 
-        QString Baseboard::getProduct() const
-        {
+        QString Baseboard::getProduct() const {
             return product;
         }
 
-        void Baseboard::init()
-        {
-            Detail::setManufacturer(Baseboard::type());
+        void Baseboard::init() {
+            setManufacturer();
             setProduct();
         }
 
-        QString Baseboard::toString() const
-        {
-            return getManufacturer() + betweenTypes + getProduct();
+        QString Baseboard::toString() const {
+            return getManufacturer() + " |  " + getProduct();
         }
 
         QString Baseboard::type() const {
             return "baseboard";
         }
-
     }
-
 }

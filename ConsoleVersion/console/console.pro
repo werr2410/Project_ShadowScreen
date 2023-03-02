@@ -11,7 +11,9 @@ SOURCES += \
         Computer/baseboard.cpp \
         Computer/cpu.cpp \
         Computer/detail.cpp \
-        Computer/gpu.cpp \
+        Computer/memorychip.cpp \
+        Computer/storage.cpp \
+        Computer/videocard.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -23,7 +25,9 @@ HEADERS += \
     Computer/baseboard.h \
     Computer/cpu.h \
     Computer/detail.h \
-    Computer/gpu.h
+    Computer/memorychip.h \
+    Computer/storage.h \
+    Computer/videocard.h
 
 DISTFILES += \
     Data/Текстовый документ.txt

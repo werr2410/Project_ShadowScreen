@@ -1,20 +1,21 @@
 #ifndef CPU_H
 #define CPU_H
 
-#include "Computer/detail.h"
+#include "detail.h"
 
 namespace ShadowScreen {
 
     namespace Computer {
 
         class CPU : public Detail {
+        private:
             QString name;
 
-            void setPrivateName(QString name);
+            void setName(QString name);
 
         public:
-            CPU();
             CPU(bool isInit);
+            CPU();
 
             void setName();
             QString getName() const;

@@ -1,40 +1,63 @@
 #include "detail.h"
+#include <iostream>
 
 namespace ShadowScreen {
 
     namespace Computer {
 
-        QString Detail::getCommand(QString detail) {
-            QString res = "wmic "; // wmic "type" get list full
+    QString Detail::getFilename() {
+        return "tmpcompturefile.txt";
+    }
 
-            res += detail + " ";
-            res += "list full ";
-            res += ">> ";
-            res += comp_filename;
+    bool Detail::seacrhString(QString str1, QString str2) {
+        return (std::strstr(str1.toStdString().c_str(), str2.toStdString().c_str()) != NULL);
+    }
 
-            return res;
+    ShadowScreen::Computer::Detail::Detail(QString manufacturer) {
+            if(manufacturer.isEmpty() == false)
+                this->manufacturer = manufacturer;
+            //else
+                // exec
         }
 
-        bool Detail::SearchString(QString left, QString right) {
-            return (std::strstr(left.toStdString().c_str(), right.toStdString().c_str()) != NULL);
+        void Detail::setManufacturers(QString manufacturer) {
+            if(manufacturer.isEmpty() == false)
+                this->manufacturer = manufacturer;
+            //else
+                // exec
         }
 
-        Detail::Detail(QString manufacturer) {
-            this->manufacturer = manufacturer;
+        QString Detail::getType(AttributesDetail td) {
+            switch (td) {
+            case AttributesDetail::Manufacturer:
+                return "Manufacturer";
+            case AttributesDetail::Capacity:
+                return "Capacity";
+            case AttributesDetail::Model:
+                return "Model";
+            case AttributesDetail::Name:
+                return "Name";
+            case AttributesDetail::Product:
+                return "Product";
+            case AttributesDetail::Size:
+                return "Size";
+            default:
+                //exec
+                break;
+            }
+
+            return "";
         }
 
-        void Detail::setPrivateManufacturer(QString manufacturer) {
-            this->manufacturer = manufacturer;
-        }
 
-        QString Detail::getDetail(QString type, QString detail) {
+        QString Detail::getDetail(QString type, AttributesDetail detail) {
             QString command = getCommand(type);
             QString line = " ";
             std::string res = "";
 
             std::system(command.toStdString().c_str());
 
-            QFile file(comp_filename);
+            QFile file(getFilename());
 
             if(file.open(QIODevice::ReadOnly | QIODevice::Text)) {
                 QTextStream in(&file);
@@ -43,10 +66,11 @@ namespace ShadowScreen {
 
                     line = in.readLine();
 
-                    if(SearchString(line, detail)) {
+                    if(seacrhString(line, getType(detail))) {
                         QStringList list = line.split("=");
 
-                        res += list[list.length() - 1].toStdString() + betweenString;
+                        res += list[list.length() - 1].toStdString() + " ";
+
                     }
                 }
 
@@ -54,27 +78,33 @@ namespace ShadowScreen {
 
                 file.close();
             } else {
-                qDebug() << "file dont open \n";
+                 std::cout << "file dont open \n" << std::endl;
             }
 
             return QString(res.c_str());
         }
 
-        Detail::Detail()
-        {
-            setPrivateManufacturer("detail dont have manufacturer/s");
+        QString Detail::getCommand(QString type) {
+            QString res = "wmic "; // wmic "type" get list full
+
+            res += type + " ";
+            res += "list full ";
+            res += ">> " + getFilename();
+
+            return res;
         }
 
-        void Detail::setManufacturer(QString typeDetail)
-        {
-            setPrivateManufacturer(getDetail(typeDetail, "Manufacturer"));
+        Detail::Detail() {
+            this->manufacturer = "unknown";
         }
 
-        QString Detail::getManufacturer() const
-        {
+        void Detail::setManufacturer(QString typeDetail) {
+            setManufacturers(getDetail(typeDetail, Manufacturer));
+        }
+
+        QString Detail::getManufacturer() const {
             return manufacturer;
         }
-
     }
-
 }
+
