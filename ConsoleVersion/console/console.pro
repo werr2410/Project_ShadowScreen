@@ -1,4 +1,4 @@
-QT -= gui
+QT += gui
 
 CONFIG += c++17 console
 CONFIG -= app_bundle
@@ -12,6 +12,7 @@ SOURCES += \
         Computer/computer.cpp \
         Computer/cpu.cpp \
         Computer/detail.cpp \
+        Computer/detailinfo.cpp \
         Computer/gpu.cpp \
         Computer/memorychip.cpp \
         Computer/storage.cpp \
@@ -27,6 +28,7 @@ HEADERS += \
     Computer/computer.h \
     Computer/cpu.h \
     Computer/detail.h \
+    Computer/detailinfo.h \
     Computer/gpu.h \
     Computer/memorychip.h \
     Computer/storage.h

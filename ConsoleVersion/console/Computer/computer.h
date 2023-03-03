@@ -43,9 +43,23 @@ namespace ShadowScreen {
             int amountGPU() const;
             int amountCPU() const;
 
+            QString getNormalyBaseboard(QChar between) const;
+            QString getNormalyStorage(QChar between) const;
+            QString getNormalyMemorychip(QChar between) const;
+            QString getNormalyCPU(QChar between) const;
+            QString getNormalyGPU(QChar between) const;
+
+            QStringList getNormalyBaseboard() const;
+            QStringList getNormalyStorage() const;
+            QStringList getNormalyMemorychip() const;
+            QStringList getNormalyGPU() const;
+            QStringList getNormalyCPU() const;
+
             void init(Baseboard baseboard, Storage storage, Memorychip memorychip, CPU cpu, GPU gpu);
             void init();
             QString toString() const;
+
+            QStringList getNormalyDetail(Detail* detail);
         };
 
     }

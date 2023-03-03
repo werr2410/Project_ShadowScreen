@@ -34,7 +34,7 @@ namespace ShadowScreen {
         }
 
         QString Memorychip::toString() const {
-            return getManufacturer() + " | " + getCapacity();
+            return getManufacturer() + "$" + getCapacity();
         }
 
         QString Memorychip::type() const {

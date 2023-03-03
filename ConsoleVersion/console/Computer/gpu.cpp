@@ -34,7 +34,7 @@ namespace ShadowScreen {
                 while (!in.atEnd()) {
                     prep = in.readLine();
 
-                    res += " " + prep.trimmed().toStdString() + " |";
+                    res += "|" + prep.trimmed().toStdString() + "|$";
 
                     prep = "";
                 }
@@ -45,7 +45,7 @@ namespace ShadowScreen {
             }
 
 
-            setManufacturers(QString().fromStdString(res).trimmed());
+            setManufacturers((QString().fromStdString(res.substr(0, res.length() - 1)).trimmed()));
         }
 
         void GPU::init() {
@@ -57,7 +57,7 @@ namespace ShadowScreen {
         }
 
         QString GPU::type() const {
-            return "videocard";
+            return "gpu";
         }
     }
 }

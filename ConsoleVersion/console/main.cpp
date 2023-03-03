@@ -13,7 +13,14 @@ int main(int argc, char *argv[]) {
 
     Computer comp(true);
 
-    comp.amountMemorychip();
+    Memorychip mc;
+    CPU cpu;
+
+    comp.getNormalyDetail(new Memorychip(mc));
+
+    cout << "\n\n\n\n\n";
+
+    comp.getNormalyDetail(new CPU(cpu));
 
 //    Baseboard bs(true);
 //    Memorychip mc(true);

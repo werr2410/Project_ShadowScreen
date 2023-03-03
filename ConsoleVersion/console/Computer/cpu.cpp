@@ -33,7 +33,7 @@ namespace ShadowScreen {
         }
 
         QString CPU::toString() const {
-            return getName() + " | " + getManufacturer();
+            return getName() + "$" + getManufacturer();
         }
 
         QString CPU::type() const {

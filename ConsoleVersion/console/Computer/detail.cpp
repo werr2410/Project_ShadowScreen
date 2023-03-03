@@ -21,7 +21,7 @@ namespace ShadowScreen {
 
         QString Detail::getDetail(QString type, QString detail) {
             QString command = getCommand(type);
-            QString line = " ";
+            QString line = "";
             QString prer = "";
             std::string res = "";
 
@@ -41,7 +41,7 @@ namespace ShadowScreen {
                     if(list[0] == detail) {
                         prer = list[list.length() - 1].trimmed();
 
-                        res += " " + prer.toStdString();
+                        res += "|" + prer.toStdString() + "|";
 
                         prer = "";
                     }

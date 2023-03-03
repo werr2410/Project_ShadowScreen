@@ -49,7 +49,7 @@ namespace ShadowScreen {
         }
 
         QString Storage::toString() const {
-            return getManufacturer() + " | " + getModel() + " | " + getSize();
+            return getManufacturer() + "$" + getModel() + "$" + getSize();
         }
 
         QString Storage::type() const {

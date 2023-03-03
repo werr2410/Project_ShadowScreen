@@ -1,8 +1,55 @@
 #include "computer.h"
 
+#include <iostream>
+
+using namespace std;
+
 namespace ShadowScreen {
 
     namespace Computer {
+
+        QStringList Computer::getNormalyDetail(Detail *detail) {
+            QStringList res;
+            QStringList tmp;
+            QStringList tmp1;
+//            int amount;
+
+//            if(detail->type() == "baseboard") {
+//                amount = amountBaseboard();
+//            } else if(detail->type() == "memorychip") {
+//                amount = amountMemorychip();
+//            } else if(detail->type() == "cpu") {
+//                amount = amountCPU();
+//            } else if(detail->type() == "gpu") {
+//                amount = amountGPU();
+//            } else if(detail->type() == "diskdrive") {
+//                amount = amountStorage();
+//            } else if(detail->type() == "memorychip") {
+//                amount = amountMemorychip();
+//            } else {
+//                amount = 0;
+//            }
+
+            tmp = detail->toString().split("$");
+
+            for(int i = 0; i < tmp.length(); i++) {
+                tmp1 = tmp[i].split("|");
+            }
+
+            std::cout << "tmp: \n";
+
+            for(int i = 0; i < tmp.length(); i++) {
+                cout << tmp[i].toStdString() << " ---- ";
+            }
+
+            cout << "\ntmp1: \n";
+
+            for(int i = 0; i < tmp1.length(); i++) {
+                cout << tmp1[i].toStdString() << " ---- ";
+            }
+
+            return res;
+        }
 
         Computer::Computer(Baseboard baseboard, Storage storage, Memorychip memorychip, CPU cpu, GPU gpu) {
             setBaseboard(baseboard);
@@ -79,6 +126,55 @@ namespace ShadowScreen {
 
         int Computer::amountCPU() const {
             return cpu.getManufacturer().split(" ").length();
+        }
+
+        QString Computer::getNormalyBaseboard(QChar between) const {
+
+        }
+
+        QString Computer::getNormalyStorage(QChar between) const
+        {
+
+        }
+
+        QString Computer::getNormalyMemorychip(QChar between) const
+        {
+
+        }
+
+        QString Computer::getNormalyCPU(QChar between) const
+        {
+
+        }
+
+        QString Computer::getNormalyGPU(QChar between) const
+        {
+
+        }
+
+        QStringList Computer::getNormalyBaseboard() const
+        {
+
+        }
+
+        QStringList Computer::getNormalyStorage() const
+        {
+
+        }
+
+        QStringList Computer::getNormalyMemorychip() const
+        {
+
+        }
+
+        QStringList Computer::getNormalyGPU() const
+        {
+
+        }
+
+        QStringList Computer::getNormalyCPU() const
+        {
+
         }
 
         void Computer::init(Baseboard baseboard, Storage storage, Memorychip memorychip, CPU cpu, GPU gpu) {

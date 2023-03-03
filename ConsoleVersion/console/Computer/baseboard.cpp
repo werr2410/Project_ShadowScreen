@@ -34,7 +34,7 @@ namespace ShadowScreen {
         }
 
         QString Baseboard::toString() const {
-            return getManufacturer() + " | " + getProduct();
+            return getManufacturer() + "$" + getProduct();
         }
 
         QString Baseboard::type() const {
