@@ -22,6 +22,7 @@ namespace ShadowScreen {
         QString Detail::getDetail(QString type, QString detail) {
             QString command = getCommand(type);
             QString line = " ";
+            QString prer = "";
             std::string res = "";
 
             std::system(command.toStdString().c_str());
@@ -35,10 +36,14 @@ namespace ShadowScreen {
 
                     line = in.readLine();
 
-                    if(seacrhString(line, detail)) {
-                        QStringList list = line.split("=");
+                    QStringList list = line.split("=");
 
-                        res += list[list.length() - 1].toStdString() + " ";
+                    if(list[0] == detail) {
+                        prer = list[list.length() - 1].trimmed();
+
+                        res += " " + prer.toStdString();
+
+                        prer = "";
                     }
                 }
 
@@ -47,7 +52,7 @@ namespace ShadowScreen {
                 file.close();
             }
 
-            return QString(res.c_str());
+            return QString(res.c_str()).trimmed();
         }
 
         QString Detail::getCommand(QString type) {

@@ -16,6 +16,7 @@ namespace ShadowScreen {
 
         void Videocard::Manufacturer() {
             QString line = " ";
+            QString prep = "";
             std::string res = "";
             QString command = "wmic path win32_VideoController get name ";
 
@@ -29,10 +30,14 @@ namespace ShadowScreen {
             if(file.open(QIODevice::ReadOnly | QIODevice::Text)) {
                 QTextStream in(&file);
 
-                line = in.readLine() + " | ";
+                line = in.readLine();
 
                 while (!in.atEnd()) {
-                    res += in.readLine().toStdString() + " | ";
+                    prep = in.readLine();
+
+                    res += " " + prep.trimmed().toStdString() + " |";
+
+                    prep = "";
                 }
 
                 file.remove();
@@ -40,7 +45,8 @@ namespace ShadowScreen {
                 file.close();
             }
 
-            setManufacturers(QString().fromStdString(res));
+
+            setManufacturers(QString().fromStdString(res).trimmed());
         }
 
         void Videocard::init() {
