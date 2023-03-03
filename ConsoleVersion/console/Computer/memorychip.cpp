@@ -9,8 +9,7 @@ namespace ShadowScreen {
                 this->Capacity = Capacity;
         }
 
-        Memorychip::Memorychip(bool isInit)
-        {
+        Memorychip::Memorychip(bool isInit) {
             if(isInit)
                 Memorychip::init();
             else
@@ -18,11 +17,11 @@ namespace ShadowScreen {
         }
 
         Memorychip::Memorychip() {
-            setCapacity("0");
+            setCapacity("unknown");
         }
 
         void Memorychip::setCapacity() {
-            setCapacity(getDetail(Memorychip::type(), Computer::Capacity));
+            setCapacity(getDetail(Memorychip::type(), "Capacity"));
         }
 
         QString Memorychip::getCapacity() const {

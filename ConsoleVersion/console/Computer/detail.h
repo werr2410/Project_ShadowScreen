@@ -1,5 +1,8 @@
 #ifndef DETAIL_H
 #define DETAIL_H
+
+#define comp_filename "file.txt"
+
 #include <QString>
 #include <QVector>
 #include <QFile>
@@ -7,18 +10,10 @@
 #include <string>
 #include <QTextStream>
 
+
 namespace ShadowScreen {
 
     namespace Computer {
-
-        enum AttributesDetail {
-            Manufacturer,
-            Product,
-            Model,
-            Name,
-            Capacity,
-            Size
-        };
 
         class Detail {
         private:
@@ -31,9 +26,7 @@ namespace ShadowScreen {
 
             void setManufacturers(QString manufacturer);
 
-            static QString getFilename();
-            static QString getType(AttributesDetail td);
-            static QString getDetail(QString type, AttributesDetail detail);
+            static QString getDetail(QString type, QString detail);
             static QString getCommand(QString type);
 
         public:

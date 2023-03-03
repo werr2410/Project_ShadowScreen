@@ -8,10 +8,9 @@ namespace ShadowScreen {
                 this->name = name;
         }
 
-        CPU::CPU(bool isInit)
-        {
+        CPU::CPU(bool isInit) {
             if(isInit)
-                init();
+                CPU::init();
             else
                 (*this) = CPU();
         }
@@ -21,7 +20,7 @@ namespace ShadowScreen {
         }
 
         void CPU::setName() {
-            setName(Detail::getDetail(CPU::type(), Name));
+            setName(Detail::getDetail(CPU::type(), "Name"));
         }
 
         QString CPU::getName() const {

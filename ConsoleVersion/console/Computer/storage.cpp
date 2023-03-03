@@ -14,8 +14,7 @@ namespace ShadowScreen {
                 this->size = size;
         }
 
-        Storage::Storage(bool isInit)
-        {
+        Storage::Storage(bool isInit) {
             if(isInit)
                 Storage::init();
             else
@@ -23,16 +22,16 @@ namespace ShadowScreen {
         }
 
         Storage::Storage() {
-            setSize("0");
+            setSize("unknown");
             setModel("unknown");
         }
 
         void Storage::setModel() {
-            setModel(Detail::getDetail(Storage::type(), Model));
+            setModel(Detail::getDetail(Storage::type(), "Model"));
         }
 
         void Storage::setSize() {
-            setSize(Detail::getDetail(Storage::type(), Size));
+            setSize(Detail::getDetail(Storage::type(), "Size"));
         }
 
         QString Storage::getModel() const {

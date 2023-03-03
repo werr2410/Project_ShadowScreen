@@ -7,14 +7,11 @@ namespace ShadowScreen {
         void ShadowScreen::Computer::Baseboard::setProduct(QString product) {
             if(product.isEmpty() == false)
                 this->product = product;
-
-            // exe
         }
 
-        Baseboard::Baseboard(bool isInit)
-        {
+        Baseboard::Baseboard(bool isInit) {
             if(isInit)
-                init();
+                Baseboard::init();
             else
                 (*this) = Baseboard();
         }
@@ -24,7 +21,7 @@ namespace ShadowScreen {
         }
 
         void Baseboard::setProduct() {
-            setProduct(Detail::getDetail(Baseboard::type(), Product));
+            setProduct(Detail::getDetail(Baseboard::type(), "Product"));
         }
 
         QString Baseboard::getProduct() const {
@@ -37,7 +34,7 @@ namespace ShadowScreen {
         }
 
         QString Baseboard::toString() const {
-            return getManufacturer() + " |  " + getProduct();
+            return getManufacturer() + " | " + getProduct();
         }
 
         QString Baseboard::type() const {

@@ -5,31 +5,26 @@ namespace ShadowScreen {
 
     namespace Computer {
 
-    Videocard::Videocard(bool isInit)
-    {
-        if(isInit)
-            Videocard::init();
-        else
-            (*this) = Videocard();
-    }
+        Videocard::Videocard(bool isInit) {
+            if(isInit)
+                Videocard::init();
+            else
+                (*this) = Videocard();
+        }
 
-    Videocard::Videocard() : Detail()
-    {
+        Videocard::Videocard() : Detail() { }
 
-    }
-
-    void Videocard::Manufacturer() {
-
-            QString command = "wmic path win32_VideoController get name ";
-
-            command += ">> " + getFilename();
-
+        void Videocard::Manufacturer() {
             QString line = " ";
             std::string res = "";
+            QString command = "wmic path win32_VideoController get name ";
+
+            command += ">> ";
+            command += comp_filename;
 
             std::system(command.toStdString().c_str());
 
-            QFile file(getFilename());
+            QFile file(comp_filename);
 
             if(file.open(QIODevice::ReadOnly | QIODevice::Text)) {
                 QTextStream in(&file);
@@ -37,7 +32,7 @@ namespace ShadowScreen {
                 line = in.readLine() + " | ";
 
                 while (!in.atEnd()) {
-                   res += in.readLine().toStdString() + " | ";
+                    res += in.readLine().toStdString() + " | ";
                 }
 
                 file.remove();
@@ -59,7 +54,5 @@ namespace ShadowScreen {
         QString Videocard::type() const {
             return "videocard";
         }
-
-
     }
 }

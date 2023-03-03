@@ -12,7 +12,6 @@ using namespace std;
 using namespace ShadowScreen::Computer;
 
 int main(int argc, char *argv[]) {
-
     QCoreApplication a(argc, argv);
 
     Baseboard bs(true);
