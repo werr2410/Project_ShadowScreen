@@ -2,7 +2,7 @@
 
 #include "Computer/baseboard.h"
 #include "Computer/cpu.h"
-#include "Computer/videocard.h"
+#include "Computer/gpu.h"
 #include "Computer/storage.h"
 #include "Computer/memorychip.h"
 
@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     Memorychip mc(true);
     Storage storage(true);
     CPU cpu(true);
-    Videocard gpu(true);
+    GPU gpu(true);
 
     cout << bs.toString().toStdString() << endl;
     cout << mc.toString().toStdString() << endl;

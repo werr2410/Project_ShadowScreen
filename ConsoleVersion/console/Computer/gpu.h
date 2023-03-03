@@ -1,5 +1,5 @@
-#ifndef VIDEOCARD_H
-#define VIDEOCARD_H
+#ifndef GPU_H
+#define GPU_H
 
 #include "detail.h"
 
@@ -7,10 +7,10 @@ namespace ShadowScreen {
 
     namespace Computer {
 
-        class Videocard : public Detail {
+        class GPU : public Detail {
         public:
-            Videocard(bool isInit);
-            Videocard();
+            GPU(bool isInit);
+            GPU();
 
             void Manufacturer();
 
@@ -21,4 +21,4 @@ namespace ShadowScreen {
     }
 }
 
-#endif // VIDEOCARD_H
+#endif // GPU_H

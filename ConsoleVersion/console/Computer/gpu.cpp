@@ -1,20 +1,19 @@
-#include "videocard.h"
-#include <iostream>
+#include "gpu.h"
 
 namespace ShadowScreen {
 
     namespace Computer {
 
-        Videocard::Videocard(bool isInit) {
+        GPU::GPU(bool isInit) {
             if(isInit)
-                Videocard::init();
+                GPU::init();
             else
-                (*this) = Videocard();
+                (*this) = GPU();
         }
 
-        Videocard::Videocard() : Detail() { }
+        GPU::GPU() : Detail() { }
 
-        void Videocard::Manufacturer() {
+        void GPU::Manufacturer() {
             QString line = " ";
             QString prep = "";
             std::string res = "";
@@ -49,15 +48,15 @@ namespace ShadowScreen {
             setManufacturers(QString().fromStdString(res).trimmed());
         }
 
-        void Videocard::init() {
+        void GPU::init() {
             Manufacturer();
         }
 
-        QString Videocard::toString() const {
+        QString GPU::toString() const {
             return getManufacturer();
         }
 
-        QString Videocard::type() const {
+        QString GPU::type() const {
             return "videocard";
         }
     }
