@@ -1,5 +1,6 @@
 #include "computer.h"
 
+#include <QDebug>
 #include <iostream>
 
 using namespace std;
@@ -36,16 +37,16 @@ namespace ShadowScreen {
                 tmp1 = tmp[i].split("|");
             }
 
-            std::cout << "tmp: \n";
+            qDebug() << "tmp: \n";
 
             for(int i = 0; i < tmp.length(); i++) {
-                cout << tmp[i].toStdString() << " ---- ";
+                qDebug() << tmp[i] << " ---- ";
             }
 
-            cout << "\ntmp1: \n";
+            qDebug() << "\ntmp1: \n";
 
             for(int i = 0; i < tmp1.length(); i++) {
-                cout << tmp1[i].toStdString() << " ---- ";
+                qDebug() << tmp1[i] << " ---- ";
             }
 
             return res;
@@ -189,11 +190,11 @@ namespace ShadowScreen {
         QString Computer::toString() const {
             QString res = "";
 
-            res += " |b| " + baseboard.toString()   + " |b| ";
-            res += " |s| " + storage.toString()     + " |s| ";
-            res += " |m| " + memorychip.toString()  + " |m| ";
-            res += " |c| " + cpu.toString()         + " |c| ";
-            res += " |g| " + gpu.toString()         + " |g| ";
+            res += " |b| " + baseboard.toString()   + " |b|\n";
+            res += " |s| " + storage.toString()     + " |s|\n";
+            res += " |m| " + memorychip.toString()  + " |m|\n";
+            res += " |c| " + cpu.toString()         + " |c|\n";
+            res += " |g| " + gpu.toString()         + " |g|\n";
 
             return res;
         }

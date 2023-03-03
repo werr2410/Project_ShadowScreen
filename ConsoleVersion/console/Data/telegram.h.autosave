@@ -1,0 +1,31 @@
+#ifndef TELEGRAM_H
+#define TELEGRAM_H
+
+#include <QString>
+
+namespace ShadowScreen {
+
+    namespace Telegram {
+        
+        class Telegram {
+            QString username;
+            QString chatId;
+            QString usercode;
+            
+        public:
+            Telegram(QString username, QStirng chatId, QString usercode);
+            Telegram();
+            
+            void setUsername(QString username);
+            void setChatId(QString chatId);
+            void setUsercode(QString usercode);
+            
+            QString getUsername() const;
+            QString getChatId() const;
+            QString getUsercode() const;
+            
+            void init(QString )
+        };
+    }
+}
+#endif // TELEGRAM_H

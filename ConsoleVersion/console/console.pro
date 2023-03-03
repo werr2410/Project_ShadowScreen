@@ -16,6 +16,7 @@ SOURCES += \
         Computer/gpu.cpp \
         Computer/memorychip.cpp \
         Computer/storage.cpp \
+        Data/telegram.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -31,7 +32,8 @@ HEADERS += \
     Computer/detailinfo.h \
     Computer/gpu.h \
     Computer/memorychip.h \
-    Computer/storage.h
+    Computer/storage.h \
+    Data/telegram.h
 
 DISTFILES += \
     Data/Текстовый документ.txt

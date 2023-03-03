@@ -3,6 +3,7 @@
 #include "Computer/computer.h"
 
 #include <iostream>
+#include <QDebug>
 
 using namespace std;
 using namespace ShadowScreen::Computer;
@@ -12,6 +13,8 @@ int main(int argc, char *argv[]) {
 
 
     Computer comp(true);
+
+    qDebug() << "EAFWSFWFWFWFWFDSASGDG";
 
     Memorychip mc;
     CPU cpu;
