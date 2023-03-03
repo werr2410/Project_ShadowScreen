@@ -7,6 +7,8 @@
 #include "Computer/storage.h"
 #include "Computer/gpu.h"
 
+#include <iostream>
+
 namespace ShadowScreen {
 
     namespace Computer {
@@ -20,6 +22,7 @@ namespace ShadowScreen {
 
         public:
             Computer(Baseboard baseboard, Storage storage, Memorychip memorychip, CPU cpu, GPU gpu);
+            Computer(bool isInit);
             Computer();
 
             void setBaseboard(Baseboard baseboard);
@@ -34,9 +37,17 @@ namespace ShadowScreen {
             CPU getCPU() const;
             GPU getGPU() const;
 
+            int amountBaseboard() const;
+            int amountStorage() const;
+            int amountMemorychip() const;
+            int amountGPU() const;
+            int amountCPU() const;
+
             void init(Baseboard baseboard, Storage storage, Memorychip memorychip, CPU cpu, GPU gpu);
+            void init();
             QString toString() const;
         };
+
     }
 }
 #endif // COMPUTER_H
