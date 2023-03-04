@@ -1,28 +1,34 @@
 #include <QCoreApplication>
 
 #include "Computer/computer.h"
+#include "Data/security.h"
 
 #include <iostream>
 #include <QDebug>
 
+
 using namespace std;
 using namespace ShadowScreen::Computer;
+using namespace ShadowScreen::Securitys;
 
 int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
 
-    Computer comp(true);
+    QString string = "Andrey";
 
-    qDebug() << "EAFWSFWFWFWFWFDSASGDG";
+    qDebug() << string;
 
-    Memorychip mc;
-    CPU cpu;
+    string = Security::getField(string);
 
-    comp.getNormalyDetail(new Memorychip(mc));
+    qDebug() << string;
 
-    cout << "\n\n\n\n\n";
+    string = Security::getField(string);
 
-    comp.getNormalyDetail(new CPU(cpu));
+    qDebug() << string;
+
+//    Computer comp(true);
+
+//    qDebug() << comp.toString();
 
 //    Baseboard bs(true);
 //    Memorychip mc(true);
