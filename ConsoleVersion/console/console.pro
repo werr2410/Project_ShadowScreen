@@ -18,6 +18,8 @@ SOURCES += \
         Computer/storage.cpp \
         Data/security.cpp \
         Data/telegram.cpp \
+        Database/mssql.cpp \
+        User/user.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -36,7 +38,9 @@ HEADERS += \
     Computer/storage.h \
     Data/key.h \
     Data/security.h \
-    Data/telegram.h
+    Data/telegram.h \
+    Database/mssql.h \
+    User/user.h
 
 DISTFILES += \
     Data/Текстовый документ.txt
