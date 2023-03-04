@@ -11,7 +11,6 @@ using namespace ShadowScreen::Computer;
 int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
 
-
     Computer comp(true);
 
     qDebug() << "EAFWSFWFWFWFWFDSASGDG";

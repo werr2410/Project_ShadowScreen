@@ -2,7 +2,7 @@
 
 namespace ShadowScreen {
 
-    namespace Telegram {
+    namespace Data {
 
         Telegram::Telegram(QString username, QString chatId, QString usercode)  {
             setUsername(username);
@@ -43,8 +43,6 @@ namespace ShadowScreen {
         QString Telegram::toString() const {
             return username + "|" + chatId + "|" + usercode;
         }
-
-
 
     }
 }
