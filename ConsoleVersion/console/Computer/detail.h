@@ -8,6 +8,7 @@
 #include <QFile>
 #include <cstring>
 #include <string>
+#include <QSqlDatabase>
 #include <QTextStream>
 
 

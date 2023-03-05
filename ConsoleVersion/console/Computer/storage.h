@@ -2,13 +2,13 @@
 #define STORAGE_H
 
 #include "detail.h"
-
+#include "detailinfo.h"
 
 namespace ShadowScreen {
 
     namespace Computer {
 
-        class Storage : public Detail {
+        class Storage : public Detail, public DetailInfo {
         private:
             QString model;
             QString size;

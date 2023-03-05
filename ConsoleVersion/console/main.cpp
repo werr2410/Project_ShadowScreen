@@ -1,40 +1,32 @@
 #include <QCoreApplication>
 
 #include "Computer/computer.h"
+#include "Data/security.h"
+#include "Database/mssql.h"
 
 #include <iostream>
 #include <QDebug>
 
 using namespace std;
 using namespace ShadowScreen::Computer;
+using namespace ShadowScreen::Securitys;
+using namespace ShadowScreen::Database;
+using namespace ShadowScreen::Exception;
 
 int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
 
-    Computer comp(true);
+    Baseboard bs(true);
 
-    qDebug() << "EAFWSFWFWFWFWFDSASGDG";
+    qDebug() << bs.toString();
 
-    Memorychip mc;
-    CPU cpu;
+//    MSSQL db("DESKTOP-TDHSHRS\\NEWSQL2", "ShadowScreen", "QTCPLUSPLUS", "p12plusplusexam");
 
-    comp.getNormalyDetail(new Memorychip(mc));
+//    db.init();
+//    qDebug() << db.open();
 
-    cout << "\n\n\n\n\n";
-
-    comp.getNormalyDetail(new CPU(cpu));
-
-//    Baseboard bs(true);
-//    Memorychip mc(true);
-//    Storage storage(true);
-//    CPU cpu(true);
-//    GPU gpu(true);
-
-//    cout << bs.toString().toStdString() << endl;
-//    cout << mc.toString().toStdString() << endl;
-//    cout << storage.toString().toStdString() <<  endl;
-//    cout << cpu.toString().toStdString() << endl;
-//    cout << gpu.toString().toStdString() << endl;
+//    if(db.getStatus())
+//        db.close();
 
     return a.exec();
 }

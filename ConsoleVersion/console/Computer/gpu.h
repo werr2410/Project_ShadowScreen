@@ -2,12 +2,13 @@
 #define GPU_H
 
 #include "detail.h"
+#include "detailinfo.h"
 
 namespace ShadowScreen {
 
     namespace Computer {
 
-        class GPU : public Detail {
+        class GPU : public Detail, public DetailInfo {
         public:
             GPU(bool isInit);
             GPU();

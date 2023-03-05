@@ -2,12 +2,13 @@
 #define MEMORYCHIP_H
 
 #include "detail.h"
+#include "detailinfo.h"
 
 namespace ShadowScreen {
 
     namespace Computer {
 
-        class Memorychip : public Detail {
+        class Memorychip : public Detail, public DetailInfo {
         private:
             QString Capacity;
 

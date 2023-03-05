@@ -2,12 +2,13 @@
 #define CPU_H
 
 #include "detail.h"
+#include "detailinfo.h"
 
 namespace ShadowScreen {
 
     namespace Computer {
 
-        class CPU : public Detail {
+        class CPU : public Detail, public DetailInfo {
         private:
             QString name;
 
