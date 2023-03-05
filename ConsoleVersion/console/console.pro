@@ -1,4 +1,4 @@
-QT += gui
+QT += gui sql
 
 CONFIG += c++17 console
 CONFIG -= app_bundle
@@ -40,6 +40,7 @@ HEADERS += \
     Data/security.h \
     Data/telegram.h \
     Database/mssql.h \
+    Exception/exceptions.h \
     User/user.h
 
 DISTFILES += \
