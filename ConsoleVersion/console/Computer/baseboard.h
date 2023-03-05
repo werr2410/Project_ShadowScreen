@@ -27,8 +27,6 @@ namespace ShadowScreen {
             QString toString() const override;
             QString type() const override;
 
-            int pushToDatabase(QSqlDatabase& db) const override;
-            void loadFromDatabase(QSqlDatabase& db, int id) override;
         };
     }
 }

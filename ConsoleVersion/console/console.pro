@@ -18,6 +18,7 @@ SOURCES += \
         Computer/storage.cpp \
         Data/security.cpp \
         Data/telegram.cpp \
+        Database/dbobj.cpp \
         Database/mssql.cpp \
         User/user.cpp \
         main.cpp
@@ -39,6 +40,7 @@ HEADERS += \
     Data/key.h \
     Data/security.h \
     Data/telegram.h \
+    Database/dbobj.h \
     Database/mssql.h \
     Exception/exceptions.h \
     User/user.h

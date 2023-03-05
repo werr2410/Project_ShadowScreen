@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QSqlDatabase>
+
 #include "Exception/exceptions.h"
 
 namespace ShadowScreen {

@@ -25,6 +25,14 @@ namespace ShadowScreen {
                 return "invalid field for connect to ms sql";
             }
         };
+
+        class DBFUNCIdisnegative : public SSExecptions {
+        public:
+
+            QString message() const override {
+                return "id = 0 or it is negative";
+            }
+        };
     }
 }
 
