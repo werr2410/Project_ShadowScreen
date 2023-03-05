@@ -16,6 +16,10 @@ SOURCES += \
         Computer/gpu.cpp \
         Computer/memorychip.cpp \
         Computer/storage.cpp \
+        Data/adress.cpp \
+        Data/bankcard.cpp \
+        Data/delivery.cpp \
+        Data/review.cpp \
         Data/telegram.cpp \
         main.cpp
 
@@ -33,6 +37,10 @@ HEADERS += \
     Computer/gpu.h \
     Computer/memorychip.h \
     Computer/storage.h \
+    Data/adress.h \
+    Data/bankcard.h \
+    Data/delivery.h \
+    Data/review.h \
     Data/telegram.h
 
 DISTFILES += \
