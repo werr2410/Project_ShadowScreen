@@ -26,7 +26,6 @@ namespace ShadowScreen {
             void init() override;
             QString toString() const override;
             QString type() const override;
-
         };
     }
 }

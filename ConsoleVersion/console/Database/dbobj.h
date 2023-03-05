@@ -2,6 +2,7 @@
 #define DBOBJ_H
 
 #include <QSqlDatabase>
+#include <QSqlQuery>
 
 #include "Exception/exceptions.h"
 
