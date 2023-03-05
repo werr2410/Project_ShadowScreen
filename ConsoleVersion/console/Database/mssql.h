@@ -37,6 +37,7 @@ namespace ShadowScreen {
             QString getUsername() const;
             QString getPassword() const;
 
+            QSqlDatabase &getDatabase();
             bool getStatus() const;
 
             void init();

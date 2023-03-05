@@ -8,4 +8,6 @@ release/memorychip.o
 release/storage.o
 release/security.o
 release/telegram.o
+release/mssql.o
+release/user.o
 release/main.o

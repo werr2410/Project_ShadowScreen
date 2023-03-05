@@ -222,6 +222,7 @@ Makefile: ../console/console.pro D:/Qt/6.4.2/mingw_64/mkspecs/win32-g++/qmake.co
 		D:/Qt/6.4.2/mingw_64/mkspecs/features/lex.prf \
 		../console/console.pro \
 		D:/Qt/6.4.2/mingw_64/lib/Qt6Gui.prl \
+		D:/Qt/6.4.2/mingw_64/lib/Qt6Sql.prl \
 		D:/Qt/6.4.2/mingw_64/lib/Qt6Core.prl \
 		D:/Qt/6.4.2/mingw_64/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ..\console\console.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -377,6 +378,7 @@ D:/Qt/6.4.2/mingw_64/mkspecs/features/yacc.prf:
 D:/Qt/6.4.2/mingw_64/mkspecs/features/lex.prf:
 ../console/console.pro:
 D:/Qt/6.4.2/mingw_64/lib/Qt6Gui.prl:
+D:/Qt/6.4.2/mingw_64/lib/Qt6Sql.prl:
 D:/Qt/6.4.2/mingw_64/lib/Qt6Core.prl:
 D:/Qt/6.4.2/mingw_64/mkspecs/features/build_pass.prf:
 qmake: FORCE

@@ -8,6 +8,7 @@
 #include <QFile>
 #include <cstring>
 #include <string>
+#include <QSqlDatabase>
 #include <QTextStream>
 
 
@@ -38,6 +39,9 @@ namespace ShadowScreen {
             virtual void init() = 0;
             virtual QString toString() const = 0;
             virtual QString type() const = 0;
+
+            virtual int pushToDatabase(QSqlDatabase& db) const = 0;
+            virtual void loadFromDatabase(QSqlDatabase& db, int id) = 0;
         };
     }
 }

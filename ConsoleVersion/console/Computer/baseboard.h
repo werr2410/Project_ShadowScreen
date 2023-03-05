@@ -1,13 +1,16 @@
 #ifndef BASEBOARD_H
 #define BASEBOARD_H
 
+#include <QSqlQuery>
+
 #include "detail.h"
+#include "Computer/detailinfo.h"
 
 namespace ShadowScreen {
 
     namespace Computer {
 
-        class Baseboard : public Detail {
+        class Baseboard : public Detail, public DetailInfo {
         private:
             QString product;
 
@@ -23,6 +26,9 @@ namespace ShadowScreen {
             void init() override;
             QString toString() const override;
             QString type() const override;
+
+            int pushToDatabase(QSqlDatabase& db) const override;
+            void loadFromDatabase(QSqlDatabase& db, int id) override;
         };
     }
 }

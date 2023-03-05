@@ -8,4 +8,6 @@ debug/memorychip.o
 debug/storage.o
 debug/security.o
 debug/telegram.o
+debug/mssql.o
+debug/user.o
 debug/main.o

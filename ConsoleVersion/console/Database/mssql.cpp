@@ -16,9 +16,9 @@ namespace ShadowScreen {
             setPassword(password);
         }
 
-        MSSQL::MSSQL()
-        {
+        MSSQL::MSSQL() {
             db = QSqlDatabase::addDatabase(getDriver());
+            status = false;
         }
 
         void MSSQL::setServer(QString server) {
@@ -77,17 +77,27 @@ namespace ShadowScreen {
             return password;
         }
 
+        QSqlDatabase &MSSQL::getDatabase() {
+            return db;
+        }
+
         bool MSSQL::getStatus() const {
             return status;
         }
 
         void MSSQL::init() {
+            if(server.isEmpty() || database.isEmpty() || username.isEmpty() || username.isEmpty() || password.isEmpty())
+                throw new Exception::MSSQLCloseData();
+
             db.setDatabaseName(toString());
             db.setUserName(username);
             db.setPassword(password);
         }
 
         bool MSSQL::open() {
+            if(server.isEmpty() || database.isEmpty() || username.isEmpty() || username.isEmpty() || password.isEmpty())
+                throw new Exception::MSSQLCloseData();
+
             status = db.open();
 
             return status;
@@ -105,8 +115,6 @@ namespace ShadowScreen {
         }
 
         QString MSSQL::toString() const {
-            //DRIVER={SQL Server};SERVER=DESKTOP-TDHSHRS\\NEWSQL2;DATABASE=bankcard
-
             QString res = "DRIVER={SQL Server};SERVER=" + server + ";DATABASE=" + database;
 
             return res;
