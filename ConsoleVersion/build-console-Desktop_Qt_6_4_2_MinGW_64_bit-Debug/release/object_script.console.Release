@@ -6,6 +6,10 @@ release/detailinfo.o
 release/gpu.o
 release/memorychip.o
 release/storage.o
+release/adress.o
+release/bankcard.o
+release/delivery.o
+release/review.o
 release/security.o
 release/telegram.o
 release/dbobj.o

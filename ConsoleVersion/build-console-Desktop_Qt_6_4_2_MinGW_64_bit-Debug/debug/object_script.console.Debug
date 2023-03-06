@@ -6,6 +6,10 @@ debug/detailinfo.o
 debug/gpu.o
 debug/memorychip.o
 debug/storage.o
+debug/adress.o
+debug/bankcard.o
+debug/delivery.o
+debug/review.o
 debug/security.o
 debug/telegram.o
 debug/dbobj.o
