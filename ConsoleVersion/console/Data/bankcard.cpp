@@ -4,7 +4,7 @@ namespace ShadowScreen {
 
     namespace Data {
 
-        Bankcard::Bankcard(QString title, QString number, QDate expirationDate) {
+        Bankcard::Bankcard(QString title, QString number, QDate expirationDate) : Dbobj() {
             setTitle(title);
             setNumber(number);
             setExpirationDate(expirationDate);
@@ -66,6 +66,26 @@ namespace ShadowScreen {
 
         void Bankcard::init(QString number, QDate expirationDate) {
             (*this) = Bankcard(number, expirationDate);
+        }
+
+        void Bankcard::insertToDatabase(QSqlDatabase &db) const {
+
+        }
+
+        void Bankcard::selectFromDatabase(QSqlDatabase &db, int id) {
+
+        }
+
+        void Bankcard::alterToDatabase(QSqlDatabase &db, int id) const {
+
+        }
+
+        void Bankcard::deleteFromDatabase(QSqlDatabase &db, int id) const {
+
+        }
+
+        int Bankcard::getIdFromDatabase(QSqlDatabase &db) const {
+
         }
 
         Bankcard &Bankcard::operator =(const Bankcard &obj) {

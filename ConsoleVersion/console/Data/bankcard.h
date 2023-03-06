@@ -2,19 +2,24 @@
 #define BANKCARD_H
 
 #include <QString>
-#include<QDate>
+#include <QDate>
+
+#include "Database/dbobj.h"
+
 namespace ShadowScreen {
 
     namespace Data {
 
-        class Bankcard {
+        using Database::Dbobj;
+
+        class Bankcard : public Dbobj {
             QString title;
             QString number;
             QDate expirationDate;
 
         public:
             Bankcard(QString title, QString number, QDate expirationDate );
-            Bankcard( QString number, QDate expirationDate);
+            Bankcard(QString number, QDate expirationDate);
             Bankcard();
 
             void setTitle(QString title);
@@ -29,6 +34,12 @@ namespace ShadowScreen {
 
             void init(QString title, QString number, QDate expirationDate);
             void init(QString number, QDate expirationDate);
+
+            void insertToDatabase(QSqlDatabase& db) const override;
+            void selectFromDatabase(QSqlDatabase& db, int id) override;
+            void alterToDatabase(QSqlDatabase& db, int id) const override;
+            void deleteFromDatabase(QSqlDatabase& db, int id) const override;
+            int  getIdFromDatabase(QSqlDatabase& db) const override;
 
             Bankcard &operator =(const Bankcard& obj); // зачем если он автоматически создаеться
             bool operator==(const Bankcard &rhs) const;

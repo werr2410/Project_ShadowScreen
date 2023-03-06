@@ -1,3 +1,5 @@
+debug/chat.o
+debug/message.o
 debug/baseboard.o
 debug/computer.o
 debug/cpu.o

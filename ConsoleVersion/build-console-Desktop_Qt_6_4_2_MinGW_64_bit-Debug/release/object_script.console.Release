@@ -1,3 +1,5 @@
+release/chat.o
+release/message.o
 release/baseboard.o
 release/computer.o
 release/cpu.o

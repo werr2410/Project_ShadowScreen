@@ -1,4 +1,4 @@
-QT += gui sql
+QT += gui sql core
 
 CONFIG += c++17 console
 CONFIG -= app_bundle
@@ -8,6 +8,8 @@ CONFIG -= app_bundle
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Chating/chat.cpp \
+    Chating/message.cpp \
         Computer/baseboard.cpp \
         Computer/computer.cpp \
         Computer/cpu.cpp \
@@ -33,6 +35,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    Chating/chat.h \
+    Chating/message.h \
     Computer/baseboard.h \
     Computer/computer.h \
     Computer/cpu.h \
