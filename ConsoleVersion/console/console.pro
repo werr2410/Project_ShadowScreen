@@ -16,12 +16,16 @@ SOURCES += \
         Computer/gpu.cpp \
         Computer/memorychip.cpp \
         Computer/storage.cpp \
+        Data/adress.cpp \
+        Data/bankcard.cpp \
+        Data/delivery.cpp \
+        Data/review.cpp \
         Data/security.cpp \
         Data/telegram.cpp \
         Database/dbobj.cpp \
         Database/mssql.cpp \
         User/user.cpp \
-        main.cpp
+        main.cpp \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -37,13 +41,18 @@ HEADERS += \
     Computer/gpu.h \
     Computer/memorychip.h \
     Computer/storage.h \
+    Data/adress.h \
+    Data/bankcard.h \
+    Data/delivery.h \
+    Data/review.h \
+    Data/telegram.h \
     Data/key.h \
     Data/security.h \
     Data/telegram.h \
     Database/dbobj.h \
     Database/mssql.h \
     Exception/exceptions.h \
-    User/user.h
+    User/user.h \
 
 DISTFILES += \
-    Data/Текстовый документ.txt
+    Data/Текстовый документ.txt \

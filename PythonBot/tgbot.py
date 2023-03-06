@@ -1,9 +1,9 @@
+
 import telebot
 import config
 import random
- 
 from telebot import types
- 
+
 bot = telebot.TeleBot(config.TOKEN)
  
 @bot.message_handler(commands=['start'])
