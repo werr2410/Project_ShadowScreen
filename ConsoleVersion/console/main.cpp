@@ -23,9 +23,10 @@ int main(int argc, char *argv[]) {
     qDebug() << db.open();
 
     if(db.getStatus()) {
-        Adress adress("unknown", "unknown", "unknown", "unknown");
+//        Adress adress("unknown", "unknown", "unknown", "unknown");
 
-        qDebug() << adress.getIdFromDatabase(db.getDatabase());
+//        qDebug() << adress.getIdFromDatabase(db.getDatabase());
+
 
     }
 
