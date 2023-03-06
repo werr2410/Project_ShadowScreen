@@ -53,17 +53,11 @@ namespace ShadowScreen {
             return number + "|" + expirationDate.toString("yyyy-MM-dd");
         }
 
-        bool Bankcard::isInvalidCard() const
-        {
-          if(expirationDate < QDate().currentDate()) {
-              return false;
-          } else if (number.length() < 16) {
-              return false;
-          } else {
-              return true;
-          }
+        bool Bankcard::isInvalidCard() const {
+            if(expirationDate < QDate().currentDate())
+                return false;
 
-          // вообще не правильная логика
+            return true;
         }
 
         void Bankcard::init(QString title, QString number, QDate expirationDate) {
@@ -71,7 +65,7 @@ namespace ShadowScreen {
         }
 
         void Bankcard::init(QString number, QDate expirationDate) {
-             (*this) = Bankcard(number, expirationDate);
+            (*this) = Bankcard(number, expirationDate);
         }
 
         Bankcard &Bankcard::operator =(const Bankcard &obj) {

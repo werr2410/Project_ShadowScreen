@@ -4,6 +4,10 @@ namespace ShadowScreen {
 
     namespace Database {
 
+        Dbobj::Dbobj() {
+            id = NULL;
+        }
+
         void Dbobj::setId(int id) {
             if(id <= 0)
                 throw new Exception::DBFUNCIdisnegative();
