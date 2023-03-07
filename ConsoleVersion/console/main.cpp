@@ -8,7 +8,7 @@
 #include <QDebug>
 
 using namespace std;
-using namespace ShadowScreen::Computer;
+using namespace ShadowScreen::computer;
 using namespace ShadowScreen::Securitys;
 using namespace ShadowScreen::Database;
 using namespace ShadowScreen::Exception;

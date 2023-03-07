@@ -2,9 +2,9 @@
 
 namespace ShadowScreen {
 
-    namespace Computer {
+    namespace computer {
 
-        void ShadowScreen::Computer::Memorychip::setCapacity(QString Capacity) {
+        void ShadowScreen::computer::Memorychip::setCapacity(QString Capacity) {
             if(Capacity.isEmpty() == false)
                 this->Capacity = Capacity;
         }

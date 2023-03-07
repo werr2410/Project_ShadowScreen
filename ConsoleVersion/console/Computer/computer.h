@@ -11,7 +11,7 @@
 
 namespace ShadowScreen {
 
-    namespace Computer {
+    namespace computer {
 
         enum Details {
             d_Baseboard,

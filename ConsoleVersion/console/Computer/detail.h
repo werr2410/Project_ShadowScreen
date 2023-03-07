@@ -14,7 +14,7 @@
 
 namespace ShadowScreen {
 
-    namespace Computer {
+    namespace computer {
 
         class Detail {
         private:

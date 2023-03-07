@@ -6,7 +6,7 @@
 
 namespace ShadowScreen {
 
-    namespace Computer {
+    namespace computer {
 
         class GPU : public Detail, public DetailInfo {
         public:

@@ -3,7 +3,7 @@
 
 namespace ShadowScreen {
 
-    namespace Computer {
+    namespace computer {
 
         DetailInfo::DetailInfo(QPixmap image, QString description, QString status, bool isSale, int stars) {
             setImage(image);

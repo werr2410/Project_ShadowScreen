@@ -10,7 +10,7 @@
 
 namespace ShadowScreen {
 
-    namespace Computer {
+    namespace computer {
 
         using Database::Dbobj;
 

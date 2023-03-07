@@ -2,8 +2,8 @@
 
 namespace ShadowScreen {
 
-    namespace Computer {
-        void ShadowScreen::Computer::CPU::setName(QString name) {
+    namespace computer {
+        void ShadowScreen::computer::CPU::setName(QString name) {
             if(name.isEmpty() == false)
                 this->name = name;
         }

@@ -4,12 +4,25 @@ namespace ShadowScreen {
 
     namespace Database {
 
-        Dbobj::Dbobj() {
-            id = NULL;
+        Dbobj::Dbobj(int id, QString table)
+        {
+            setId(id);
+            setTable(table);
+        }
+
+        Dbobj::Dbobj(QString table):Dbobj(NULL,table){}
+
+
+        Dbobj::Dbobj():Dbobj("unknown") {}
+
+
+        void Dbobj::setTable(QString table)
+        {
+            this->table  = table;
         }
 
         void Dbobj::setId(int id) {
-            if(id <= 0)
+            if(id < 0)
                 throw new Exception::DBFUNCIdisnegative();
 
             this->id = id;
@@ -17,6 +30,11 @@ namespace ShadowScreen {
 
         int Dbobj::getId() const {
             return id;
+        }
+
+        QString Dbobj::getTable() const
+        {
+            return table;
         }
     }
 }

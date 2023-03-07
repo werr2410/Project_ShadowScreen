@@ -2,9 +2,9 @@
 
 namespace ShadowScreen {
 
-    namespace Computer {
+    namespace computer {
 
-        void ShadowScreen::Computer::Baseboard::setProduct(QString product) {
+        void ShadowScreen::computer::Baseboard::setProduct(QString product) {
             if(product.isEmpty() == false)
                 this->product = product;
         }

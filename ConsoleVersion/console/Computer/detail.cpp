@@ -3,13 +3,13 @@
 
 namespace ShadowScreen {
 
-    namespace Computer {
+    namespace computer {
 
         bool Detail::seacrhString(QString str1, QString str2) {
             return (std::strstr(str1.toStdString().c_str(), str2.toStdString().c_str()) != NULL);
         }
 
-        ShadowScreen::Computer::Detail::Detail(QString manufacturer) {
+        ShadowScreen::computer::Detail::Detail(QString manufacturer) {
             if(manufacturer.isEmpty() == false)
                 this->manufacturer = manufacturer;
         }

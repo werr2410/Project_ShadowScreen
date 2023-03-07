@@ -6,7 +6,7 @@
 
 namespace ShadowScreen {
 
-    namespace Computer {
+    namespace computer {
 
         class Memorychip : public Detail, public DetailInfo {
         private:

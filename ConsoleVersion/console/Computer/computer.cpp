@@ -7,7 +7,7 @@ using namespace std;
 
 namespace ShadowScreen {
 
-    namespace Computer {
+    namespace computer {
 
         Computer::Computer(Baseboard baseboard, Storage storage, Memorychip memorychip, CPU cpu, GPU gpu) {
             setBaseboard(baseboard);

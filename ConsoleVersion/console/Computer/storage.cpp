@@ -2,9 +2,9 @@
 
 namespace ShadowScreen {
 
-    namespace Computer {
+    namespace computer {
 
-        void ShadowScreen::Computer::Storage::setModel(QString model) {
+        void ShadowScreen::computer::Storage::setModel(QString model) {
             if(model.isEmpty() == false)
                 this->model = model;
         }

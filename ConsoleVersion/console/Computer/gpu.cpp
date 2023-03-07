@@ -2,7 +2,7 @@
 
 namespace ShadowScreen {
 
-    namespace Computer {
+    namespace computer {
 
         GPU::GPU(bool isInit) {
             if(isInit)
