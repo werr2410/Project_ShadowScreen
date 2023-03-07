@@ -10,6 +10,13 @@ namespace ShadowScreen {
 
         using Database::Dbobj;
 
+        enum fieldAdress {
+            fd_Country,
+            fd_Town,
+            fd_Street,
+            fd_NumberHouse
+        };
+
         class Adress : public Dbobj {
             QString country;
             QString town;
@@ -49,6 +56,7 @@ namespace ShadowScreen {
             bool operator<=(const Adress &rhs) const;
             bool operator>=(const Adress &rhs) const;
 
+            QString operator[](fieldAdress field) const;
         };
     }
 }

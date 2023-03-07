@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include "Chating/message.h"
+#include "Exception/exceptions.h"
 
 namespace ShadowScreen {
 
@@ -43,6 +44,8 @@ namespace ShadowScreen {
 
             Chat operator+(const Message& message) const;
             Chat &operator+=(const Message& message);
+
+            Message operator[](int i) const;
         };
     }
 }

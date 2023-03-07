@@ -13,6 +13,15 @@ namespace ShadowScreen {
 
     namespace Computer {
 
+        enum Details {
+            d_Baseboard,
+            d_Storage,
+            d_Memorychip,
+            d_CPU,
+            d_GPU
+        };
+
+
         class Computer {
             Baseboard baseboard;
             Storage storage;
@@ -48,6 +57,8 @@ namespace ShadowScreen {
             QString toString() const;
 
             QStringList getNormalyDetail(Detail* detail);
+
+            Detail* operator[](Details detail);
         };
 
     }

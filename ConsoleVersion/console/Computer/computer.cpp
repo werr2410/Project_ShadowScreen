@@ -107,5 +107,19 @@ namespace ShadowScreen {
             return res;
         }
 
+        Detail *Computer::operator[](Details detail) {
+            switch(detail) {
+            case d_Baseboard:
+                return new Baseboard(baseboard);
+            case d_Memorychip:
+                return new Memorychip(memorychip);
+            case d_Storage:
+                return new Storage(storage);
+            case d_CPU:
+                return new CPU(cpu);
+            case d_GPU:
+                return new GPU(gpu);
+            }
+        }
     }
 }

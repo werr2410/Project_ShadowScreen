@@ -172,5 +172,21 @@ namespace ShadowScreen {
         bool Adress::operator>=(const Adress &rhs) const {
             return rhs <= *this;
         }
+
+        QString Adress::operator[](fieldAdress field) const {
+            switch(field) {
+            case fd_Country:
+                return country;
+
+            case fd_Town:
+                return town;
+
+            case fd_Street:
+                return street;
+
+            case fd_NumberHouse:
+                return numberHouse;
+            }
+        }
     }
 }

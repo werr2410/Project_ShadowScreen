@@ -96,5 +96,12 @@ namespace ShadowScreen {
 
             return *this;
         }
+
+        Message Chat::operator[](int i) const {
+            if(i < 0 || i > ql_message.length())
+                throw new Exception::rangeNotFondException();
+
+            return ql_message[i];
+        }
     }
 }

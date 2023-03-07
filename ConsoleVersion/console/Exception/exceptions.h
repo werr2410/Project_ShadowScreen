@@ -33,6 +33,14 @@ namespace ShadowScreen {
                 return "id = 0 or it is negative";
             }
         };
+
+        class rangeNotFondException : public SSExecptions {
+        public:
+
+            QString message() const override {
+                return "range not found";
+            }
+        };
     }
 }
 
