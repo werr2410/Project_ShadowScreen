@@ -4,30 +4,30 @@
 #define NO_LOGIN_USER       "NO LOGIN"
 
 #define LENGHT_HASHCODE     30
+#define LENGHT_PASSWORD     16
+#define LENGHT_USERNAME     16
 
 #define MAX_COUNT_BANKCARD  3
 #define MAX_COUNT_DELIVERY  4
 
 
+
+#include <QDir>
 #include <QDate>
 #include <QList>
-#include <qvector.h>
-#include <cstdio>
+#include <QVector>
 #include <QRandomGenerator>
 
 #include "Computer/computer.h"
+#include "Chating/chat.h"
+#include "Database/mssql.h"
+#include "Exception/exceptions.h"
 
 #include "Data/telegram.h"
 #include "Data/adress.h"
 #include "Data/delivery.h"
 #include "Data/review.h"
 #include "Data/bankcard.h"
-
-#include "Chating/chat.h"
-
-#include "Database/mssql.h"
-
-
 
 namespace ShadowScreen {
 
@@ -75,7 +75,7 @@ namespace ShadowScreen {
         protected:
 
             void setHashcode(QString code);
-            void setStartUse(QDateTime);
+            void setStartUse(QDateTime datetime);
 
         public:
             User(QString username, QString password);
@@ -89,11 +89,12 @@ namespace ShadowScreen {
             void setUsername(QString username);
 
             void setBirthDay(QDate birthday);
+            void addHashcode();
 
             void setComputer(Computer computer);
             void setTelegram(Telegram telegem);
             void setDatabase(MSSQL database);
-            void setAdress(QString adress);
+            void setAdress(Adress adress);
 
             void setDelivery(QVector<Delivery> delivery);
             void setBankcard(QVector<Bankcard> bankcard);
@@ -133,13 +134,14 @@ namespace ShadowScreen {
             static bool isInvalidEmail(QString email);
             static bool isInvalidPassword(QString password);
 
-            static User quickRegistration();
+            static User quickRegistration(const QDir& dir);
 
             static QString generationUsername();
             static QString generationPassword();
 
-            static bool isUniqueUsername();
-            static bool isUniqueEmail();
+            static bool isUniqueUsername(QString username);
+            static bool isUniqueEmail(QString email);
+            static bool isUniqueHashcode(QString code);
         };
     }
 }

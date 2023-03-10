@@ -36,7 +36,6 @@ namespace ShadowScreen {
             void init(QString number, QDate expirationDate);
 
 
-            Bankcard &operator =(const Bankcard& obj); // зачем если он автоматически создаеться
             bool operator==(const Bankcard &rhs) const;
             bool operator!=(const Bankcard &rhs) const;
         };

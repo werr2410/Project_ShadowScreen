@@ -41,8 +41,6 @@ namespace ShadowScreen {
             void init(QString country, QString town, QString street, QString numberHouse);
             void init(QString town, QString street, QString numberHouse);
 
-            Adress& operator =(const Adress& obj); // зачем если он автоматически создаеться
-
             bool operator==(const Adress &rhs) const;
             bool operator!=(const Adress &rhs) const;
             bool operator<(const Adress &rhs) const;

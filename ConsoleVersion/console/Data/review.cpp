@@ -62,14 +62,6 @@ namespace ShadowScreen {
             (*this) = Review(description, mark);
         }
 
-        Review &Review::operator =(const Review &obj)
-        {
-            this->title = obj.title;
-            this->description = obj.description;
-            this->mark = obj.mark;
-            return * this;
-        }
-
         bool Review::operator==(const Review &rhs) const
         {
             return toString() == rhs.toString();

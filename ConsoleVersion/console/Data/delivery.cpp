@@ -50,14 +50,6 @@ namespace ShadowScreen {
             (*this) = Delivery(type, adress);
         }
 
-        Delivery &Delivery::operator =(const Delivery &obj) {
-            this->title = obj.title;
-            this->type = obj.type;
-            this->adress = obj.adress;
-
-            return * this;
-        }
-
         bool Delivery::operator==(const Delivery &rhs) const {
             return toString() == rhs.toString();
         }

@@ -35,7 +35,6 @@ namespace ShadowScreen {
             void init(TypeDelivery type, Adress adress);
 
         //overload operators
-            Delivery& operator =(const Delivery& obj); // зачем если он автоматически создаеться
             bool operator==(const Delivery &rhs) const;
             bool operator!=(const Delivery &rhs) const;
         /*

@@ -134,14 +134,6 @@ namespace ShadowScreen {
 //            return query.value(0).toInt();
 //        }
 
-        Adress &Adress::operator =(const Adress &obj) {
-            this->country = obj.country;
-            this->town = obj.town;
-            this->street = obj.street;
-            this->numberHouse = obj.numberHouse;
-
-            return *this;
-        }
 
         bool Adress::operator==(const Adress &rhs) const {
             return toString() == rhs.toString();

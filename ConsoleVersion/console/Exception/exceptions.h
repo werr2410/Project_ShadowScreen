@@ -41,6 +41,22 @@ namespace ShadowScreen {
                 return "range not found";
             }
         };
+
+        class UserDataInvalidException : public SSExecptions {
+        public:
+
+            QString message() const override {
+                return "format exception";
+            }
+        };
+
+        class BiggestArrayInvalidException : public SSExecptions {
+        public:
+
+            QString message() const override {
+                return "array is invalid";
+            }
+        };
     }
 }
 

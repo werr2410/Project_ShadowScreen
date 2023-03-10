@@ -26,7 +26,6 @@ namespace ShadowScreen {
             void init(QString title, QString description, int mark);
             void init(QString description, int mark);
 
-            Review &operator =(const Review& obj); // зачем если он автоматически создаеться
             bool operator==(const Review &rhs) const;
             bool operator!=(const Review &rhs) const;
             bool operator<(const Review &rhs) const;

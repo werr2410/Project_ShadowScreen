@@ -68,13 +68,6 @@ namespace ShadowScreen {
             (*this) = Bankcard(number, expirationDate);
         }
 
-        Bankcard &Bankcard::operator =(const Bankcard &obj) {
-            this->title = obj.title;
-            this->number = obj.number;
-            this->expirationDate = obj.expirationDate;
-
-            return * this;
-        }
 
         bool Bankcard::operator==(const Bankcard &rhs) const {
             return toString() == rhs.toString();
