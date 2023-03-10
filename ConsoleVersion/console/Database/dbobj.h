@@ -13,21 +13,23 @@ namespace ShadowScreen {
         protected:
             int id;
             QString table;
+
         public:
-            Dbobj(int id,QString table);
+            Dbobj(int id, QString table);
             Dbobj(QString table);
             Dbobj();
+
             void setTable(QString table);
             void setId(int id);
+
+            QString getTable() const;
             int getId() const;
-            QString getTable()const;
 
-            virtual void insertToDatabase(QSqlDatabase& db) const = 0;
-            virtual void selectFromDatabase(QSqlDatabase& db, int id) = 0;
-            virtual void alterToDatabase(QSqlDatabase& db, int id) const = 0;
-            virtual void deleteFromDatabase(QSqlDatabase& db, int id) const = 0;
-            virtual int  getIdFromDatabase(QSqlDatabase& db) const = 0;
+            virtual void selectDataById(QSqlDatabase& db,int id) = 0;
+            virtual void insertDataTable(QSqlDatabase& db) = 0;
+            virtual void dropTable(QSqlDatabase& db) = 0;
 
+            static void insertDataField(QSqlDatabase& db, QString field);
         };
     }
 }
