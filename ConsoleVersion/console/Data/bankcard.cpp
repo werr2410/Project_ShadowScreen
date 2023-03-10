@@ -68,26 +68,6 @@ namespace ShadowScreen {
             (*this) = Bankcard(number, expirationDate);
         }
 
-        void Bankcard::insertToDatabase(QSqlDatabase &db) const {
-
-        }
-
-        void Bankcard::selectFromDatabase(QSqlDatabase &db, int id) {
-
-        }
-
-        void Bankcard::alterToDatabase(QSqlDatabase &db, int id) const {
-
-        }
-
-        void Bankcard::deleteFromDatabase(QSqlDatabase &db, int id) const {
-
-        }
-
-        int Bankcard::getIdFromDatabase(QSqlDatabase &db) const {
-
-        }
-
         Bankcard &Bankcard::operator =(const Bankcard &obj) {
             this->title = obj.title;
             this->number = obj.number;

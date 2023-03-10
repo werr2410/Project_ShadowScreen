@@ -14,7 +14,7 @@ namespace ShadowScreen {
 
         using Database::Dbobj;
 
-        class Baseboard : public Detail, public DetailInfo, public Dbobj {
+        class Baseboard : public Detail, public DetailInfo {
         private:
             QString product;
 
@@ -30,12 +30,6 @@ namespace ShadowScreen {
             void init() override;
             QString toString() const override;
             QString type() const override;
-
-            void insertToDatabase(QSqlDatabase& db) const override;
-            void selectFromDatabase(QSqlDatabase& db, int id) override;
-            void alterToDatabase(QSqlDatabase& db, int id) const override;
-            void deleteFromDatabase(QSqlDatabase& db, int id) const override;
-            int  getIdFromDatabase(QSqlDatabase& db) const override;
         };
     }
 }

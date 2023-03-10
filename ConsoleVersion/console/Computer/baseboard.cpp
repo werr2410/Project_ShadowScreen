@@ -41,65 +41,65 @@ namespace ShadowScreen {
             return "baseboard";
         }
 
-        void Baseboard::insertToDatabase(QSqlDatabase &db) const {
-            QSqlQuery query(db);
+//        void Baseboard::insertToDatabase(QSqlDatabase &db) const {
+//            QSqlQuery query(db);
 
-            query.prepare("exec addFullBaseboard :Manufacturer, :Product, :Description, :isSale, :Image, :Stars, :Status");
-            query.bindValue(0, this->getManufacturer());
-            query.bindValue(1, this->product);
-            query.bindValue(2, this->getDescription());
-            query.bindValue(3, this->getIsSale());
+//            query.prepare("exec addFullBaseboard :Manufacturer, :Product, :Description, :isSale, :Image, :Stars, :Status");
+//            query.bindValue(0, this->getManufacturer());
+//            query.bindValue(1, this->product);
+//            query.bindValue(2, this->getDescription());
+//            query.bindValue(3, this->getIsSale());
 
-            QByteArray imageData;
-            QBuffer buffer(&imageData);
-            buffer.open(QIODevice::WriteOnly);
-            this->getImage().save(&buffer, "PNG");
+//            QByteArray imageData;
+//            QBuffer buffer(&imageData);
+//            buffer.open(QIODevice::WriteOnly);
+//            this->getImage().save(&buffer, "PNG");
 
-            query.bindValue(4, imageData);
-            query.bindValue(5, this->getStars());
-            query.bindValue(6, this->getStatus());
+//            query.bindValue(4, imageData);
+//            query.bindValue(5, this->getStars());
+//            query.bindValue(6, this->getStatus());
 
-            query.exec();
-        }
+//            query.exec();
+//        }
 
-        void Baseboard::selectFromDatabase(QSqlDatabase &db, int id) {
-            QSqlQuery query(db);
+//        void Baseboard::selectFromDatabase(QSqlDatabase &db, int id) {
+//            QSqlQuery query(db);
 
-            query.prepare("select BaseboardId, Manufacturer, Product, Description, IsSale, Image, Stars, Status from Baseboard where id = :id");
-            query.bindValue(0, id);
+//            query.prepare("select BaseboardId, Manufacturer, Product, Description, IsSale, Image, Stars, Status from Baseboard where id = :id");
+//            query.bindValue(0, id);
 
-            query.exec();
-            query.next();
+//            query.exec();
+//            query.next();
 
-            setId(query.value(0).toInt());
-            setManufacturer(query.value(1).toString());
-            setProduct(query.value(2).toString());
-            setDescription(query.value(3).toString());
-            setIsSale(query.value(4).toBool());
+//            setId(query.value(0).toInt());
+//            setManufacturer(query.value(1).toString());
+//            setProduct(query.value(2).toString());
+//            setDescription(query.value(3).toString());
+//            setIsSale(query.value(4).toBool());
 
-            QByteArray imageData = query.value(5).toByteArray();
-            QPixmap image;
-            QImage img;
-            img.loadFromData(imageData);
-            image = QPixmap::fromImage(img, Qt::AutoColor);
+//            QByteArray imageData = query.value(5).toByteArray();
+//            QPixmap image;
+//            QImage img;
+//            img.loadFromData(imageData);
+//            image = QPixmap::fromImage(img, Qt::AutoColor);
 
-            setImage(image);
-            setStars(query.value(6).toInt());
-            setStatus(query.value(7).toString());
-        }
+//            setImage(image);
+//            setStars(query.value(6).toInt());
+//            setStatus(query.value(7).toString());
+//        }
 
-        void Baseboard::alterToDatabase(QSqlDatabase &db, int id) const {
-            QSqlQuery query(db);
+//        void Baseboard::alterToDatabase(QSqlDatabase &db, int id) const {
+//            QSqlQuery query(db);
 
 
-        }
+//        }
 
-        void Baseboard::deleteFromDatabase(QSqlDatabase &db, int id) const {
+//        void Baseboard::deleteFromDatabase(QSqlDatabase &db, int id) const {
 
-        }
+//        }
 
-        int Baseboard::getIdFromDatabase(QSqlDatabase &db) const {
+//        int Baseboard::getIdFromDatabase(QSqlDatabase &db) const {
 
-        }
+//        }
     }
 }

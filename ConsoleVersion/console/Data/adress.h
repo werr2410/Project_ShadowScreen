@@ -17,7 +17,7 @@ namespace ShadowScreen {
             fd_NumberHouse
         };
 
-        class Adress : public Dbobj {
+        class Adress {
             QString country;
             QString town;
             QString street;
@@ -40,12 +40,6 @@ namespace ShadowScreen {
 
             void init(QString country, QString town, QString street, QString numberHouse);
             void init(QString town, QString street, QString numberHouse);
-
-            void insertToDatabase(QSqlDatabase& db) const override;
-            void selectFromDatabase(QSqlDatabase& db, int id) override;
-            void alterToDatabase(QSqlDatabase& db, int id) const override;
-            void deleteFromDatabase(QSqlDatabase& db, int id) const override;
-            int  getIdFromDatabase(QSqlDatabase& db) const override;
 
             Adress& operator =(const Adress& obj); // зачем если он автоматически создаеться
 

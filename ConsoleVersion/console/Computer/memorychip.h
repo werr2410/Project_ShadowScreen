@@ -8,7 +8,7 @@ namespace ShadowScreen {
 
     namespace computer {
 
-        class Memorychip : public Detail, public DetailInfo {
+        class Memorychip : public Detail{
         private:
             QString Capacity;
 

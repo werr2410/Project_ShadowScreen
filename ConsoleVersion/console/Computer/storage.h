@@ -8,7 +8,7 @@ namespace ShadowScreen {
 
     namespace computer {
 
-        class Storage : public Detail, public DetailInfo {
+        class Storage : public Detail {
         private:
             QString model;
             QString size;

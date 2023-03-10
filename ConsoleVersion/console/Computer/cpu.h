@@ -8,7 +8,7 @@ namespace ShadowScreen {
 
     namespace computer {
 
-        class CPU : public Detail, public DetailInfo {
+        class CPU : public Detail {
         private:
             QString name;
 

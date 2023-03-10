@@ -8,7 +8,7 @@ namespace ShadowScreen {
 
     namespace computer {
 
-        class GPU : public Detail, public DetailInfo {
+        class GPU : public Detail {
         public:
             GPU(bool isInit);
             GPU();

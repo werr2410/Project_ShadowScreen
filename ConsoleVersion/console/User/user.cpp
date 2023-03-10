@@ -4,165 +4,246 @@ namespace ShadowScreen {
 
     namespace user {
 
-    QString User::generateHashcode()
-    {
-        QString example = Numbers + Smallletters+ Bigletters+Magicchas;
-        QString res ="";
-        for(int i =0 ; i <32;i++)
+        void User::setHashcode(QString code)
         {
-            res +=  example[std::rand()%example.length()];
+
         }
-        return res;
-    }
 
-    User::User(QString Password, QString Username)
-    {
-        setPassword(Password);
-        setUsername(Username);
-        setName("Name");
-        setMiddlename("Middlename");
-        setSurname("Surname");
-        setBirthday(QDate());
-        setEmail("Email");
-        setAdress(Adress());
-        setComp(Computer(true));
-        setStartUse(QDateTime().currentDateTime());
-        setTelegram(Telegram());
-        Hashcode = generateHashcode();
+        void User::setStartUse(QDateTime)
+        {
 
-    }
+        }
 
-    User::User():User(nologenuser,nologenuser) {}
+        User::User(QString username, QString password)
+        {
 
-    void User::setName(QString Name)
-    {
+        }
 
-    }
+        User::User()
+        {
 
-    void User::setSurname(QString Surname)
-    {
+        }
 
-    }
+        void User::setName(QString name)
+        {
 
-    void User::setMiddlename(QString Middlename)
-    {
+        }
 
-    }
+        void User::setSurname(QString surname)
+        {
 
-    void User::setBirthday(QDate Birthday)
-    {
+        }
 
-    }
+        void User::setMiddlename(QString middlename)
+        {
 
-    void User::setStartUse(QDateTime StartUse)
-    {
+        }
 
-    }
+        void User::setEmail(QString email)
+        {
 
-    void User::setEmail(QString Email)
-    {
+        }
 
-    }
+        void User::setPassword(QString password)
+        {
 
-    void User::setPassword(QString Password)
-    {
+        }
 
-    }
+        void User::setUsername(QString username)
+        {
 
-    void User::setUsername(QString Username)
-    {
+        }
 
-    }
+        void User::setBirthDay(QDate birthday)
+        {
 
-    void User::setComp(Computer Comp)
-    {
+        }
 
-    }
+        void User::setComputer(Computer computer)
+        {
 
-    QString User::getName() const
-    {
-        return Name;
-    }
+        }
 
-    QString User::getSurname() const
-    {
-        return Surname;
-    }
+        void User::setTelegram(Telegram telegem)
+        {
 
-    QString User::getMiddlename() const
-    {
-        return Middlename;
-    }
+        }
 
-    QDate User::getBirthday() const
-    {
-        return Birthday;
-    }
+        void User::setDatabase(MSSQL database)
+        {
 
-    QDateTime User::getStartUse() const
-    {
-        return StartUse;
-    }
+        }
 
-    QString User::getEmail() const
-    {
-        return Email;
-    }
+        void User::setAdress(QString adress)
+        {
 
-    QString User::getPassword() const
-    {
-        return Password;
-    }
+        }
 
-    QString User::getUsername() const
-    {
-        return Username;
-    }
+        void User::setDelivery(QVector<Delivery> delivery)
+        {
 
-    Computer User::getComp() const
-    {
-        return Comp;
-    }
+        }
 
-    Telegram User::getTelegram() const
-    {
-        return telegram;
-    }
+        void User::setBankcard(QVector<Bankcard> bankcard)
+        {
 
-    Adress User::getAdress() const
-    {
-        return adress;
-    }
+        }
 
-    QString User::getHashcode() const
-    {
-        return Hashcode;
-    }
+        void User::setReviews(QList<Review> reviews)
+        {
 
-    QString User::toString() const
-    {
+        }
 
-    }
+        void User::setChat(QVector<Chat> chat)
+        {
 
-    bool User::isValidBirthday() const
-    {
+        }
 
-    }
+        QString User::getName() const
+        {
 
-    bool User::isValidEmail() const
-    {
+        }
 
-    }
+        QString User::getSurname() const
+        {
 
-    bool User::isValidPassword() const
-    {
+        }
 
-    }
+        QString User::getMiddlename() const
+        {
 
-    bool User::isValidUsername() const
-    {
+        }
 
-    }
+        QString User::getEmail() const
+        {
+
+        }
+
+        QString User::getPassword() const
+        {
+
+        }
+
+        QString User::getUsername() const
+        {
+
+        }
+
+        QString User::getHashcode() const
+        {
+
+        }
+
+        Telegram User::getTelegram() const
+        {
+
+        }
+
+        QDate User::getBirthday() const
+        {
+
+        }
+
+        QDateTime User::getStartUse() const
+        {
+
+        }
+
+        Computer User::getComputer() const
+        {
+
+        }
+
+        QVector<Delivery> User::getDelivery() const
+        {
+
+        }
+
+        QVector<Bankcard> User::getBankcard() const
+        {
+
+        }
+
+        QList<Review> User::getReview() const
+        {
+
+        }
+
+        QVector<Chat> User::getChat() const
+        {
+
+        }
+
+        int User::getAmountDelivery() const
+        {
+
+        }
+
+        int User::getAmountBankcard() const
+        {
+
+        }
+
+        void User::pushBankcard(Bankcard bankcard)
+        {
+
+        }
+
+        void User::pushDelivery(Delivery delivery)
+        {
+
+        }
+
+        void User::pushChat(Chat chat)
+        {
+
+        }
+
+        void User::eraseBankcard(Bankcard bankcard)
+        {
+
+        }
+
+        void User::eraseDelivery(Delivery delivery)
+        {
+
+        }
+
+        bool User::isInvalidEmail(QString email)
+        {
+
+        }
+
+        bool User::isInvalidPassword(QString password)
+        {
+
+        }
+
+        User User::quickRegistration()
+        {
+
+        }
+
+        QString User::generationUsername()
+        {
+
+        }
+
+        QString User::generationPassword()
+        {
+
+        }
+
+        bool User::isUniqueUsername()
+        {
+
+        }
+
+        bool User::isUniqueEmail()
+        {
+
+        }
+
 
 
     }
