@@ -16,5 +16,7 @@ debug/security.o
 debug/telegram.o
 debug/dbobj.o
 debug/mssql.o
+debug/shadowwindow.o
 debug/user.o
 debug/main.o
+debug/moc_shadowwindow.o
