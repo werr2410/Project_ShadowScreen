@@ -20,6 +20,7 @@ release/registrationwindow.o
 release/telegramwindow.o
 release/adresswindow.o
 release/bankcardwindow.o
+release/deliverywindow.o
 release/reviewwindow.o
 release/main.o
 release/shadowwindow.o
@@ -27,5 +28,6 @@ release/moc_registrationwindow.o
 release/moc_telegramwindow.o
 release/moc_adresswindow.o
 release/moc_bankcardwindow.o
+release/moc_deliverywindow.o
 release/moc_reviewwindow.o
 release/moc_shadowwindow.o

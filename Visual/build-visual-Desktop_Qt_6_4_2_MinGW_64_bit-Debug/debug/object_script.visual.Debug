@@ -20,6 +20,7 @@ debug/registrationwindow.o
 debug/telegramwindow.o
 debug/adresswindow.o
 debug/bankcardwindow.o
+debug/deliverywindow.o
 debug/reviewwindow.o
 debug/main.o
 debug/shadowwindow.o
@@ -27,5 +28,6 @@ debug/moc_registrationwindow.o
 debug/moc_telegramwindow.o
 debug/moc_adresswindow.o
 debug/moc_bankcardwindow.o
+debug/moc_deliverywindow.o
 debug/moc_reviewwindow.o
 debug/moc_shadowwindow.o
