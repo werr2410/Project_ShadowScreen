@@ -13,6 +13,7 @@ SOURCES += \
     Data/bankcard.cpp \
     Data/review.cpp \
     Data/telegram.cpp \
+    Windows/Other/registrationwindow.cpp \
     Windows/Other/telegramwindow.cpp \
     Windows/adresswindow.cpp \
     Windows/bankcardwindow.cpp \
@@ -25,6 +26,7 @@ HEADERS += \
     Data/bankcard.h \
     Data/review.h \
     Data/telegram.h \
+    Windows/Other/registrationwindow.h \
     Windows/Other/telegramwindow.h \
     Windows/adresswindow.h \
     Windows/bankcardwindow.h \
@@ -32,6 +34,7 @@ HEADERS += \
     shadowwindow.h
 
 FORMS += \
+    Windows/Other/registrationwindow.ui \
     Windows/Other/telegramwindow.ui \
     Windows/adresswindow.ui \
     Windows/bankcardwindow.ui \

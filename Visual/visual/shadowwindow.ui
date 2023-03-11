@@ -393,8 +393,20 @@
     <property name="title">
      <string>Data</string>
     </property>
-    <addaction name="actionDe_ivery"/>
-    <addaction name="actionAdress"/>
+    <widget class="QMenu" name="menuDelivery">
+     <property name="title">
+      <string>Delivery</string>
+     </property>
+     <addaction name="actionadd"/>
+    </widget>
+    <widget class="QMenu" name="menuAdress">
+     <property name="title">
+      <string>Adress</string>
+     </property>
+     <addaction name="actionreset_set_adress"/>
+    </widget>
+    <addaction name="menuDelivery"/>
+    <addaction name="menuAdress"/>
    </widget>
    <widget class="QMenu" name="menuDatabase">
     <property name="title">
@@ -408,16 +420,6 @@
    <addaction name="menuDatabase"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionDe_ivery">
-   <property name="text">
-    <string>Delivery</string>
-   </property>
-  </action>
-  <action name="actionAdress">
-   <property name="text">
-    <string>Adress</string>
-   </property>
-  </action>
   <action name="actionPush">
    <property name="text">
     <string>Push</string>
@@ -436,6 +438,16 @@
   <action name="actionChat">
    <property name="text">
     <string>Chat</string>
+   </property>
+  </action>
+  <action name="actionadd">
+   <property name="text">
+    <string>add</string>
+   </property>
+  </action>
+  <action name="actionreset_set_adress">
+   <property name="text">
+    <string>reset|set adress</string>
    </property>
   </action>
  </widget>
