@@ -32,6 +32,7 @@ SOURCES += \
     Windows/User/Data/userdatawindow.cpp \
     Windows/User/mybankcardwindow.cpp \
     Windows/User/mydeliverywindow.cpp \
+    Windows/User/myreviewwindow.cpp \
     Windows/adresswindow.cpp \
     Windows/bankcardwindow.cpp \
     Windows/deliverywindow.cpp \
@@ -64,6 +65,7 @@ HEADERS += \
     Windows/User/Data/userdatawindow.h \
     Windows/User/mybankcardwindow.h \
     Windows/User/mydeliverywindow.h \
+    Windows/User/myreviewwindow.h \
     Windows/adresswindow.h \
     Windows/bankcardwindow.h \
     Windows/deliverywindow.h \
@@ -76,6 +78,7 @@ FORMS += \
     Windows/User/Data/userdatawindow.ui \
     Windows/User/mybankcardwindow.ui \
     Windows/User/mydeliverywindow.ui \
+    Windows/User/myreviewwindow.ui \
     Windows/adresswindow.ui \
     Windows/bankcardwindow.ui \
     Windows/deliverywindow.ui \
