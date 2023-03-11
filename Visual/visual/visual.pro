@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,6 +12,8 @@ SOURCES += \
     Data/adress.cpp \
     Data/bankcard.cpp \
     Data/review.cpp \
+    Data/telegram.cpp \
+    Windows/Other/telegramwindow.cpp \
     Windows/adresswindow.cpp \
     Windows/bankcardwindow.cpp \
     Windows/reviewwindow.cpp \
@@ -22,12 +24,15 @@ HEADERS += \
     Data/adress.h \
     Data/bankcard.h \
     Data/review.h \
+    Data/telegram.h \
+    Windows/Other/telegramwindow.h \
     Windows/adresswindow.h \
     Windows/bankcardwindow.h \
     Windows/reviewwindow.h \
     shadowwindow.h
 
 FORMS += \
+    Windows/Other/telegramwindow.ui \
     Windows/adresswindow.ui \
     Windows/bankcardwindow.ui \
     Windows/reviewwindow.ui \

@@ -1,11 +1,14 @@
 release/adress.o
 release/bankcard.o
 release/review.o
+release/telegram.o
+release/telegramwindow.o
 release/adresswindow.o
 release/bankcardwindow.o
 release/reviewwindow.o
 release/main.o
 release/shadowwindow.o
+release/moc_telegramwindow.o
 release/moc_adresswindow.o
 release/moc_bankcardwindow.o
 release/moc_reviewwindow.o
