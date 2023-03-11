@@ -29,6 +29,7 @@ SOURCES += \
     User/user.cpp \
     Windows/Other/registrationwindow.cpp \
     Windows/Other/telegramwindow.cpp \
+    Windows/User/Data/userdatawindow.cpp \
     Windows/User/mybankcardwindow.cpp \
     Windows/User/mydeliverywindow.cpp \
     Windows/adresswindow.cpp \
@@ -60,6 +61,7 @@ HEADERS += \
     User/user.h \
     Windows/Other/registrationwindow.h \
     Windows/Other/telegramwindow.h \
+    Windows/User/Data/userdatawindow.h \
     Windows/User/mybankcardwindow.h \
     Windows/User/mydeliverywindow.h \
     Windows/adresswindow.h \
@@ -71,6 +73,7 @@ HEADERS += \
 FORMS += \
     Windows/Other/registrationwindow.ui \
     Windows/Other/telegramwindow.ui \
+    Windows/User/Data/userdatawindow.ui \
     Windows/User/mybankcardwindow.ui \
     Windows/User/mydeliverywindow.ui \
     Windows/adresswindow.ui \
