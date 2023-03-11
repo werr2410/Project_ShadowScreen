@@ -3,9 +3,11 @@
 
 ShadowWindow::ShadowWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::ShadowWindow)
-{
+    , ui(new Ui::ShadowWindow) {
+
     ui->setupUi(this);
+
+    bankwindow.show();
 }
 
 ShadowWindow::~ShadowWindow()

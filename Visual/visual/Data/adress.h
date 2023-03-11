@@ -2,13 +2,10 @@
 #define ADRESS_H
 
 #include <QString>
-#include "Database/dbobj.h"
 
 namespace ShadowScreen {
 
     namespace Data {
-
-        using Database::Dbobj;
 
         enum fieldAdress {
             fd_Country,

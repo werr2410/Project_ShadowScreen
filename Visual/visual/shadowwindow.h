@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "Windows/bankcardwindow.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class ShadowWindow; }
 QT_END_NAMESPACE
@@ -17,5 +19,6 @@ public:
 
 private:
     Ui::ShadowWindow *ui;
+    BankcardWindow bankwindow;
 };
 #endif // SHADOWWINDOW_H

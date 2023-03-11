@@ -4,13 +4,13 @@
 #include <QString>
 #include <QDate>
 
-#include "Database/dbobj.h"
+//#include "Database/dbobj.h"
 
 namespace ShadowScreen {
 
     namespace Data {
 
-        using Database::Dbobj;
+        //using Database::Dbobj;
 
         class Bankcard  {
             QString title;

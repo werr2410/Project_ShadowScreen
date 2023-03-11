@@ -179,8 +179,6 @@ namespace ShadowScreen {
             case fd_NumberHouse:
                 return numberHouse;
             }
-
-            return "";
         }
     }
 }

@@ -10,6 +10,7 @@ namespace ShadowScreen {
             QString title;
             QString description;
             int mark;
+
         public:
             Review(QString title, QString description, int mark);
             Review(QString description, int mark);
