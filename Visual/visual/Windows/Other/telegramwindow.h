@@ -10,8 +10,7 @@ class TelegramWindow;
 
 using namespace ShadowScreen;
 
-class TelegramWindow : public QDialog
-{
+class TelegramWindow : public QDialog {
     Q_OBJECT
 
 public:
