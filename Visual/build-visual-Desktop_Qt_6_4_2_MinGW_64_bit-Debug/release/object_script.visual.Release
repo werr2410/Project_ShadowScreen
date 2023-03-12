@@ -17,6 +17,7 @@ release/dbobj.o
 release/mssql.o
 release/user.o
 release/detailsetwindow.o
+release/helpmewindow.o
 release/registrationwindow.o
 release/telegramwindow.o
 release/userdatawindow.o
@@ -30,6 +31,7 @@ release/reviewwindow.o
 release/main.o
 release/shadowwindow.o
 release/moc_detailsetwindow.o
+release/moc_helpmewindow.o
 release/moc_registrationwindow.o
 release/moc_telegramwindow.o
 release/moc_userdatawindow.o

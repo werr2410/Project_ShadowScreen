@@ -17,6 +17,7 @@ debug/dbobj.o
 debug/mssql.o
 debug/user.o
 debug/detailsetwindow.o
+debug/helpmewindow.o
 debug/registrationwindow.o
 debug/telegramwindow.o
 debug/userdatawindow.o
@@ -30,6 +31,7 @@ debug/reviewwindow.o
 debug/main.o
 debug/shadowwindow.o
 debug/moc_detailsetwindow.o
+debug/moc_helpmewindow.o
 debug/moc_registrationwindow.o
 debug/moc_telegramwindow.o
 debug/moc_userdatawindow.o

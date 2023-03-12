@@ -103,13 +103,13 @@
        <string>manufacturer:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_manufacture_set">
+     <widget class="QLabel" name="label_manufacture_set_cpu">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>30</y>
-        <width>201</width>
-        <height>16</height>
+        <x>90</x>
+        <y>51</y>
+        <width>291</width>
+        <height>20</height>
        </rect>
       </property>
       <property name="text">
@@ -155,13 +155,13 @@
        <string>manufacturer:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_manufacturer_set">
+     <widget class="QLabel" name="label_manufacturer_set_gpu">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>30</y>
-        <width>201</width>
-        <height>16</height>
+        <x>90</x>
+        <y>45</y>
+        <width>301</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
@@ -207,13 +207,13 @@
        <string>manufacturer:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_manufacturer_set_2">
+     <widget class="QLabel" name="label_manufacturer_set_storage">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>30</y>
-        <width>201</width>
-        <height>16</height>
+        <x>90</x>
+        <y>46</y>
+        <width>291</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
@@ -259,13 +259,13 @@
        <string>manufacturer:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_manufacturer_set_3">
+     <widget class="QLabel" name="label_manufacturer_set_memorychip">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>30</y>
-        <width>201</width>
-        <height>16</height>
+        <x>80</x>
+        <y>40</y>
+        <width>311</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
@@ -311,13 +311,13 @@
        <string>manufacturer:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_manufacturer_set_4">
+     <widget class="QLabel" name="label_manufacturer_set_baseboard">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>30</y>
-        <width>201</width>
-        <height>16</height>
+        <x>80</x>
+        <y>40</y>
+        <width>301</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">

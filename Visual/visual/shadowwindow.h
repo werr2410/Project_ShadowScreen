@@ -3,11 +3,14 @@
 
 #include <QMainWindow>
 
-#include "Windows/bankcardwindow.h"
+#include "Windows/Other/registrationwindow.h"
+#include "User/user.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class ShadowWindow; }
 QT_END_NAMESPACE
+
+using namespace ShadowScreen::user;
 
 class ShadowWindow : public QMainWindow
 {
@@ -19,6 +22,10 @@ public:
 
 private:
     Ui::ShadowWindow *ui;
-    BankcardWindow bankwindow;
+    User user;
+
+    RegistrationWindow regist;
+
+    void initComputer(Computer computer);
 };
 #endif // SHADOWWINDOW_H
