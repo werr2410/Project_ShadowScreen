@@ -28,6 +28,7 @@ SOURCES += \
     Database/mssql.cpp \
     User/user.cpp \
     Windows/Detail/detailsetwindow.cpp \
+    Windows/Other/helpmewindow.cpp \
     Windows/Other/registrationwindow.cpp \
     Windows/Other/telegramwindow.cpp \
     Windows/User/Data/userdatawindow.cpp \
@@ -62,6 +63,7 @@ HEADERS += \
     Exception/exceptions.h \
     User/user.h \
     Windows/Detail/detailsetwindow.h \
+    Windows/Other/helpmewindow.h \
     Windows/Other/registrationwindow.h \
     Windows/Other/telegramwindow.h \
     Windows/User/Data/userdatawindow.h \
@@ -76,6 +78,7 @@ HEADERS += \
 
 FORMS += \
     Windows/Detail/detailsetwindow.ui \
+    Windows/Other/helpmewindow.ui \
     Windows/Other/registrationwindow.ui \
     Windows/Other/telegramwindow.ui \
     Windows/User/Data/userdatawindow.ui \
