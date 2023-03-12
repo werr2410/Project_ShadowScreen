@@ -18,6 +18,10 @@ release/mssql.o
 release/user.o
 release/registrationwindow.o
 release/telegramwindow.o
+release/userdatawindow.o
+release/mybankcardwindow.o
+release/mydeliverywindow.o
+release/myreviewwindow.o
 release/adresswindow.o
 release/bankcardwindow.o
 release/deliverywindow.o
@@ -26,6 +30,10 @@ release/main.o
 release/shadowwindow.o
 release/moc_registrationwindow.o
 release/moc_telegramwindow.o
+release/moc_userdatawindow.o
+release/moc_mybankcardwindow.o
+release/moc_mydeliverywindow.o
+release/moc_myreviewwindow.o
 release/moc_adresswindow.o
 release/moc_bankcardwindow.o
 release/moc_deliverywindow.o

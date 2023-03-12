@@ -18,6 +18,10 @@ debug/mssql.o
 debug/user.o
 debug/registrationwindow.o
 debug/telegramwindow.o
+debug/userdatawindow.o
+debug/mybankcardwindow.o
+debug/mydeliverywindow.o
+debug/myreviewwindow.o
 debug/adresswindow.o
 debug/bankcardwindow.o
 debug/deliverywindow.o
@@ -26,6 +30,10 @@ debug/main.o
 debug/shadowwindow.o
 debug/moc_registrationwindow.o
 debug/moc_telegramwindow.o
+debug/moc_userdatawindow.o
+debug/moc_mybankcardwindow.o
+debug/moc_mydeliverywindow.o
+debug/moc_myreviewwindow.o
 debug/moc_adresswindow.o
 debug/moc_bankcardwindow.o
 debug/moc_deliverywindow.o
