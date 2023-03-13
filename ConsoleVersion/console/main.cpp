@@ -4,6 +4,7 @@
 #include "Data/security.h"
 #include "Database/mssql.h"
 #include "Data/adress.h"
+#include "Data/bankcard.h"
 #include <iostream>
 #include <QDebug>
 
@@ -23,11 +24,15 @@ int main(int argc, char *argv[]) {
     qDebug() << db.open();
 
     if(db.getStatus()) {
-        Adress adress;
+        Bankcard bank("title3421", "1567211178942145", QDate().currentDate());
 
-        adress.selectDataById(db.getDatabase(), 16);
+        bank.insertDataTable(db.getDatabase());
 
-        qDebug() << adress.toString();
+        Bankcard bank1;
+
+        bank1.selectDataById(db.getDatabase(), bank.getDataById(db.getDatabase()));
+
+        qDebug() << bank1.toString();
     }
 
     if(db.getStatus())

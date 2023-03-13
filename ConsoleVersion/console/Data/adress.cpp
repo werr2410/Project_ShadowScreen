@@ -93,9 +93,19 @@ namespace ShadowScreen {
             query.exec();
         }
 
-        int Adress::getDataById(QSqlDatabase &db) const
-        {
-            return 0;
+        int Adress::getDataById(QSqlDatabase &db) const {
+            QSqlQuery query(db);
+
+            query.prepare("select AdressId from getAdressIdTable(:Country, :Town, :Street, :Number)");
+            query.bindValue(0, country);
+            query.bindValue(1, town);
+            query.bindValue(2, street);
+            query.bindValue(3, numberHouse);
+
+            query.exec();
+            query.next();
+
+            return query.value(0).toInt();
         }
 
         bool Adress::operator==(const Adress &rhs) const {

@@ -12,7 +12,7 @@ namespace ShadowScreen {
 
         using Database::Dbobj;
 
-        class Bankcard  {
+        class Bankcard : public Dbobj {
             QString title;
             QString number;
             QDate expirationDate;
@@ -35,6 +35,9 @@ namespace ShadowScreen {
             void init(QString title, QString number, QDate expirationDate);
             void init(QString number, QDate expirationDate);
 
+            void selectDataById(QSqlDatabase& db,int id) override;
+            void insertDataTable(QSqlDatabase& db) const override;
+            int  getDataById(QSqlDatabase& db) const override;
 
             bool operator==(const Bankcard &rhs) const;
             bool operator!=(const Bankcard &rhs) const;
