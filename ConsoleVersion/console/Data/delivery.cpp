@@ -37,9 +37,17 @@ namespace ShadowScreen {
         }
 
         QString Delivery::toString() const {
-            return title + "|" +  + "|" + adress.toString();
+            QString res = title + "|";
 
-            // ????
+            switch(type) {
+            case Meest:      res += "Meest"; break;
+            case Ukrposhta:  res += "Ukrposhta"; break;
+            case NovaPoshta: res += "NovaPoshta"; break;
+            }
+
+            res += "|" + adress.toString();
+
+            return res;
         }
 
         void Delivery::init(QString title, TypeDelivery type, Adress adress) {
@@ -81,9 +89,9 @@ namespace ShadowScreen {
             query.bindValue(0, title);
 
             switch(type) {
-            case Meest:      query.bindValue(1, 'm'); break;
-            case Ukrposhta:  query.bindValue(1, 'u'); break;
-            case NovaPoshta: query.bindValue(1, 'n'); break;
+            case Meest:      query.bindValue(1, QChar('m')); break;
+            case Ukrposhta:  query.bindValue(1, QChar('u')); break;
+            case NovaPoshta: query.bindValue(1, QChar('n')); break;
             }
 
             query.bindValue(2, adress.getDataById(db));
@@ -98,9 +106,9 @@ namespace ShadowScreen {
             query.prepare("select * from getDeliveryIdTable(:Type, :AdressId, :Title)");
 
             switch(type) {
-            case Meest:      query.bindValue(0, 'm'); break;
-            case Ukrposhta:  query.bindValue(0, 'u'); break;
-            case NovaPoshta: query.bindValue(0, 'n'); break;
+            case Meest:      query.bindValue(0, QChar('m')); break;
+            case Ukrposhta:  query.bindValue(0, QChar('u')); break;
+            case NovaPoshta: query.bindValue(0, QChar('n')); break;
             }
 
             query.bindValue(1, adress.getDataById(db));

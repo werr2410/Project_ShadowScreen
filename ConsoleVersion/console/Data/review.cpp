@@ -62,6 +62,43 @@ namespace ShadowScreen {
             (*this) = Review(description, mark);
         }
 
+        void Review::selectDataById(QSqlDatabase &db, int id) {
+            QSqlQuery query(db);
+
+            query.prepare("select [Description], Mark from Reviews where ReviewsId = :id");
+            query.bindValue(0, id);
+
+            query.exec(); query.next();
+
+            setTitle("no data");
+            setDescription(query.value(0).toString());
+            setMark(query.value(1).toInt());
+        }
+
+        void Review::insertDataTable(QSqlDatabase &db) const {
+            QSqlQuery query(db);
+
+            query.prepare("exec  SmartAddReview :Description, :mark, :id");
+            query.bindValue(0, description);
+            query.bindValue(1, mark);
+            query.bindValue(2, id);
+
+            query.exec();
+        }
+
+        int Review::getDataById(QSqlDatabase &db) const {
+            QSqlQuery query(db);
+
+            query.prepare("select ReviewsId from Reviews where [Description] = :desc and Mark = :mark");
+
+            query.bindValue(0, description);
+            query.bindValue(1, mark);
+
+            query.exec(); query.next();
+
+            return query.value(0).toInt();
+        }
+
         bool Review::operator==(const Review &rhs) const
         {
             return toString() == rhs.toString();

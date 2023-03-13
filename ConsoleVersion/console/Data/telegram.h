@@ -2,12 +2,15 @@
 #define TELEGRAM_H
 
 #include <QString>
+#include "Database/dbobj.h"
 
 namespace ShadowScreen {
 
     namespace Data {
 
-        class Telegram {
+        using Database::Dbobj;
+
+        class Telegram : public Dbobj {
             QString username;
             QString chatId;
             QString usercode;
@@ -26,6 +29,10 @@ namespace ShadowScreen {
 
             void init(QString username, QString chatId, QString usercode);
             QString toString() const;
+
+            void selectDataById(QSqlDatabase& db,int id) override;
+            void insertDataTable(QSqlDatabase& db) const override;
+            int  getDataById(QSqlDatabase& db) const override;
         };
     }
 }
