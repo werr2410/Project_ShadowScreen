@@ -64,76 +64,39 @@ namespace ShadowScreen {
             (*this) = Adress(town, street,numberHouse);
         }
 
-//        void Adress::insertToDatabase(QSqlDatabase &db) const {
-//            QSqlQuery query(db);
+        void Adress::selectDataById(QSqlDatabase &db, int id) {
+            QSqlQuery query(db);
 
-//            query.prepare("INSERT into Adress values(:Country, :Town, :Street, :Number)");
+            setId(id);
 
-//            if(country.isEmpty() == false)
-//                query.bindValue(0, this->country);
-//            else
-//                query.bindValue(0, "NULL");
+            query.prepare("select Country, Town, Street, NumberHouse from Adress where AdressId = :id");
+            query.bindValue(0, id);
+            query.exec();
+            while(query.next()) {
+                setCountry(query.value(0).toString());
+                setTown(query.value(1).toString());
+                setStreet(query.value(2).toString());
+                setNumberHouse(query.value(3).toString());
+            }
+        }
 
-//            query.bindValue(1, this->town);
-//            query.bindValue(2, this->street);
-//            query.bindValue(3, this->numberHouse);
+        void Adress::insertDataTable(QSqlDatabase &db) const {
+            QSqlQuery query(db);
 
-//            query.exec();
-//        }
+            query.prepare("exec SmartAddAdress :Country, :Town, :Street, :Number, :id");
+            query.bindValue(0, country);
+            query.bindValue(1, town);
+            query.bindValue(2, street);
+            query.bindValue(3, numberHouse);
+            query.bindValue(4, id);
 
-//        void Adress::selectFromDatabase(QSqlDatabase &db, int id) {
-//            QSqlQuery query(db);
+            query.exec();
+        }
 
-//            query.prepare("select isnull(Country, 'unknown'), Town, Street, NumberHouse from Adress where AdressId = :id");
-//            query.bindValue(0, id);
-//            query.exec();
-
-//            query.next();
-
-//            (*this) = Adress(query.value(0).toString(), query.value(1).toString(),
-//                             query.value(2).toString(), query.value(3).toString());
-//        }
-
-//        void Adress::alterToDatabase(QSqlDatabase &db, int id) const {
-//            QSqlQuery query(db);
-
-//            query.prepare("update Adress set Country = :Country, Town = :Town, Street = :Street, NumberHouse = :Number where AdressId = :id");
-
-//            query.bindValue(0, this->country);
-//            query.bindValue(1, this->town);
-//            query.bindValue(2, this->street);
-//            query.bindValue(3, this->numberHouse);
-//            query.bindValue(4, id);
-
-//            query.exec();
-//            query.next();
-//        }
-
-//        void Adress::deleteFromDatabase(QSqlDatabase &db, int id) const {
-//            QSqlQuery query(db);
-
-//            query.prepare("delete from Adress where AdressId = :id");
-
-//            query.bindValue(0, id);
-
-//            query.exec();
-//        }
-
-//        int Adress::getIdFromDatabase(QSqlDatabase &db) const {
-//            QSqlQuery query(db);
-
-//            query.prepare("select AdressId from Adress where Country = :country and Town = :town and Street = :street and NumberHouse = :number");
-//            query.bindValue(0, this->country);
-//            query.bindValue(1, this->town);
-//            query.bindValue(2, this->street);
-//            query.bindValue(3, this->numberHouse);
-
-//            query.exec();
-//            query.next();
-
-//            return query.value(0).toInt();
-//        }
-
+        int Adress::getDataById(QSqlDatabase &db) const
+        {
+            return 0;
+        }
 
         bool Adress::operator==(const Adress &rhs) const {
             return toString() == rhs.toString();

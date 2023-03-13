@@ -4,7 +4,7 @@ namespace ShadowScreen {
 
     namespace Data {
 
-        Bankcard::Bankcard(QString title, QString number, QDate expirationDate) : Dbobj() {
+        Bankcard::Bankcard(QString title, QString number, QDate expirationDate) {
             setTitle(title);
             setNumber(number);
             setExpirationDate(expirationDate);

@@ -22,8 +22,9 @@ namespace ShadowScreen {
 
             virtual void selectDataById(QSqlDatabase& db,int id) = 0;
             virtual void insertDataTable(QSqlDatabase& db) const = 0;
-            virtual void dropDataById(QSqlDatabase& db, int id) const = 0;
             virtual int getDataById(QSqlDatabase& db) const = 0;
+
+            static void dropDataById(QSqlDatabase& db, int id);
         };
     }
 }

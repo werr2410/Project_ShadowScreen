@@ -9,14 +9,14 @@ namespace ShadowScreen {
                 this->product = product;
         }
 
-        Baseboard::Baseboard(bool isInit) : Detail(), DetailInfo(), Dbobj() {
+        Baseboard::Baseboard(bool isInit) : Detail(), DetailInfo() {
             if(isInit)
                 Baseboard::init();
             else
                 (*this) = Baseboard();
         }
 
-        Baseboard::Baseboard() : Detail(), DetailInfo(), Dbobj() {
+        Baseboard::Baseboard() : Detail(), DetailInfo() {
             setProduct("unkown");
         }
 

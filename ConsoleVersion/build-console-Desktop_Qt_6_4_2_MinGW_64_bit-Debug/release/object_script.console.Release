@@ -16,7 +16,5 @@ release/security.o
 release/telegram.o
 release/dbobj.o
 release/mssql.o
-release/shadowwindow.o
 release/user.o
 release/main.o
-release/moc_shadowwindow.o

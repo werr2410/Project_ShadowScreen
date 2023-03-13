@@ -17,7 +17,7 @@ namespace ShadowScreen {
             fd_NumberHouse
         };
 
-        class Adress {
+        class Adress : public Dbobj {
             QString country;
             QString town;
             QString street;
@@ -32,6 +32,7 @@ namespace ShadowScreen {
             void setTown(QString town);
             void setStreet(QString street);
             void setNumberHouse(QString numberHouse);
+
             QString getCountry() const;
             QString getTown() const;
             QString getStreet() const;
@@ -40,6 +41,10 @@ namespace ShadowScreen {
 
             void init(QString country, QString town, QString street, QString numberHouse);
             void init(QString town, QString street, QString numberHouse);
+
+            void selectDataById(QSqlDatabase& db,int id) override;
+            void insertDataTable(QSqlDatabase& db) const override;
+            int  getDataById(QSqlDatabase& db) const override;
 
             bool operator==(const Adress &rhs) const;
             bool operator!=(const Adress &rhs) const;

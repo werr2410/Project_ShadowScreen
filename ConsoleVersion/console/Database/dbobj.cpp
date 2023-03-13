@@ -20,5 +20,10 @@ namespace ShadowScreen {
         int Dbobj::getId() const {
             return id;
         }
+
+        void Dbobj::dropDataById(QSqlDatabase &db, int id)
+        {
+            // dsfsdfsdfsdfsdfsdfsdfsdfsdfsdfdsfsdfsdfdsf
+        }
     }
 }
