@@ -64,6 +64,8 @@ namespace ShadowScreen {
         void Delivery::selectDataById(QSqlDatabase &db, int id) {
             QSqlQuery query(db);
 
+            setId(id);
+
             query.prepare("select Title, [Type], AdressId from Delivery where DeliveryId = :id");
             query.bindValue(0, id);
 
@@ -82,7 +84,7 @@ namespace ShadowScreen {
             adress.selectDataById(db, query.value(2).toInt());
         }
 
-        void Delivery::insertDataTable(QSqlDatabase &db) const {
+        void Delivery::insertDataTable(QSqlDatabase &db) {
             QSqlQuery query(db);
 
             query.prepare("exec SmartAddDelivery :Title, :typeDelivery, :AdressId, :DeliveryId");
@@ -100,7 +102,7 @@ namespace ShadowScreen {
             query.exec();
         }
 
-        int Delivery::getDataById(QSqlDatabase &db) const {
+        int Delivery::getDataById(QSqlDatabase &db) {
             QSqlQuery query(db);
 
             query.prepare("select * from getDeliveryIdTable(:Type, :AdressId, :Title)");
@@ -116,7 +118,9 @@ namespace ShadowScreen {
 
             query.exec(); query.next();
 
-            return query.value(0).toInt();
+            setId(query.value(0).toInt());
+
+            return id;
         }
 
         bool Delivery::operator==(const Delivery &rhs) const {

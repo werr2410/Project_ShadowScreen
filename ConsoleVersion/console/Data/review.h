@@ -35,8 +35,8 @@ namespace ShadowScreen {
             void init(QString description, int mark);
 
             void selectDataById(QSqlDatabase& db,int id) override;
-            void insertDataTable(QSqlDatabase& db) const override;
-            int  getDataById(QSqlDatabase& db) const override;
+            void insertDataTable(QSqlDatabase& db) override;
+            int  getDataById(QSqlDatabase& db) override;
 
             bool operator==(const Review &rhs) const;
             bool operator!=(const Review &rhs) const;

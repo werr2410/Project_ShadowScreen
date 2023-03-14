@@ -44,6 +44,8 @@ namespace ShadowScreen {
         void Baseboard::selectDataById(QSqlDatabase &db, int id) {
             QSqlQuery query(db);
 
+            setId(id);
+
             query.prepare("select Manufacturer, Product, Description, IsSale, Image, Stars, Status from Baseboard where BaseboardId = :id");
             query.bindValue(0, id);
 
@@ -55,7 +57,7 @@ namespace ShadowScreen {
             DetailInfo::initFieldDb(query, 2);
         }
 
-        void Baseboard::insertDataTable(QSqlDatabase &db) const {
+        void Baseboard::insertDataTable(QSqlDatabase &db) {
             QSqlQuery query(db);
 
             query.prepare("exec SmartAddBaseboard :manufacturer, :product, :desc, :isSale, :image, :stars, :status, :id");
@@ -71,7 +73,7 @@ namespace ShadowScreen {
 
         }
 
-        int Baseboard::getDataById(QSqlDatabase &db) const {
+        int Baseboard::getDataById(QSqlDatabase &db) {
             QSqlQuery query(db);
 
             query.prepare("select BaseboardId from Baseboard where Manufacturer = :manufacturer and Product = :Product");
@@ -80,7 +82,9 @@ namespace ShadowScreen {
 
             query.exec(); query.next();
 
-            return query.value(0).toInt();
+            setId(query.value(0).toInt());
+
+            return id;
         }
     }
 }

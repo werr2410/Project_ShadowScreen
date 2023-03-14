@@ -43,8 +43,8 @@ namespace ShadowScreen {
             void init(QString town, QString street, QString numberHouse);
 
             void selectDataById(QSqlDatabase& db,int id) override;
-            void insertDataTable(QSqlDatabase& db) const override;
-            int  getDataById(QSqlDatabase& db) const override;
+            void insertDataTable(QSqlDatabase& db) override;
+            int  getDataById(QSqlDatabase& db) override;
 
             bool operator==(const Adress &rhs) const;
             bool operator!=(const Adress &rhs) const;

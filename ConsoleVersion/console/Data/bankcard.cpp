@@ -71,6 +71,8 @@ namespace ShadowScreen {
         void Bankcard::selectDataById(QSqlDatabase &db, int id) {
             QSqlQuery query(db);
 
+            setId(id);
+
             query.prepare("select Title, Number, ExpirationDate from Bankcard where BankcardId = :id");
             query.bindValue(0, id);
 
@@ -82,7 +84,7 @@ namespace ShadowScreen {
             setExpirationDate(query.value(2).toDate());
         }
 
-        void Bankcard::insertDataTable(QSqlDatabase &db) const {
+        void Bankcard::insertDataTable(QSqlDatabase &db) {
             QSqlQuery query(db);
 
             query.prepare("exec SmartAddBankcard :Title, :Number, :Date, :id");
@@ -94,7 +96,7 @@ namespace ShadowScreen {
             query.exec();
         }
 
-        int Bankcard::getDataById(QSqlDatabase &db) const {
+        int Bankcard::getDataById(QSqlDatabase &db) {
             QSqlQuery query(db);
 
             query.prepare("select * from getBankcardIdTable(:Number, :Date, :Title)");
@@ -104,7 +106,9 @@ namespace ShadowScreen {
 
             query.exec(); query.next();
 
-            return query.value(0).toInt();
+            setId(query.value(0).toInt());
+
+            return id;
         }
 
 

@@ -61,6 +61,8 @@ namespace ShadowScreen {
         void GPU::selectDataById(QSqlDatabase &db, int id) {
             QSqlQuery query(db);
 
+            setId(id);
+
             query.prepare("select Manufacturer, [Description], IsSale, [Image], Stars, [Status] from GPU where GPUId = :id");
 
             query.bindValue(0, id);
@@ -73,7 +75,7 @@ namespace ShadowScreen {
 
         }
 
-        void GPU::insertDataTable(QSqlDatabase &db) const {
+        void GPU::insertDataTable(QSqlDatabase &db) {
             QSqlQuery query(db);
 
             query.prepare("exec SmartAddGPU :manufacturer, :description, :isSale, :Image, :Stars, :Status, :id");
@@ -86,7 +88,7 @@ namespace ShadowScreen {
             query.exec();
         }
 
-        int GPU::getDataById(QSqlDatabase &db) const {
+        int GPU::getDataById(QSqlDatabase &db) {
             QSqlQuery query(db);
 
             query.prepare("select GPUId from GPU where Manufacturer = :manu and [Description] = :Desc and IsSale = :isSale and Stars = :Stars");
@@ -98,7 +100,9 @@ namespace ShadowScreen {
 
             query.exec(); query.next();
 
-            return query.value(0).toInt();
+            setId(query.value(0).toInt());
+
+            return id;
         }
     }
 }

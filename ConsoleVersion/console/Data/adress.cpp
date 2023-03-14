@@ -72,6 +72,7 @@ namespace ShadowScreen {
             query.prepare("select Country, Town, Street, NumberHouse from Adress where AdressId = :id");
             query.bindValue(0, id);
             query.exec();
+
             while(query.next()) {
                 setCountry(query.value(0).toString());
                 setTown(query.value(1).toString());
@@ -80,7 +81,7 @@ namespace ShadowScreen {
             }
         }
 
-        void Adress::insertDataTable(QSqlDatabase &db) const {
+        void Adress::insertDataTable(QSqlDatabase &db) {
             QSqlQuery query(db);
 
             query.prepare("exec SmartAddAdress :Country, :Town, :Street, :Number, :id");
@@ -93,7 +94,7 @@ namespace ShadowScreen {
             query.exec();
         }
 
-        int Adress::getDataById(QSqlDatabase &db) const {
+        int Adress::getDataById(QSqlDatabase &db) {
             QSqlQuery query(db);
 
             query.prepare("select AdressId from getAdressIdTable(:Country, :Town, :Street, :Number)");
@@ -105,7 +106,9 @@ namespace ShadowScreen {
             query.exec();
             query.next();
 
-            return query.value(0).toInt();
+            setId(query.value(0).toInt());
+
+            return id;
         }
 
         bool Adress::operator==(const Adress &rhs) const {

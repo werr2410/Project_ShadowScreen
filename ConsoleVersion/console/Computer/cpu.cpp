@@ -39,5 +39,49 @@ namespace ShadowScreen {
         QString CPU::type() const {
             return "cpu";
         }
+
+        void CPU::selectDataById(QSqlDatabase &db, int id) {
+            QSqlQuery query(db);
+
+            setId(id);
+
+            query.prepare("select Manufacturer, Name, Description, IsSale, Image, Stars, Status from CPU where CPUId = :id");
+            query.bindValue(0, id);
+
+            query.exec(); query.next();
+
+            setManufacturer(query.value(0).toString());
+            setName(query.value(1).toString());
+
+            DetailInfo::initFieldDb(query, 2);
+        }
+
+        void CPU::insertDataTable(QSqlDatabase &db) {
+            QSqlQuery query(db);
+
+            query.prepare("exec SmartAddCPU :manufacturer, :name, :desc, :isSale, :Image, :Stars, :Status, :id");
+            query.bindValue(0, getManufacturer());
+            query.bindValue(1, getName());
+
+            DetailInfo::bindValueDb(query, 2);
+
+            query.bindValue(7, id);
+
+            query.exec();
+        }
+
+        int CPU::getDataById(QSqlDatabase &db) {
+            QSqlQuery query(db);
+
+            query.prepare("select CPUId from CPU where Manufacturer = :name and Name = :name");
+            query.bindValue(0, getManufacturer());
+            query.bindValue(1, getName());
+
+            query.exec(); query.next();
+
+            setId(query.value(0).toInt());
+
+            return id;
+        }
     }
 }

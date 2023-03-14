@@ -36,8 +36,8 @@ namespace ShadowScreen {
             void init(QString number, QDate expirationDate);
 
             void selectDataById(QSqlDatabase& db,int id) override;
-            void insertDataTable(QSqlDatabase& db) const override;
-            int  getDataById(QSqlDatabase& db) const override;
+            void insertDataTable(QSqlDatabase& db) override;
+            int  getDataById(QSqlDatabase& db) override;
 
             bool operator==(const Bankcard &rhs) const;
             bool operator!=(const Bankcard &rhs) const;

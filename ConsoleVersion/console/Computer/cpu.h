@@ -2,13 +2,16 @@
 #define CPU_H
 
 #include "detail.h"
+#include "Database/dbobj.h"
 #include "detailinfo.h"
 
 namespace ShadowScreen {
 
+    using Database::Dbobj;
+
     namespace computer {
 
-        class CPU : public Detail {
+        class CPU : public Detail, public DetailInfo, public Dbobj {
         private:
             QString name;
 
@@ -24,6 +27,10 @@ namespace ShadowScreen {
             void init() override;
             QString toString() const override;
             QString type() const override;
+
+            void selectDataById(QSqlDatabase& db,int id) override;
+            void insertDataTable(QSqlDatabase& db) override;
+            int getDataById(QSqlDatabase& db) override;
         };
     }
 }

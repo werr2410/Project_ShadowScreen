@@ -41,5 +41,20 @@ namespace ShadowScreen {
             return "Memorychip";
         }
 
+        void Memorychip::selectDataById(QSqlDatabase &db, int id)
+        {
+
+        }
+
+        void Memorychip::insertDataTable(QSqlDatabase &db)
+        {
+
+        }
+
+        int Memorychip::getDataById(QSqlDatabase &db)
+        {
+
+        }
+
     }
 }

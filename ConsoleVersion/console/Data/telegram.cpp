@@ -47,6 +47,8 @@ namespace ShadowScreen {
         void Telegram::selectDataById(QSqlDatabase &db, int id) {
             QSqlQuery query(db);
 
+            setId(id);
+
             query.prepare("select Username, ChatId, Usercode from Telegram where TelegramId = :id");
             query.bindValue(0, id);
 
@@ -57,7 +59,7 @@ namespace ShadowScreen {
             setUsercode(query.value(2).toString());
         }
 
-        void Telegram::insertDataTable(QSqlDatabase &db) const {
+        void Telegram::insertDataTable(QSqlDatabase &db) {
             QSqlQuery query(db);
 
             query.prepare("exec SmartAddTelegram :username, :chatid, :usercode, :id");
@@ -69,7 +71,7 @@ namespace ShadowScreen {
             query.exec();
         }
 
-        int Telegram::getDataById(QSqlDatabase &db) const {
+        int Telegram::getDataById(QSqlDatabase &db) {
             QSqlQuery query(db);
 
             query.prepare("select TelegramId from Telegram where Username = :username and ChatId = :chatid and Usercode = :usercode");
@@ -79,8 +81,9 @@ namespace ShadowScreen {
 
             query.exec(); query.next();
 
-            return query.value(0).toInt();
-        }
+            setId(query.value(0).toInt());
 
+            return id;
+        }
     }
 }
