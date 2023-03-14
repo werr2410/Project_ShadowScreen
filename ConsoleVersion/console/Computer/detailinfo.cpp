@@ -5,6 +5,34 @@ namespace ShadowScreen {
 
     namespace computer {
 
+        void DetailInfo::initFieldDb(QSqlQuery &query, int nextvalue){
+            setDescription(query.value(nextvalue).toString());
+            setIsSale(query.value(nextvalue + 1).toBool());
+
+            QByteArray byteArray = query.value(nextvalue + 2).toByteArray();
+            QPixmap img; img.loadFromData(byteArray, "PNG");
+
+            setImage(img);
+
+            setStars(query.value(nextvalue + 3).toInt());
+            setStatus(query.value(nextvalue + 4).toString());
+        }
+
+        void DetailInfo::bindValueDb(QSqlQuery &query, int nextvalue) const{
+            QByteArray byteArray;
+            QBuffer buffer(&byteArray);
+            buffer.open(QIODevice::WriteOnly);
+            image.save(&buffer, "PNG"); // сохранить в формате PNG
+
+            query.bindValue(nextvalue, getDescription());
+            query.bindValue(nextvalue + 1, getIsSale());
+
+            query.bindValue(nextvalue + 2, byteArray);
+
+            query.bindValue(nextvalue + 3, getStars());
+            query.bindValue(nextvalue + 4, getStatus());
+        }
+
         DetailInfo::DetailInfo(QPixmap image, QString description, QString status, bool isSale, int stars) {
             setImage(image);
             setDescription(description);

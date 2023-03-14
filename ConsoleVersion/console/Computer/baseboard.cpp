@@ -41,65 +41,48 @@ namespace ShadowScreen {
             return "baseboard";
         }
 
-//        void Baseboard::insertToDatabase(QSqlDatabase &db) const {
-//            QSqlQuery query(db);
+        void Baseboard::selectDataById(QSqlDatabase &db, int id) {
+            QSqlQuery query(db);
 
-//            query.prepare("exec addFullBaseboard :Manufacturer, :Product, :Description, :isSale, :Image, :Stars, :Status");
-//            query.bindValue(0, this->getManufacturer());
-//            query.bindValue(1, this->product);
-//            query.bindValue(2, this->getDescription());
-//            query.bindValue(3, this->getIsSale());
+//            QByteArray byteArray = query.value(3).toByteArray();
+//            QPixmap img; img.loadFromData(byteArray, "PNG");
 
-//            QByteArray imageData;
-//            QBuffer buffer(&imageData);
-//            buffer.open(QIODevice::WriteOnly);
-//            this->getImage().save(&buffer, "PNG");
+            query.prepare("select Manufacturer, Product, Description, IsSale, Image, Stars, Status from Baseboard where BaseboardId = :id");
+            query.bindValue(0, id);
 
-//            query.bindValue(4, imageData);
-//            query.bindValue(5, this->getStars());
-//            query.bindValue(6, this->getStatus());
+            query.exec(); query.next();
 
-//            query.exec();
-//        }
+            setManufacturer(query.value(0).toString());
+            setProduct(query.value(1).toString());
+            setDescription(query.value(2).toString());
+        }
 
-//        void Baseboard::selectFromDatabase(QSqlDatabase &db, int id) {
-//            QSqlQuery query(db);
+        void Baseboard::insertDataTable(QSqlDatabase &db) const {
+            QSqlQuery query(db);
 
-//            query.prepare("select BaseboardId, Manufacturer, Product, Description, IsSale, Image, Stars, Status from Baseboard where id = :id");
-//            query.bindValue(0, id);
+            query.prepare("exec SmartAddBaseboard :manufacturer, :product, :desc, :isSale, :image, :stars, :status, :id");
 
-//            query.exec();
-//            query.next();
+            QByteArray byteArray;
+            QBuffer buffer(&byteArray);
+            buffer.open(QIODevice::WriteOnly);
+            getImage().save(&buffer, "PNG"); // сохранить в формате PNG
 
-//            setId(query.value(0).toInt());
-//            setManufacturer(query.value(1).toString());
-//            setProduct(query.value(2).toString());
-//            setDescription(query.value(3).toString());
-//            setIsSale(query.value(4).toBool());
+            query.bindValue(0, getManufacturer());
+            query.bindValue(1, getProduct());
+            query.bindValue(2, getDescription());
+            query.bindValue(3, getIsSale());
+            query.bindValue(4, byteArray);
+            query.bindValue(5, getStars());
+            query.bindValue(6, getStatus());
+            query.bindValue(7, id);
 
-//            QByteArray imageData = query.value(5).toByteArray();
-//            QPixmap image;
-//            QImage img;
-//            img.loadFromData(imageData);
-//            image = QPixmap::fromImage(img, Qt::AutoColor);
+            query.exec();
 
-//            setImage(image);
-//            setStars(query.value(6).toInt());
-//            setStatus(query.value(7).toString());
-//        }
+        }
 
-//        void Baseboard::alterToDatabase(QSqlDatabase &db, int id) const {
-//            QSqlQuery query(db);
+        int Baseboard::getDataById(QSqlDatabase &db) const
+        {
 
-
-//        }
-
-//        void Baseboard::deleteFromDatabase(QSqlDatabase &db, int id) const {
-
-//        }
-
-//        int Baseboard::getIdFromDatabase(QSqlDatabase &db) const {
-
-//        }
+        }
     }
 }

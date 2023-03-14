@@ -10,7 +10,7 @@
 #include <string>
 #include <QSqlDatabase>
 #include <QTextStream>
-
+#include <QSqlQuery>
 
 namespace ShadowScreen {
 

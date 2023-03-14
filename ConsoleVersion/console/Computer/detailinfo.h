@@ -3,6 +3,9 @@
 
 #include <QString>
 #include <QPixmap>
+#include <QSqlQuery>
+#include <QFile>
+#include <QBuffer>
 
 namespace ShadowScreen {
 
@@ -15,6 +18,10 @@ namespace ShadowScreen {
             QString status;
             bool isSale;
             int stars;
+
+        protected:
+            void initFieldDb(QSqlQuery& query, int nextvalue);
+            void bindValueDb(QSqlQuery& query, int nextvalue) const;
 
         public:
             DetailInfo(QPixmap image, QString description, QString status, bool isSale, int stars);

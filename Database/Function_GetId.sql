@@ -1,5 +1,19 @@
 use ShadowScreen
 
+select * from Telegram
+
+exec SmartAddTelegram 'Anr1esss', '324214324', '2342354132', 3
+
+select Username, ChatId, Usercode from Telegram where TelegramId = 1
+
+exec SmartAddGPU 'manufacturer', 'desc', 0, NuLL, 0, NULL, 98073425 
+
+select * from GPU
+
+select GPUId from GPU where Manufacturer = 'manufacturer' and [Description] = 'desc' and IsSale = 0 and Stars = 0 
+
+select Manufacturer, [Description], IsSale, [Image], Stars, [Status] from GPU where GPUId = 1
+
 go create function getAdressIdTable(
 	@Country nvarchar(30),
 	@Town nvarchar(30),
@@ -24,8 +38,10 @@ go create function getReviwsIdTable(
 		where [Description] = @Description and @mark = Mark
 	)
 
+	select BankcardId from getBankcardIdTable('1234123412341234', '2023-03-30', NULL)
+
 go create function getBankcardIdTable(
-	@number nvarchar(10),
+	@number nvarchar(16),
 	@date date,
 	@title nvarchar(20) = NULL
 	) 
@@ -33,7 +49,7 @@ go create function getBankcardIdTable(
 	(
 		select BankcardId
 		from Bankcard
-		where @number = Number and @date = ExpirationDate and Title = @title
+		where Number = @number and  ExpirationDate = @date  and Title = @title
 	)
 
 go create function getDeliveryIdTable(
