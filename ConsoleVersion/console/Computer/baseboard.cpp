@@ -44,9 +44,6 @@ namespace ShadowScreen {
         void Baseboard::selectDataById(QSqlDatabase &db, int id) {
             QSqlQuery query(db);
 
-//            QByteArray byteArray = query.value(3).toByteArray();
-//            QPixmap img; img.loadFromData(byteArray, "PNG");
-
             query.prepare("select Manufacturer, Product, Description, IsSale, Image, Stars, Status from Baseboard where BaseboardId = :id");
             query.bindValue(0, id);
 
@@ -54,7 +51,8 @@ namespace ShadowScreen {
 
             setManufacturer(query.value(0).toString());
             setProduct(query.value(1).toString());
-            setDescription(query.value(2).toString());
+
+            DetailInfo::initFieldDb(query, 2);
         }
 
         void Baseboard::insertDataTable(QSqlDatabase &db) const {
@@ -62,27 +60,27 @@ namespace ShadowScreen {
 
             query.prepare("exec SmartAddBaseboard :manufacturer, :product, :desc, :isSale, :image, :stars, :status, :id");
 
-            QByteArray byteArray;
-            QBuffer buffer(&byteArray);
-            buffer.open(QIODevice::WriteOnly);
-            getImage().save(&buffer, "PNG"); // сохранить в формате PNG
-
             query.bindValue(0, getManufacturer());
             query.bindValue(1, getProduct());
-            query.bindValue(2, getDescription());
-            query.bindValue(3, getIsSale());
-            query.bindValue(4, byteArray);
-            query.bindValue(5, getStars());
-            query.bindValue(6, getStatus());
+
+            DetailInfo::bindValueDb(query, 2);
+
             query.bindValue(7, id);
 
             query.exec();
 
         }
 
-        int Baseboard::getDataById(QSqlDatabase &db) const
-        {
+        int Baseboard::getDataById(QSqlDatabase &db) const {
+            QSqlQuery query(db);
 
+            query.prepare("select BaseboardId from Baseboard where Manufacturer = :manufacturer and Product = :Product");
+            query.bindValue(0, getManufacturer());
+            query.bindValue(1, getProduct());
+
+            query.exec(); query.next();
+
+            return query.value(0).toInt();
         }
     }
 }
