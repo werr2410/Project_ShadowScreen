@@ -56,6 +56,54 @@ namespace ShadowScreen {
             return "diskdrive";
         }
 
+        void Storage::selectDataById(QSqlDatabase &db, int id) {
+            QSqlQuery query(db);
+
+            setId(id);
+
+            query.prepare("select Manufacturer, Model, Size, Description, IsSale, Image, Stars, Status from Storage where StorageId = :id");
+            query.bindValue(0, id);
+
+            query.exec(); query.next();
+
+            setManufacturer(query.value(0).toString());
+            setModel(query.value(1).toString());
+            setSize(query.value(2).toString());
+
+            DetailInfo::initFieldDb(query, 3);
+        }
+
+        void Storage::insertDataTable(QSqlDatabase &db){
+            QSqlQuery query(db);
+
+            query.prepare("exec SmartAddStorage :manufacturer, :model, :size, :desc, :isSale, :image, :stars, :status, :id");
+
+            query.bindValue(0, getManufacturer());
+            query.bindValue(1, getModel());
+            query.bindValue(2, getSize());
+
+            DetailInfo::bindValueDb(query, 3);
+
+            query.bindValue(8, id);
+
+            query.exec();
+        }
+
+        int Storage::getDataById(QSqlDatabase &db) {
+            QSqlQuery query(db);
+
+            query.prepare("select StorageId from Storage where Manufacturer = :manufacturer and Model = :model and Size = :size");
+            query.bindValue(0, getManufacturer());
+            query.bindValue(1, getModel());
+            query.bindValue(2, getSize());
+
+            query.exec(); query.next();
+
+            setId(query.value(0).toInt());
+
+            return id;
+        }
+
     }
 }
 

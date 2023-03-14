@@ -17,7 +17,7 @@ namespace ShadowScreen {
             setGPU(gpu);
         }
 
-        Computer::Computer(bool isInit) {
+        Computer::Computer(bool isInit){
             if(isInit)
                 init();
             else
@@ -105,6 +105,63 @@ namespace ShadowScreen {
             res += " |g| " + gpu.toString()         + " |g|";
 
             return res;
+        }
+
+        void Computer::selectDataById(QSqlDatabase &db, int id) {
+            QSqlQuery query(db);
+
+            setId(id);
+
+            query.prepare("select CPUId, GPUId, StorageId, MemorychipId, BaseboardId from Computer where ComputerId = :id");
+
+            query.bindValue(0, id);
+
+            query.exec(); query.next();
+
+            cpu         .selectDataById(db, query.value(0).toInt());
+            gpu         .selectDataById(db, query.value(1).toInt());
+            storage     .selectDataById(db, query.value(2).toInt());
+            memorychip  .selectDataById(db, query.value(3).toInt());
+            baseboard   .selectDataById(db, query.value(4).toInt());
+        }
+
+        void Computer::insertDataTable(QSqlDatabase &db) {
+            QSqlQuery query(db);
+
+            query.prepare("exec SmartAddComputer default, :CpuId, :GpuId, :StorageId, :MemorychipId, :BasebpardId, :id");
+
+            cpu.insertDataTable(db);
+            gpu.insertDataTable(db);
+            storage.insertDataTable(db);
+            memorychip.insertDataTable(db);
+            baseboard.insertDataTable(db);
+
+            query.bindValue(0, cpu.getDataById(db));
+            query.bindValue(1, gpu.getDataById(db));
+            query.bindValue(2, storage.getDataById(db));
+            query.bindValue(3, memorychip.getDataById(db));
+            query.bindValue(4, baseboard.getDataById(db));
+            query.bindValue(5, id);
+
+            query.exec();
+        }
+
+        int Computer::getDataById(QSqlDatabase &db) {
+            QSqlQuery query(db);
+
+            query.prepare("select ComputerId from Computer where CPUId = :CPUId and GPUId = :GPUId and BaseboardId = :BaseboardId and MemorychipId = :memorychipId and StorageId = :storageid");
+
+            query.bindValue(0, cpu.getDataById(db));
+            query.bindValue(1, gpu.getDataById(db));
+            query.bindValue(2, baseboard.getDataById(db));
+            query.bindValue(3, memorychip.getDataById(db));
+            query.bindValue(4, storage.getDataById(db));
+
+            query.exec(); query.next();
+
+            setId(query.value(0).toInt());
+
+            return id;
         }
 
         Detail *Computer::operator[](Details detail) {

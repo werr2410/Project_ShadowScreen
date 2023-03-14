@@ -22,7 +22,7 @@ namespace ShadowScreen {
         };
 
 
-        class Computer {
+        class Computer : public Dbobj {
             Baseboard baseboard;
             Storage storage;
             Memorychip memorychip;
@@ -57,6 +57,10 @@ namespace ShadowScreen {
             QString toString() const;
 
             QStringList getNormalyDetail(Detail* detail);
+
+            void selectDataById(QSqlDatabase& db,int id) override;
+            void insertDataTable(QSqlDatabase& db) override;
+            int getDataById(QSqlDatabase& db) override;
 
             Detail* operator[](Details detail);
         };

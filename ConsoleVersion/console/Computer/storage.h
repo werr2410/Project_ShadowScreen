@@ -3,12 +3,15 @@
 
 #include "detail.h"
 #include "detailinfo.h"
+#include "Database/dbobj.h"
 
 namespace ShadowScreen {
 
     namespace computer {
 
-        class Storage : public Detail {
+        using Database::Dbobj;
+
+        class Storage : public Detail, public DetailInfo, public Dbobj {
         private:
             QString model;
             QString size;
@@ -29,6 +32,10 @@ namespace ShadowScreen {
             void init() override;
             QString toString() const override;
             QString type() const override;
+
+            void selectDataById(QSqlDatabase& db,int id) override;
+            void insertDataTable(QSqlDatabase& db) override;
+            int getDataById(QSqlDatabase& db) override;
         };
     }
 }
