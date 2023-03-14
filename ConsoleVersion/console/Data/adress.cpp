@@ -64,7 +64,7 @@ namespace ShadowScreen {
             (*this) = Adress(town, street,numberHouse);
         }
 
-        void Adress::selectDataById(QSqlDatabase &db, int id) {
+        bool Adress::selectDataById(QSqlDatabase &db, int id) {
             QSqlQuery query(db);
 
             setId(id);
@@ -73,12 +73,16 @@ namespace ShadowScreen {
             query.bindValue(0, id);
             query.exec();
 
+            if(isFind(query) == false) return false;
+
             while(query.next()) {
                 setCountry(query.value(0).toString());
                 setTown(query.value(1).toString());
                 setStreet(query.value(2).toString());
                 setNumberHouse(query.value(3).toString());
             }
+
+            return true;
         }
 
         void Adress::insertDataTable(QSqlDatabase &db) {
@@ -89,7 +93,7 @@ namespace ShadowScreen {
             query.bindValue(1, town);
             query.bindValue(2, street);
             query.bindValue(3, numberHouse);
-            query.bindValue(4, id);
+            query.bindValue(4, getId());
 
             query.exec();
         }
@@ -104,11 +108,13 @@ namespace ShadowScreen {
             query.bindValue(3, numberHouse);
 
             query.exec();
+
+            if(isFind(query) == false) return -1;
             query.next();
 
             setId(query.value(0).toInt());
 
-            return id;
+            return getId();
         }
 
         bool Adress::operator==(const Adress &rhs) const {

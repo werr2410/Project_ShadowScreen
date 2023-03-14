@@ -56,7 +56,7 @@ namespace ShadowScreen {
             return "diskdrive";
         }
 
-        void Storage::selectDataById(QSqlDatabase &db, int id) {
+        bool Storage::selectDataById(QSqlDatabase &db, int id) {
             QSqlQuery query(db);
 
             setId(id);
@@ -64,13 +64,19 @@ namespace ShadowScreen {
             query.prepare("select Manufacturer, Model, Size, Description, IsSale, Image, Stars, Status from Storage where StorageId = :id");
             query.bindValue(0, id);
 
-            query.exec(); query.next();
+            query.exec();
+
+            if(isFind(query) == false) return false;
+
+            query.next();
 
             setManufacturer(query.value(0).toString());
             setModel(query.value(1).toString());
             setSize(query.value(2).toString());
 
             DetailInfo::initFieldDb(query, 3);
+
+            return true;
         }
 
         void Storage::insertDataTable(QSqlDatabase &db){
@@ -84,7 +90,7 @@ namespace ShadowScreen {
 
             DetailInfo::bindValueDb(query, 3);
 
-            query.bindValue(8, id);
+            query.bindValue(8, getId());
 
             query.exec();
         }
@@ -97,11 +103,15 @@ namespace ShadowScreen {
             query.bindValue(1, getModel());
             query.bindValue(2, getSize());
 
-            query.exec(); query.next();
+            query.exec();
+
+            if(isFind(query) == false) return -1;
+
+            query.next();
 
             setId(query.value(0).toInt());
 
-            return id;
+            return getId();
         }
 
     }

@@ -40,7 +40,7 @@ namespace ShadowScreen {
             void init(QString title, TypeDelivery type, Adress adress);
             void init(TypeDelivery type, Adress adress);
 
-            void selectDataById(QSqlDatabase& db,int id) override;
+            bool selectDataById(QSqlDatabase& db,int id) override;
             void insertDataTable(QSqlDatabase& db) override;
             int  getDataById(QSqlDatabase& db) override;
 

@@ -107,7 +107,7 @@ namespace ShadowScreen {
             return res;
         }
 
-        void Computer::selectDataById(QSqlDatabase &db, int id) {
+        bool Computer::selectDataById(QSqlDatabase &db, int id) {
             QSqlQuery query(db);
 
             setId(id);
@@ -116,13 +116,21 @@ namespace ShadowScreen {
 
             query.bindValue(0, id);
 
-            query.exec(); query.next();
+            query.exec();
 
-            cpu         .selectDataById(db, query.value(0).toInt());
-            gpu         .selectDataById(db, query.value(1).toInt());
-            storage     .selectDataById(db, query.value(2).toInt());
-            memorychip  .selectDataById(db, query.value(3).toInt());
-            baseboard   .selectDataById(db, query.value(4).toInt());
+            if(isFind(query) == false) return false;
+
+            query.next();
+
+            ddd:
+
+            if(cpu         .selectDataById(db, query.value(0).toInt()) == false) { cpu.insertDataTable(db);         goto ddd;}
+            if(gpu         .selectDataById(db, query.value(1).toInt()) == false) { gpu.insertDataTable(db);         goto ddd;}
+            if(storage     .selectDataById(db, query.value(2).toInt()) == false) { storage.insertDataTable(db);     goto ddd;}
+            if(memorychip  .selectDataById(db, query.value(3).toInt()) == false) { memorychip.insertDataTable(db);  goto ddd;}
+            if(baseboard   .selectDataById(db, query.value(4).toInt()) == false) { baseboard.insertDataTable(db);   goto ddd;}
+
+            return true;
         }
 
         void Computer::insertDataTable(QSqlDatabase &db) {
@@ -130,18 +138,67 @@ namespace ShadowScreen {
 
             query.prepare("exec SmartAddComputer default, :CpuId, :GpuId, :StorageId, :MemorychipId, :BasebpardId, :id");
 
-            cpu.insertDataTable(db);
-            gpu.insertDataTable(db);
-            storage.insertDataTable(db);
-            memorychip.insertDataTable(db);
-            baseboard.insertDataTable(db);
+            // cpu - start
+            int tmpint = cpu.getDataById(db);
 
-            query.bindValue(0, cpu.getDataById(db));
-            query.bindValue(1, gpu.getDataById(db));
-            query.bindValue(2, storage.getDataById(db));
-            query.bindValue(3, memorychip.getDataById(db));
-            query.bindValue(4, baseboard.getDataById(db));
-            query.bindValue(5, id);
+            if(tmpint != -1)
+                query.bindValue(0, tmpint);
+            else {
+                cpu.insertDataTable(db);
+                query.bindValue(0, cpu.getId());
+            }
+            // cpu - end
+
+
+            // gpu - start
+            tmpint = gpu.getDataById(db);
+
+            if(tmpint != -1)
+                query.bindValue(1, tmpint);
+            else {
+                gpu.insertDataTable(db);
+                query.bindValue(1, gpu.getId());
+            }
+            // gpu - end
+
+
+            // storage - start
+            tmpint = storage.getDataById(db);
+
+            if(tmpint != -1)
+                query.bindValue(2, tmpint);
+            else {
+                gpu.insertDataTable(db);
+                query.bindValue(2, storage.getId());
+            }
+            // storage - end
+
+
+            // memorychip - start
+            tmpint = memorychip.getDataById(db);
+
+            if(tmpint != -1)
+                query.bindValue(3, tmpint);
+            else {
+                memorychip.insertDataTable(db);
+                query.bindValue(3, memorychip.getId());
+            }
+            // memorychip - end
+
+
+            // baseboard - start
+            tmpint = baseboard.getDataById(db);
+
+            if(tmpint != -1)
+                query.bindValue(3, tmpint);
+            else {
+                baseboard.insertDataTable(db);
+                query.bindValue(3, baseboard.getId());
+            }
+            // baseboard - end
+
+
+            query.bindValue(5, getId());
 
             query.exec();
         }
@@ -161,7 +218,7 @@ namespace ShadowScreen {
 
             setId(query.value(0).toInt());
 
-            return id;
+            return getId();
         }
 
         Detail *Computer::operator[](Details detail) {
@@ -177,6 +234,8 @@ namespace ShadowScreen {
             case d_GPU:
                 return new GPU(gpu);
             }
+
+            return new CPU(cpu);
         }
     }
 }

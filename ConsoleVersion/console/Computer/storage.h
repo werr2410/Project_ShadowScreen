@@ -33,7 +33,7 @@ namespace ShadowScreen {
             QString toString() const override;
             QString type() const override;
 
-            void selectDataById(QSqlDatabase& db,int id) override;
+            bool selectDataById(QSqlDatabase& db,int id) override;
             void insertDataTable(QSqlDatabase& db) override;
             int getDataById(QSqlDatabase& db) override;
         };

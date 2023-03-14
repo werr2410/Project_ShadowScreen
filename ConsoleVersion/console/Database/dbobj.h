@@ -10,8 +10,11 @@ namespace ShadowScreen {
     namespace Database {
 
         class Dbobj {
-        protected:
+        private:
             int id;
+
+        protected:
+            bool isFind(QSqlQuery& query) const;
 
         public:
             Dbobj(int id);
@@ -20,7 +23,7 @@ namespace ShadowScreen {
             void setId(int id);
             int getId() const;
 
-            virtual void selectDataById(QSqlDatabase& db,int id) = 0;
+            virtual bool selectDataById(QSqlDatabase& db,int id) = 0;
             virtual void insertDataTable(QSqlDatabase& db) = 0;
             virtual int getDataById(QSqlDatabase& db) = 0;
 

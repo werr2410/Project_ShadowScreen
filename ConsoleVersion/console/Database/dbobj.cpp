@@ -4,6 +4,13 @@ namespace ShadowScreen {
 
     namespace Database {
 
+        bool Dbobj::isFind(QSqlQuery &query) const {
+            if(query.size() <= 0)
+                return true;
+            else
+                return false;
+        }
+
         Dbobj::Dbobj(int id) {
             setId(id);
         }

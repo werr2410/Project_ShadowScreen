@@ -20,7 +20,9 @@
 
 #include "Computer/computer.h"
 #include "Chating/chat.h"
+
 #include "Database/mssql.h"
+
 #include "Exception/exceptions.h"
 
 #include "Data/telegram.h"
@@ -35,10 +37,9 @@ namespace ShadowScreen {
 
         using namespace computer;
         using namespace Data;
-        using namespace Chating;
         using namespace Database;
 
-        class User {
+        class User : public Dbobj {
 
             // about
             QString             name;
@@ -65,9 +66,7 @@ namespace ShadowScreen {
             Adress              adress;
             QVector<Delivery>   delivery;
             QVector<Bankcard>   bankcard;
-            QList<Review>       review;
-
-            QVector<Chat>       chat;
+            QList  <Review>       review;
 
             static QString generateHashcode();
             static QString getFullString();
@@ -99,7 +98,6 @@ namespace ShadowScreen {
             void setDelivery(QVector<Delivery> delivery);
             void setBankcard(QVector<Bankcard> bankcard);
             void setReviews(QList<Review> reviews);
-            void setChat(QVector<Chat> chat);
 
             QString getName() const;
             QString getSurname() const;
@@ -119,14 +117,11 @@ namespace ShadowScreen {
             QVector<Bankcard> getBankcard() const;
             QList<Review> getReview() const;
 
-            QVector<Chat> getChat() const;
-
             int getAmountDelivery() const;
             int getAmountBankcard() const;
 
             void pushBankcard(Bankcard bankcard);
             void pushDelivery(Delivery delivery);
-            void pushChat(Chat chat);
 
             void eraseBankcard(Bankcard bankcard);
             void eraseDelivery(Delivery delivery);
@@ -142,6 +137,10 @@ namespace ShadowScreen {
             static bool isUniqueUsername(QString username);
             static bool isUniqueEmail(QString email);
             static bool isUniqueHashcode(QString code);
+
+            bool selectDataById(QSqlDatabase& db,int id) override;
+            void insertDataTable(QSqlDatabase& db) override;
+            int getDataById(QSqlDatabase& db) override;
         };
     }
 }

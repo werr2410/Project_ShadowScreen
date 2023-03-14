@@ -68,20 +68,25 @@ namespace ShadowScreen {
             (*this) = Bankcard(number, expirationDate);
         }
 
-        void Bankcard::selectDataById(QSqlDatabase &db, int id) {
+        bool Bankcard::selectDataById(QSqlDatabase &db, int id) {
             QSqlQuery query(db);
 
             setId(id);
 
             query.prepare("select Title, Number, ExpirationDate from Bankcard where BankcardId = :id");
-            query.bindValue(0, id);
+            query.bindValue(0, getId());
 
             query.exec();
+
+            if(isFind(query) == false) return false;
+
             query.next();
 
             setTitle(query.value(0).toString());
             setNumber(query.value(1).toString());
             setExpirationDate(query.value(2).toDate());
+
+            return true;
         }
 
         void Bankcard::insertDataTable(QSqlDatabase &db) {
@@ -91,7 +96,7 @@ namespace ShadowScreen {
             query.bindValue(0, title);
             query.bindValue(1, number);
             query.bindValue(2, expirationDate.toString("yyyy-MM-dd"));
-            query.bindValue(3, id);
+            query.bindValue(3, getId());
 
             query.exec();
         }
@@ -104,11 +109,15 @@ namespace ShadowScreen {
             query.bindValue(1, expirationDate.toString("yyyy-MM-dd"));
             query.bindValue(2, title);
 
-            query.exec(); query.next();
+            query.exec();
+
+            if(isFind(query) == false) return -1;
+
+            query.next();
 
             setId(query.value(0).toInt());
 
-            return id;
+            return getId();
         }
 
 

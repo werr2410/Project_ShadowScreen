@@ -127,10 +127,6 @@ namespace ShadowScreen {
             this->review = reviews;
         }
 
-        void User::setChat(QVector<Chat> chat) {
-            this->chat = chat;
-        }
-
         QString User::getName() const {
             return name;
         }
@@ -187,10 +183,6 @@ namespace ShadowScreen {
             return review;
         }
 
-        QVector<Chat> User::getChat() const {
-            return chat;
-        }
-
         int User::getAmountDelivery() const {
             return delivery.length();
         }
@@ -213,9 +205,6 @@ namespace ShadowScreen {
             this->delivery.push_back(delivery);
         }
 
-        void User::pushChat(Chat chat) {
-            this->chat.push_back(chat);
-        }
 
         void User::eraseBankcard(Bankcard bankcard) {
             QVector<Bankcard>::Iterator it;
@@ -379,6 +368,21 @@ namespace ShadowScreen {
             bool res = true;
             // database
             return res;
+        }
+
+        bool User::selectDataById(QSqlDatabase &db, int id)
+        {
+
+        }
+
+        void User::insertDataTable(QSqlDatabase &db)
+        {
+
+        }
+
+        int User::getDataById(QSqlDatabase &db)
+        {
+
         }
     }
 }

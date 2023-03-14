@@ -42,7 +42,7 @@ namespace ShadowScreen {
             void init(QString country, QString town, QString street, QString numberHouse);
             void init(QString town, QString street, QString numberHouse);
 
-            void selectDataById(QSqlDatabase& db,int id) override;
+            bool selectDataById(QSqlDatabase& db,int id) override;
             void insertDataTable(QSqlDatabase& db) override;
             int  getDataById(QSqlDatabase& db) override;
 

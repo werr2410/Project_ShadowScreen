@@ -40,7 +40,7 @@ namespace ShadowScreen {
             return "cpu";
         }
 
-        void CPU::selectDataById(QSqlDatabase &db, int id) {
+        bool CPU::selectDataById(QSqlDatabase &db, int id) {
             QSqlQuery query(db);
 
             setId(id);
@@ -48,12 +48,18 @@ namespace ShadowScreen {
             query.prepare("select Manufacturer, Name, Description, IsSale, Image, Stars, Status from CPU where CPUId = :id");
             query.bindValue(0, id);
 
-            query.exec(); query.next();
+            query.exec();
+
+            if(isFind(query) == false) return false;
+
+            query.next();
 
             setManufacturer(query.value(0).toString());
             setName(query.value(1).toString());
 
             DetailInfo::initFieldDb(query, 2);
+
+            return true;
         }
 
         void CPU::insertDataTable(QSqlDatabase &db) {
@@ -65,7 +71,7 @@ namespace ShadowScreen {
 
             DetailInfo::bindValueDb(query, 2);
 
-            query.bindValue(7, id);
+            query.bindValue(7, getId());
 
             query.exec();
         }
@@ -77,11 +83,15 @@ namespace ShadowScreen {
             query.bindValue(0, getManufacturer());
             query.bindValue(1, getName());
 
-            query.exec(); query.next();
+            query.exec();
+
+            if(isFind(query) == false) return -1;
+
+            query.next();
 
             setId(query.value(0).toInt());
 
-            return id;
+            return getId();
         }
     }
 }

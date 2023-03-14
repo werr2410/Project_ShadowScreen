@@ -61,7 +61,7 @@ namespace ShadowScreen {
             setAdress(adress);
         }
 
-        void Delivery::selectDataById(QSqlDatabase &db, int id) {
+        bool Delivery::selectDataById(QSqlDatabase &db, int id) {
             QSqlQuery query(db);
 
             setId(id);
@@ -69,7 +69,11 @@ namespace ShadowScreen {
             query.prepare("select Title, [Type], AdressId from Delivery where DeliveryId = :id");
             query.bindValue(0, id);
 
-            query.exec(); query.next();
+            query.exec();
+
+            if(isFind(query) == false) return false;
+
+            query.next();
 
             setTitle(query.value(0).toString());
 
@@ -81,7 +85,10 @@ namespace ShadowScreen {
             else if(type == 'n') setTypeDelivery(NovaPoshta);
 
             // adress
-            adress.selectDataById(db, query.value(2).toInt());
+            if(adress.selectDataById(db, query.value(2).toInt()) == false)
+                adress = Adress();
+
+            return true;
         }
 
         void Delivery::insertDataTable(QSqlDatabase &db) {
@@ -96,8 +103,16 @@ namespace ShadowScreen {
             case NovaPoshta: query.bindValue(1, QChar('n')); break;
             }
 
-            query.bindValue(2, adress.getDataById(db));
-            query.bindValue(3, id);
+            int tmpId = adress.getDataById(db);
+
+            if(tmpId != -1) {
+                query.bindValue(2, tmpId);
+            } else {
+                adress.insertDataTable(db);
+                query.bindValue(2, adress.getId());
+            }
+
+            query.bindValue(3, getId());
 
             query.exec();
         }
@@ -116,11 +131,15 @@ namespace ShadowScreen {
             query.bindValue(1, adress.getDataById(db));
             query.bindValue(2, title);
 
-            query.exec(); query.next();
+            query.exec();
+
+            if(isFind(query) == false) return -1;
+
+            query.next();
 
             setId(query.value(0).toInt());
 
-            return id;
+            return getId();
         }
 
         bool Delivery::operator==(const Delivery &rhs) const {

@@ -62,7 +62,7 @@ namespace ShadowScreen {
             (*this) = Review(description, mark);
         }
 
-        void Review::selectDataById(QSqlDatabase &db, int id) {
+        bool Review::selectDataById(QSqlDatabase &db, int id) {
             QSqlQuery query(db);
 
             setId(id);
@@ -70,11 +70,17 @@ namespace ShadowScreen {
             query.prepare("select [Description], Mark from Reviews where ReviewsId = :id");
             query.bindValue(0, id);
 
-            query.exec(); query.next();
+            query.exec();
+
+            if(isFind(query) == false) return false;
+
+            query.next();
 
             setTitle("no data");
             setDescription(query.value(0).toString());
             setMark(query.value(1).toInt());
+
+            return true;
         }
 
         void Review::insertDataTable(QSqlDatabase &db) {
@@ -83,7 +89,7 @@ namespace ShadowScreen {
             query.prepare("exec  SmartAddReview :Description, :mark, :id");
             query.bindValue(0, description);
             query.bindValue(1, mark);
-            query.bindValue(2, id);
+            query.bindValue(2, getId());
 
             query.exec();
         }
@@ -96,11 +102,15 @@ namespace ShadowScreen {
             query.bindValue(0, description);
             query.bindValue(1, mark);
 
-            query.exec(); query.next();
+            query.exec();
+
+            if(isFind(query) == false) return -1;
+
+            query.next();
 
             setId(query.value(0).toInt());
 
-            return id;
+            return getId();
         }
 
         bool Review::operator==(const Review &rhs) const

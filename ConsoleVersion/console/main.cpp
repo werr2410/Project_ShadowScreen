@@ -22,23 +22,15 @@ int main(int argc, char *argv[]) {
     qDebug() << db.open();
 
     if(db.getStatus()) {
-//        Adress adress;
-//        adress.selectDataById(db.getDatabase(), 10);
+        Adress adress;
+        // adress.selectDataById(db.getDatabase(), 10);
 
-//        Delivery del("me delivery", Meest, adress);
-//        del.insertDataTable(db.getDatabase());
+        qDebug() << adress.toString();
 
-//        Delivery bank1;
+        if(adress.selectDataById(db.getDatabase(), 43509)) qDebug() << "OKK\n";
+        else qDebug() << "NONNNNNNNNN\n";
 
-//        bank1.selectDataById(db.getDatabase(), del.getDataById(db.getDatabase()));
-
-//        qDebug() << bank1.toString();
-
-        GPU gpu(true);
-
-        qDebug() << gpu.toString();
-
-
+        qDebug() << adress.toString();
         db.close();
     }
 

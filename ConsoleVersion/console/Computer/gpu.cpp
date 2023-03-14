@@ -58,7 +58,7 @@ namespace ShadowScreen {
             return "gpu";
         }
 
-        void GPU::selectDataById(QSqlDatabase &db, int id) {
+        bool GPU::selectDataById(QSqlDatabase &db, int id) {
             QSqlQuery query(db);
 
             setId(id);
@@ -67,12 +67,17 @@ namespace ShadowScreen {
 
             query.bindValue(0, id);
 
-            query.exec(); query.next();
+            query.exec();
+
+            if(isFind(query) == false) return false;
+
+            query.next();
 
             setManufacturers(query.value(0).toString());
 
             DetailInfo::initFieldDb(query, 1);
 
+            return true;
         }
 
         void GPU::insertDataTable(QSqlDatabase &db) {
@@ -83,7 +88,7 @@ namespace ShadowScreen {
 
             DetailInfo::bindValueDb(query, 1);
 
-            query.bindValue(6, id);
+            query.bindValue(6, getId());
 
             query.exec();
         }
@@ -98,11 +103,15 @@ namespace ShadowScreen {
             query.bindValue(2, getIsSale());
             query.bindValue(3, getStars());
 
-            query.exec(); query.next();
+            query.exec();
+
+            if(isFind(query) == false) return -1;
+
+            query.next();
 
             setId(query.value(0).toInt());
 
-            return id;
+            return getId();
         }
     }
 }
