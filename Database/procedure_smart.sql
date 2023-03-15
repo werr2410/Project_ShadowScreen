@@ -291,3 +291,34 @@ go create proc SmartAddUser
 			(@Username, @Name, @Surname, @Middlename,@Numberphone, @Birthday, @StartUse, @Hashcode,@Email,  @Passport, @ComputerId, @TelegramId, @AdressId)
 	end
 end
+
+
+go create proc SmartAddBancardFK
+@userId int,
+@bankcardId int as begin
+	if exists(select FKId from FK_User_Bankcard where UserId = @userId and @bankcardId = BankcardId)  begin
+		return
+	end else begin 
+		insert into FK_User_Bankcard values(@userId, @bankcardId)
+	end
+end
+
+go create proc SmartAddDeliveryFK
+@userid int,
+@deliveryId int as begin
+		if exists(select FKId from FK_User_Delivery where UserId = @userId and @deliveryId = DeliveryId)  begin
+		return
+	end else begin 
+		insert into FK_User_Delivery values(@userId, @deliveryId)
+	end
+end
+
+go create proc SmartAddReviewFK
+@userid int,
+@reviewid int as begin
+		if exists(select FKId from FK_User_Reviews where UserId = @userId and @reviewid = ReviewsId)  begin
+		return
+	end else begin 
+		insert into FK_User_Reviews values(@userId, @reviewid)
+	end
+end

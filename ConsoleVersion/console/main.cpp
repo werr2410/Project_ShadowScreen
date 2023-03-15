@@ -34,6 +34,5 @@ int main(int argc, char *argv[]) {
         db.close();
     }
 
-
     return a.exec();
 }

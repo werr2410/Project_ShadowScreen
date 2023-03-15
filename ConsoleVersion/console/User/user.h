@@ -45,6 +45,7 @@ namespace ShadowScreen {
             QString             name;
             QString             surname;
             QString             middlename;
+            QString             numberphone; // get; set;
             QString             hashcode;
             QString             email;
             QString             password;
@@ -83,6 +84,7 @@ namespace ShadowScreen {
             void setName(QString name);
             void setSurname(QString surname);
             void setMiddlename(QString middlename);
+            void setNumberphone(QString numberphone); // RESSSSSSSS
             void setEmail(QString email);
             void setPassword(QString password);
             void setUsername(QString username);
@@ -134,13 +136,10 @@ namespace ShadowScreen {
             static QString generationUsername();
             static QString generationPassword();
 
-            static bool isUniqueUsername(QString username);
-            static bool isUniqueEmail(QString email);
-            static bool isUniqueHashcode(QString code);
-
             bool selectDataById(QSqlDatabase& db,int id) override;
             void insertDataTable(QSqlDatabase& db) override;
             int getDataById(QSqlDatabase& db) override;
+
         };
     }
 }

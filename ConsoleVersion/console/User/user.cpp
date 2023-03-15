@@ -24,7 +24,7 @@ namespace ShadowScreen {
         }
 
         void User::setHashcode(QString code) {
-            if(isUniqueHashcode(code) && code.length() == LENGHT_HASHCODE)
+            if(code.length() == LENGHT_HASHCODE)
                 this->hashcode = code;
             else
                 setHashcode(generateHashcode());
@@ -63,7 +63,7 @@ namespace ShadowScreen {
         }
 
         void User::setEmail(QString email) {
-            if(isInvalidEmail(email) == false || isUniqueEmail(email) == false)
+            if(isInvalidEmail(email) == false)
                 throw new Exception::UserDataInvalidException();
 
             this->email = email.trimmed();
@@ -79,7 +79,7 @@ namespace ShadowScreen {
         }
 
         void User::setUsername(QString username) {
-            if(isUniqueUsername(username) == false || password.isEmpty())
+            if(password.isEmpty())
                 throw new Exception::UserDataInvalidException();
 
             this->username = username;
@@ -352,37 +352,249 @@ namespace ShadowScreen {
             return password;
         }
 
-        bool User::isUniqueUsername(QString username) {
-            bool res = true;
-            // database
-            return res;
+        bool User::selectDataById(QSqlDatabase &db, int id) {
+            QSqlQuery query(db);
+
+            query.prepare("select Username, Name, Surname, Middlename, NumberPhone, Birthday, StartUse, Hashcode, Email, Passport, ComputerId, TelegramId, AdressId from [user] where UserId = :id");
+            query.bindValue(0, getId() == -1 ? getDataById(db) : getId());
+            query.exec();
+
+            if(isFind(query) == false) return false;
+
+            setUsername(query.value(0).toString());
+            setName(query.value(1).toString());
+            setSurname(query.value(2).toString());
+            setMiddlename(query.value(3).toString());
+            setNumberphone(query.value(4).toString());
+            setBirthDay(query.value(5).toDate());
+            setStartUse(query.value(6).toDateTime());
+            setHashcode(query.value(7).toString());
+            setEmail(query.value(8).toString());
+            setPassword(query.value(9).toString());
+
+            int computerId = query.value(10).toInt();
+            int telegramId = query.value(11).toInt();
+            int adressId = query.value(12).toInt();
+
+            if(computer.selectDataById(db, computerId) == false)
+                computer.insertDataTable(db);
+
+            if(telegram.selectDataById(db, telegramId) == false)
+                telegram.insertDataTable(db);
+
+            if(adress.selectDataById(db, adressId) == false)
+                adress.insertDataTable(db);
+
+            // bankcard - start
+            QSqlQuery q(db);
+            Bankcard bc;
+
+            q.prepare("SELECT b.Title, b.Number, b.ExpirationDate FROM bankcard b JOIN FK_User_Bankcard f ON f.BankcardId = b.BankcardId JOIN [User] u ON u.UserId = f.UserId WHERE u.UserId = :id;");
+            q.bindValue(0, getId());
+
+            if(q.exec()) {
+                bankcard.clear();
+
+                while(q.next()) {
+                    bc.setTitle(q.value(0).toString());
+                    bc.setNumber(q.value(1).toString());
+                    bc.setExpirationDate(q.value(2).toDate());
+
+                    bankcard.push_back(bc);
+                }
+            }
+
+            q.clear();
+            // bankcard - end
+
+            // delivery -  start
+            q.prepare("SELECT d.DeliveryId FROM Delivery d  JOIN FK_User_Delivery ud ON d.DeliveryId = ud.DeliveryId  JOIN [User] u ON u.UserId = ud.UserId  WHERE u.UserId = id;");
+            q.bindValue(0, getId());
+
+            if(q.exec()) {
+                delivery.clear();
+
+                while(q.next()) {
+                    Delivery deliv;
+
+                    deliv.selectDataById(db, query.value(0).toInt());
+
+                    delivery.push_back(deliv);
+                }
+            }
+            q.clear();
+            // delivey - end
+
+            // review - start
+            q.prepare("SELECT r.Mark FROM Reviews r JOIN FK_User_Reviews f ON r.ReviewsId = f.ReviewsId JOIN [user] u ON u.UserId = f.UserId WHERE u.UserId = :id;");
+            q.bindValue(0, getId());
+
+            if(q.exec()) {
+                review.clear();
+
+                while(q.next()) {
+                    Review rew;
+
+                    rew.selectDataById(db, query.value(0).toInt());
+
+                    review.push_back(rew);
+                }
+            }
+
+            q.clear();
+            // review - end
+
+            return true;
         }
 
-        bool User::isUniqueEmail(QString email) {
-            bool res = true;
-            // database
-            return res;
+        void User::insertDataTable(QSqlDatabase &db) {
+            QSqlQuery query(db);
+
+            query.prepare("exec SmartAddUser :username, :Name:, :surname:, :Middlename, :numberphone, :birthday, :startUse, :hashcode, :email, :password, :ComputerId, :TelegramId, :AdressId, :id");
+
+            query.bindValue(0, username);
+            query.bindValue(1, name);
+            query.bindValue(2, surname);
+            query.bindValue(3, middlename);
+            query.bindValue(4, numberphone);
+            query.bindValue(5, birthday);
+            query.bindValue(6, startUse);
+            query.bindValue(7, hashcode);
+            query.bindValue(8, email);
+            query.bindValue(9, password);
+
+            // adress - start
+            int tmpId = adress.getDataById(db);
+
+            if(tmpId != -1)
+                query.bindValue(10, tmpId);
+            else {
+                adress.insertDataTable(db);
+                query.bindValue(10, adress.getId());
+            }
+            // Adress - end
+
+
+            // Telegram - start
+            tmpId = telegram.getDataById(db);
+
+            if(tmpId != -1)
+                query.bindValue(11, tmpId);
+            else {
+                telegram.insertDataTable(db);
+                query.bindValue(11, telegram.getId());
+            }
+            // telgram - end
+
+            // computer - start
+            tmpId = computer.getDataById(db);
+
+            if(tmpId != -1)
+                query.bindValue(12, tmpId);
+            else {
+                computer.insertDataTable(db);
+                query.bindValue(12, computer.getId());
+            }
+            // computer - end
+
+            // bankcard - start
+            QSqlQuery UBQuery(db);
+
+            for(int i = 0; i < bankcard.length(); i++) {
+
+                UBQuery.prepare("exec SmartAddBancardFK :user, :bankcard");
+
+                // user - start
+                UBQuery.bindValue(0, getId());
+                // user - end
+
+                // bankcard - start
+
+                int tmpid1 = bankcard[i].getDataById(db);
+
+                if(tmpid1 != -1)
+                    UBQuery.bindValue(1, tmpid1);
+                else {
+                    bankcard[i].insertDataTable(db);
+                    UBQuery.bindValue(1, bankcard[i].getId());
+                }
+                // bankcard - end
+
+                UBQuery.exec();
+                UBQuery.clear();
+            }
+            // bankcard - end
+
+            // delivery - start
+            for(int i = 0; i < delivery.length(); i++)  {
+                UBQuery.prepare("exec SmartAddDeliveryFK :user, :delivery");
+
+                // user - start
+                UBQuery.bindValue(0, getId());
+                // user - end
+
+                // delivery - start
+                int tmpid1 = delivery[i].getDataById(db);
+
+                if(tmpid1 != -1)
+                    UBQuery.bindValue(1, tmpid1);
+                else {
+                    delivery[i].insertDataTable(db);
+                    UBQuery.bindValue(1, delivery[i].getId());
+                }
+                // delivery - end
+
+                UBQuery.exec();
+                UBQuery.clear();
+            }
+            // delivery - end
+
+            // review - start
+            for(int i = 0; i < review.length(); i++) {
+                UBQuery.prepare("exec SmartAddReviewFK :user, :review");
+                UBQuery.bindValue(1, getId());
+
+                // user - start
+                UBQuery.bindValue(0, getId());
+                // user - end
+
+                // review - start
+                int tmpid1 = review[i].getDataById(db);
+
+                if(tmpid1 != -1)
+                    UBQuery.bindValue(1, tmpid1);
+                else {
+                    review[i].insertDataTable(db);
+                    UBQuery.bindValue(1, review[i].getId());
+                }
+                // review - end
+
+                UBQuery.exec();
+                UBQuery.clear();
+            }
+            // review - end
+
+            query.bindValue(13, getId());
+
+            query.exec();
         }
 
-        bool User::isUniqueHashcode(QString code) {
-            bool res = true;
-            // database
-            return res;
-        }
+        int User::getDataById(QSqlDatabase &db) {
+            QSqlQuery query(db);
 
-        bool User::selectDataById(QSqlDatabase &db, int id)
-        {
+            query.prepare("select UserId from [User] where Username = :username and Passport = :password");
+            query.bindValue(0, username);
+            query.bindValue(1, password);
 
-        }
+            query.exec();
 
-        void User::insertDataTable(QSqlDatabase &db)
-        {
+            if(isFind(query) == false) return -1;
 
-        }
+            query.next();
 
-        int User::getDataById(QSqlDatabase &db)
-        {
+            setId(query.value(0).toInt());
 
+            return getId();
         }
     }
 }
