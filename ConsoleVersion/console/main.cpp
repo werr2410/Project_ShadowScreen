@@ -4,6 +4,7 @@
 #include "Database/mssql.h"
 #include "Data/delivery.h"
 #include "Data/bankcard.h"
+#include "User/user.h"
 #include <iostream>
 #include <QDebug>
 
@@ -11,6 +12,7 @@ using namespace std;
 using namespace ShadowScreen::computer;
 using namespace ShadowScreen::Database;
 using namespace ShadowScreen::Exception;
+using namespace ShadowScreen::user;
 using namespace ShadowScreen::Data;
 
 int main(int argc, char *argv[]) {
@@ -22,16 +24,10 @@ int main(int argc, char *argv[]) {
     qDebug() << db.open();
 
     if(db.getStatus()) {
-        Adress adress;
-        // adress.selectDataById(db.getDatabase(), 10);
+        User andrey("username", "password");
+        andrey.setComputer(Computer(true));
 
-        qDebug() << adress.toString();
-
-        if(adress.selectDataById(db.getDatabase(), 43509)) qDebug() << "OKK\n";
-        else qDebug() << "NONNNNNNNNN\n";
-
-        qDebug() << adress.toString();
-        db.close();
+        andrey.init(db.getDatabase());
     }
 
     return a.exec();

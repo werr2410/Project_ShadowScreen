@@ -7,8 +7,8 @@
 #define LENGHT_PASSWORD     16
 #define LENGHT_USERNAME     16
 
-#define MAX_COUNT_BANKCARD  3
-#define MAX_COUNT_DELIVERY  4
+#define MAX_COUNT_BANKCARD  99
+#define MAX_COUNT_DELIVERY  99
 
 
 
@@ -107,6 +107,7 @@ namespace ShadowScreen {
             QString getEmail() const;
             QString getPassword() const;
             QString getUsername() const;
+            QString getNumberphone() const;
 
             QString getHashcode() const;
             Telegram getTelegram() const;
@@ -139,6 +140,8 @@ namespace ShadowScreen {
             bool selectDataById(QSqlDatabase& db,int id) override;
             void insertDataTable(QSqlDatabase& db) override;
             int getDataById(QSqlDatabase& db) override;
+
+            bool init(QSqlDatabase& db);
 
         };
     }

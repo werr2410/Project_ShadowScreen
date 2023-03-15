@@ -36,7 +36,8 @@ namespace ShadowScreen {
         }
 
         User::User(QString username, QString password) {
-            // hard logic
+            setUsername(username);
+            setPassword(password);
         }
 
         User::User() : User(NO_LOGIN_USER, NO_LOGIN_USER) { }
@@ -60,6 +61,11 @@ namespace ShadowScreen {
                 throw new Exception::UserDataInvalidException();
 
             this->middlename = middlename.trimmed();
+        }
+
+        void User::setNumberphone(QString numberphone)
+        {
+            this->numberphone = numberphone;
         }
 
         void User::setEmail(QString email) {
@@ -149,6 +155,10 @@ namespace ShadowScreen {
 
         QString User::getUsername() const {
             return username;
+        }
+
+        QString User::getNumberphone() const {
+            return numberphone;
         }
 
         QString User::getHashcode() const {
@@ -355,26 +365,28 @@ namespace ShadowScreen {
         bool User::selectDataById(QSqlDatabase &db, int id) {
             QSqlQuery query(db);
 
+            setId(id);
+
             query.prepare("select Username, Name, Surname, Middlename, NumberPhone, Birthday, StartUse, Hashcode, Email, Passport, ComputerId, TelegramId, AdressId from [user] where UserId = :id");
-            query.bindValue(0, getId() == -1 ? getDataById(db) : getId());
+            query.bindValue(0, getId() ? getDataById(db) : id);
             query.exec();
 
             if(isFind(query) == false) return false;
 
-            setUsername(query.value(0).toString());
-            setName(query.value(1).toString());
-            setSurname(query.value(2).toString());
-            setMiddlename(query.value(3).toString());
-            setNumberphone(query.value(4).toString());
-            setBirthDay(query.value(5).toDate());
-            setStartUse(query.value(6).toDateTime());
-            setHashcode(query.value(7).toString());
-            setEmail(query.value(8).toString());
-            setPassword(query.value(9).toString());
+            setUsername     (query.value(0).toString());
+            setName         (query.value(1).toString());
+            setSurname      (query.value(2).toString());
+            setMiddlename   (query.value(3).toString());
+            setNumberphone  (query.value(4).toString());
+            setBirthDay     (query.value(5).toDate());
+            setStartUse     (query.value(6).toDateTime());
+            setHashcode     (query.value(7).toString());
+            setEmail        (query.value(8).toString());
+            setPassword     (query.value(9).toString());
 
-            int computerId = query.value(10).toInt();
-            int telegramId = query.value(11).toInt();
-            int adressId = query.value(12).toInt();
+            int computerId = query.value(10).toInt(),
+                telegramId = query.value(11).toInt(),
+                adressId   = query.value(12).toInt();
 
             if(computer.selectDataById(db, computerId) == false)
                 computer.insertDataTable(db);
@@ -407,7 +419,7 @@ namespace ShadowScreen {
             q.clear();
             // bankcard - end
 
-            // delivery -  start
+            // delivery - start
             q.prepare("SELECT d.DeliveryId FROM Delivery d  JOIN FK_User_Delivery ud ON d.DeliveryId = ud.DeliveryId  JOIN [User] u ON u.UserId = ud.UserId  WHERE u.UserId = id;");
             q.bindValue(0, getId());
 
@@ -595,6 +607,10 @@ namespace ShadowScreen {
             setId(query.value(0).toInt());
 
             return getId();
+        }
+
+        bool User::init(QSqlDatabase& db) {
+            return selectDataById(db, getDataById(db));
         }
     }
 }
