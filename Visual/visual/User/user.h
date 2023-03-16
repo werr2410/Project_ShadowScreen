@@ -59,7 +59,7 @@ namespace ShadowScreen {
             Telegram            telegram;
 
             // Database
-            MSSQL               database;
+            //MSSQL               database;
 
             // namespace Data
             Adress              adress;
@@ -93,7 +93,7 @@ namespace ShadowScreen {
 
             void setComputer(Computer computer);
             void setTelegram(Telegram telegem);
-            void setDatabase(MSSQL database);
+            //void setDatabase(MSSQL database);
             void setAdress(Adress adress);
 
             void setDelivery(QVector<Delivery> delivery);

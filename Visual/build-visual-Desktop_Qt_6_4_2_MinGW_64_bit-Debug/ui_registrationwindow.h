@@ -33,7 +33,7 @@ public:
     QLabel *label_Reg_Username;
     QRadioButton *radioButton_Withoutusername;
     QPushButton *pushButton_do_Registration;
-    QTextEdit *textEdit_4;
+    QTextEdit *textEdit_reg_password;
     QLabel *label_Reg_Password;
     QRadioButton *radioButton_withoutpassword;
     QRadioButton *radioButton_rememberme;
@@ -68,7 +68,7 @@ public:
         pushButton_do_Login->setGeometry(QRect(10, 168, 191, 24));
         textEdit_reg_username = new QTextEdit(RegistrationWindow);
         textEdit_reg_username->setObjectName("textEdit_reg_username");
-        textEdit_reg_username->setGeometry(QRect(300, 48, 151, 31));
+        textEdit_reg_username->setGeometry(QRect(300, 52, 151, 26));
         label_Reg_Username = new QLabel(RegistrationWindow);
         label_Reg_Username->setObjectName("label_Reg_Username");
         label_Reg_Username->setGeometry(QRect(230, 58, 61, 10));
@@ -78,9 +78,9 @@ public:
         pushButton_do_Registration = new QPushButton(RegistrationWindow);
         pushButton_do_Registration->setObjectName("pushButton_do_Registration");
         pushButton_do_Registration->setGeometry(QRect(230, 168, 231, 24));
-        textEdit_4 = new QTextEdit(RegistrationWindow);
-        textEdit_4->setObjectName("textEdit_4");
-        textEdit_4->setGeometry(QRect(300, 108, 151, 31));
+        textEdit_reg_password = new QTextEdit(RegistrationWindow);
+        textEdit_reg_password->setObjectName("textEdit_reg_password");
+        textEdit_reg_password->setGeometry(QRect(300, 111, 151, 26));
         label_Reg_Password = new QLabel(RegistrationWindow);
         label_Reg_Password->setObjectName("label_Reg_Password");
         label_Reg_Password->setGeometry(QRect(230, 118, 61, 10));

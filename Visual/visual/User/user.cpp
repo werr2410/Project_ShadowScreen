@@ -36,7 +36,18 @@ namespace ShadowScreen {
         }
 
         User::User(QString username, QString password) {
-            // hard logic
+            setUsername(username);
+            setPassword(password);
+            setName("unknown");
+            setSurname("unknown");
+            setMiddlename("unknown");
+            setHashcode(ShadowScreen::user::User::generateHashcode());
+            setStartUse(QDateTime().currentDateTime());
+            setAdress(Adress());
+            setBirthDay(QDate().currentDate());
+            setComputer(ShadowScreen::computer::Computer(true));
+            setEmail("unk@now.n");
+            setTelegram(ShadowScreen::Data::Telegram());
         }
 
         User::User() : User(NO_LOGIN_USER, NO_LOGIN_USER) { }
@@ -70,7 +81,7 @@ namespace ShadowScreen {
         }
 
         void User::setPassword(QString password) {
-            if(password.isEmpty() || password.isEmpty())
+            if(password.isEmpty())
                 throw new Exception::UserDataInvalidException();
 
             // дело пользователя
@@ -79,7 +90,7 @@ namespace ShadowScreen {
         }
 
         void User::setUsername(QString username) {
-            if(isUniqueUsername(username) == false || password.isEmpty())
+            if(username.isEmpty())
                 throw new Exception::UserDataInvalidException();
 
             this->username = username;
@@ -101,25 +112,19 @@ namespace ShadowScreen {
             this->telegram = telegem;
         }
 
-        void User::setDatabase(MSSQL database) {
-            this->database = database;
-        }
+//        void User::setDatabase(MSSQL database) {
+//            this->database = database;
+//        }
 
         void User::setAdress(Adress adress) {
             this->adress = adress;
         }
 
         void User::setDelivery(QVector<Delivery> delivery) {
-            if(delivery.length() > MAX_COUNT_DELIVERY)
-                throw new Exception::BiggestArrayInvalidException();
-
             this->delivery = delivery;
         }
 
         void User::setBankcard(QVector<Bankcard> bankcard) {
-            if(bankcard.length() > MAX_COUNT_BANKCARD)
-                throw new Exception::BiggestArrayInvalidException();
-
             this->bankcard = bankcard;
         }
 

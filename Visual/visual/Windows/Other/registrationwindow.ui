@@ -89,9 +89,9 @@
    <property name="geometry">
     <rect>
      <x>300</x>
-     <y>48</y>
+     <y>52</y>
      <width>151</width>
-     <height>31</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
@@ -134,13 +134,13 @@
     <string>do</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_4">
+  <widget class="QTextEdit" name="textEdit_reg_password">
    <property name="geometry">
     <rect>
      <x>300</x>
-     <y>108</y>
+     <y>111</y>
      <width>151</width>
-     <height>31</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

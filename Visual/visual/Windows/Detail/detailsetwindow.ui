@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>430</width>
+    <width>528</width>
     <height>209</height>
    </rect>
   </property>
@@ -52,12 +52,12 @@
     <string>field2</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_Field0">
+  <widget class="QTextEdit" name="textEdit_Mnufacturer">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>99</x>
      <y>18</y>
-     <width>104</width>
+     <width>184</width>
      <height>26</height>
     </rect>
    </property>
@@ -68,9 +68,9 @@
   <widget class="QTextEdit" name="textEdit_Field1">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>99</x>
      <y>65</y>
-     <width>104</width>
+     <width>184</width>
      <height>26</height>
     </rect>
    </property>
@@ -81,9 +81,9 @@
   <widget class="QTextEdit" name="textEdit_Field2">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>99</x>
      <y>112</y>
-     <width>104</width>
+     <width>184</width>
      <height>26</height>
     </rect>
    </property>
@@ -94,7 +94,7 @@
   <widget class="QLabel" name="label_Picture">
    <property name="geometry">
     <rect>
-     <x>250</x>
+     <x>320</x>
      <y>20</y>
      <width>49</width>
      <height>16</height>
@@ -107,7 +107,7 @@
   <widget class="QLabel" name="label_Description">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>300</x>
      <y>70</y>
      <width>70</width>
      <height>16</height>
@@ -120,7 +120,7 @@
   <widget class="QLabel" name="label_Status">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>330</x>
      <y>120</y>
      <width>40</width>
      <height>16</height>
@@ -133,7 +133,7 @@
   <widget class="QRadioButton" name="radioButton_Sale">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>410</x>
      <y>160</y>
      <width>51</width>
      <height>22</height>
@@ -146,7 +146,7 @@
   <widget class="QPushButton" name="pushButton_File">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>390</x>
      <y>20</y>
      <width>101</width>
      <height>23</height>
@@ -159,7 +159,7 @@
   <widget class="QTextEdit" name="textEdit_Description">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>390</x>
      <y>60</y>
      <width>104</width>
      <height>41</height>
@@ -169,7 +169,7 @@
   <widget class="QTextEdit" name="textEdit_Status">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>390</x>
      <y>117</y>
      <width>104</width>
      <height>26</height>

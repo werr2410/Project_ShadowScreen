@@ -397,6 +397,8 @@ namespace ShadowScreen {
             if(adress.selectDataById(db, adressId) == false)
                 adress.insertDataTable(db);
 
+            query.finish();
+
             // bankcard - start
             QSqlQuery q(db);
             Bankcard bc;
@@ -456,6 +458,8 @@ namespace ShadowScreen {
             q.clear();
             // review - end
 
+            q.finish();
+
             return true;
         }
 
@@ -474,6 +478,7 @@ namespace ShadowScreen {
             query.bindValue(7, hashcode);
             query.bindValue(8, email);
             query.bindValue(9, password);
+            query.bindValue(13, getId());
 
             // adress - start
             int tmpId = adress.getDataById(db);
@@ -508,6 +513,9 @@ namespace ShadowScreen {
                 query.bindValue(12, computer.getId());
             }
             // computer - end
+
+            query.exec();
+            query.finish();
 
             // bankcard - start
             QSqlQuery UBQuery(db);
@@ -586,9 +594,7 @@ namespace ShadowScreen {
             }
             // review - end
 
-            query.bindValue(13, getId());
-
-            query.exec();
+            UBQuery.finish();
         }
 
         int User::getDataById(QSqlDatabase &db) {

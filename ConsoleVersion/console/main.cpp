@@ -24,10 +24,16 @@ int main(int argc, char *argv[]) {
     qDebug() << db.open();
 
     if(db.getStatus()) {
+
+        try {
         User andrey("username", "password");
         andrey.setComputer(Computer(true));
 
         andrey.init(db.getDatabase());
+
+        } catch(SSExecptions* obj) {
+            qDebug() << obj->message();
+        }
     }
 
     return a.exec();
