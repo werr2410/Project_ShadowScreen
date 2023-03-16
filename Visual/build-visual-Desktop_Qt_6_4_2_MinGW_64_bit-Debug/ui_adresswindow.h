@@ -29,8 +29,8 @@ public:
     QTextEdit *textEdit_Town;
     QTextEdit *textEdit_Street;
     QTextEdit *textEdit_Number;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *pushButton_add;
+    QPushButton *pushButton_Cancale;
 
     void setupUi(QDialog *AdressWindow)
     {
@@ -61,12 +61,12 @@ public:
         textEdit_Number = new QTextEdit(AdressWindow);
         textEdit_Number->setObjectName("textEdit_Number");
         textEdit_Number->setGeometry(QRect(80, 120, 171, 26));
-        pushButton = new QPushButton(AdressWindow);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(28, 190, 98, 24));
-        pushButton_2 = new QPushButton(AdressWindow);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(147, 190, 103, 24));
+        pushButton_add = new QPushButton(AdressWindow);
+        pushButton_add->setObjectName("pushButton_add");
+        pushButton_add->setGeometry(QRect(28, 190, 98, 24));
+        pushButton_Cancale = new QPushButton(AdressWindow);
+        pushButton_Cancale->setObjectName("pushButton_Cancale");
+        pushButton_Cancale->setGeometry(QRect(147, 190, 103, 24));
 
         retranslateUi(AdressWindow);
 
@@ -80,8 +80,8 @@ public:
         label_Town->setText(QCoreApplication::translate("AdressWindow", "Town:", nullptr));
         label_Street->setText(QCoreApplication::translate("AdressWindow", "Street:", nullptr));
         label_Number->setText(QCoreApplication::translate("AdressWindow", "Number:", nullptr));
-        pushButton->setText(QCoreApplication::translate("AdressWindow", "add", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("AdressWindow", "cancel", nullptr));
+        pushButton_add->setText(QCoreApplication::translate("AdressWindow", "add", nullptr));
+        pushButton_Cancale->setText(QCoreApplication::translate("AdressWindow", "cancel", nullptr));
     } // retranslateUi
 
 };

@@ -390,6 +390,40 @@ debug/moc_detailsetwindow.cpp: ../visual/Windows/Detail/detailsetwindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QFileDialog \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qfiledialog.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
+		../visual/Computer/computer.h \
+		../visual/Computer/baseboard.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlQuery \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqlquery.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlglobal.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsql-config.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlexports.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqldatabase.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QBuffer \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qbuffer.h \
+		../visual/Computer/detail.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlDatabase \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QTextStream \
+		../visual/Computer/detailinfo.h \
+		D:/Qt/6.4.2/mingw_64/include/QtGui/QPixmap \
+		../visual/Computer/cpu.h \
+		../visual/Computer/memorychip.h \
+		../visual/Computer/storage.h \
+		../visual/Computer/gpu.h \
 		debug/moc_predefs.h \
 		D:/Qt/6.4.2/mingw_64/bin/moc.exe
 	D:\Qt\6.4.2\mingw_64\bin\moc.exe $(DEFINES) --include S:/FinalProject/Visual/build-visual-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -IS:/FinalProject/Visual/visual -ID:/Qt/6.4.2/mingw_64/include -ID:/Qt/6.4.2/mingw_64/include/QtWidgets -ID:/Qt/6.4.2/mingw_64/include/QtGui -ID:/Qt/6.4.2/mingw_64/include/QtSql -ID:/Qt/6.4.2/mingw_64/include/QtCore -I. -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -ID:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\visual\Windows\Detail\detailsetwindow.h -o debug\moc_detailsetwindow.cpp
@@ -672,6 +706,57 @@ debug/moc_registrationwindow.cpp: ../visual/Windows/Other/registrationwindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QFileDialog \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qfiledialog.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QTextStream \
+		../visual/User/user.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDate \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QRandomGenerator \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qrandom.h \
+		../visual/Computer/computer.h \
+		../visual/Computer/baseboard.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlQuery \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqlquery.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlglobal.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsql-config.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlexports.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqldatabase.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QBuffer \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qbuffer.h \
+		../visual/Computer/detail.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlDatabase \
+		../visual/Computer/detailinfo.h \
+		D:/Qt/6.4.2/mingw_64/include/QtGui/QPixmap \
+		../visual/Computer/cpu.h \
+		../visual/Computer/memorychip.h \
+		../visual/Computer/storage.h \
+		../visual/Computer/gpu.h \
+		../visual/Chating/chat.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QQueue \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qqueue.h \
+		../visual/Chating/message.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDateTime \
+		../visual/Exception/exceptions.h \
+		../visual/Database/mssql.h \
+		../visual/Data/telegram.h \
+		../visual/Data/adress.h \
+		../visual/Data/delivery.h \
+		../visual/Data/review.h \
+		../visual/Data/bankcard.h \
 		debug/moc_predefs.h \
 		D:/Qt/6.4.2/mingw_64/bin/moc.exe
 	D:\Qt\6.4.2\mingw_64\bin\moc.exe $(DEFINES) --include S:/FinalProject/Visual/build-visual-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -IS:/FinalProject/Visual/visual -ID:/Qt/6.4.2/mingw_64/include -ID:/Qt/6.4.2/mingw_64/include/QtWidgets -ID:/Qt/6.4.2/mingw_64/include/QtGui -ID:/Qt/6.4.2/mingw_64/include/QtSql -ID:/Qt/6.4.2/mingw_64/include/QtCore -I. -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -ID:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\visual\Windows\Other\registrationwindow.h -o debug\moc_registrationwindow.cpp
@@ -956,6 +1041,55 @@ debug/moc_userdatawindow.cpp: ../visual/Windows/User/Data/userdatawindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../visual/User/user.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDate \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QRandomGenerator \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qrandom.h \
+		../visual/Computer/computer.h \
+		../visual/Computer/baseboard.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlQuery \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqlquery.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlglobal.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsql-config.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlexports.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqldatabase.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QBuffer \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qbuffer.h \
+		../visual/Computer/detail.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlDatabase \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QTextStream \
+		../visual/Computer/detailinfo.h \
+		D:/Qt/6.4.2/mingw_64/include/QtGui/QPixmap \
+		../visual/Computer/cpu.h \
+		../visual/Computer/memorychip.h \
+		../visual/Computer/storage.h \
+		../visual/Computer/gpu.h \
+		../visual/Chating/chat.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QQueue \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qqueue.h \
+		../visual/Chating/message.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDateTime \
+		../visual/Exception/exceptions.h \
+		../visual/Database/mssql.h \
+		../visual/Data/telegram.h \
+		../visual/Data/adress.h \
+		../visual/Data/delivery.h \
+		../visual/Data/review.h \
+		../visual/Data/bankcard.h \
 		debug/moc_predefs.h \
 		D:/Qt/6.4.2/mingw_64/bin/moc.exe
 	D:\Qt\6.4.2\mingw_64\bin\moc.exe $(DEFINES) --include S:/FinalProject/Visual/build-visual-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -IS:/FinalProject/Visual/visual -ID:/Qt/6.4.2/mingw_64/include -ID:/Qt/6.4.2/mingw_64/include/QtWidgets -ID:/Qt/6.4.2/mingw_64/include/QtGui -ID:/Qt/6.4.2/mingw_64/include/QtSql -ID:/Qt/6.4.2/mingw_64/include/QtCore -I. -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -ID:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\visual\Windows\User\Data\userdatawindow.h -o debug\moc_userdatawindow.cpp
@@ -1097,6 +1231,17 @@ debug/moc_mybankcardwindow.cpp: ../visual/Windows/User/mybankcardwindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		../visual/Windows/bankcardwindow.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../visual/Data/bankcard.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDate \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
 		debug/moc_predefs.h \
 		D:/Qt/6.4.2/mingw_64/bin/moc.exe
 	D:\Qt\6.4.2\mingw_64\bin\moc.exe $(DEFINES) --include S:/FinalProject/Visual/build-visual-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -IS:/FinalProject/Visual/visual -ID:/Qt/6.4.2/mingw_64/include -ID:/Qt/6.4.2/mingw_64/include/QtWidgets -ID:/Qt/6.4.2/mingw_64/include/QtGui -ID:/Qt/6.4.2/mingw_64/include/QtSql -ID:/Qt/6.4.2/mingw_64/include/QtCore -I. -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -ID:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\visual\Windows\User\mybankcardwindow.h -o debug\moc_mybankcardwindow.cpp
@@ -1520,6 +1665,8 @@ debug/moc_adresswindow.cpp: ../visual/Windows/adresswindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		../visual/Data/adress.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
 		debug/moc_predefs.h \
@@ -1663,6 +1810,8 @@ debug/moc_bankcardwindow.cpp: ../visual/Windows/bankcardwindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		../visual/Data/bankcard.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QDate \
@@ -2095,15 +2244,66 @@ debug/moc_shadowwindow.cpp: ../visual/shadowwindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
-		../visual/Windows/bankcardwindow.h \
+		../visual/Windows/Other/registrationwindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QDialog \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qdialog.h \
-		../visual/Data/bankcard.h \
-		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
-		D:/Qt/6.4.2/mingw_64/include/QtCore/QDate \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QFileDialog \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qfiledialog.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QTextStream \
+		../visual/User/user.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDate \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QRandomGenerator \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qrandom.h \
+		../visual/Computer/computer.h \
+		../visual/Computer/baseboard.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlQuery \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqlquery.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlglobal.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsql-config.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlexports.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqldatabase.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QBuffer \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qbuffer.h \
+		../visual/Computer/detail.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlDatabase \
+		../visual/Computer/detailinfo.h \
+		D:/Qt/6.4.2/mingw_64/include/QtGui/QPixmap \
+		../visual/Computer/cpu.h \
+		../visual/Computer/memorychip.h \
+		../visual/Computer/storage.h \
+		../visual/Computer/gpu.h \
+		../visual/Chating/chat.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QQueue \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qqueue.h \
+		../visual/Chating/message.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDateTime \
+		../visual/Exception/exceptions.h \
+		../visual/Database/mssql.h \
+		../visual/Data/telegram.h \
+		../visual/Data/adress.h \
+		../visual/Data/delivery.h \
+		../visual/Data/review.h \
+		../visual/Data/bankcard.h \
+		../visual/Windows/Other/telegramwindow.h \
+		../visual/Windows/Detail/detailsetwindow.h \
+		../visual/Windows/User/Data/userdatawindow.h \
+		../visual/Windows/User/mybankcardwindow.h \
+		../visual/Windows/bankcardwindow.h \
+		../visual/Windows/User/myreviewwindow.h \
 		debug/moc_predefs.h \
 		D:/Qt/6.4.2/mingw_64/bin/moc.exe
 	D:\Qt\6.4.2\mingw_64\bin\moc.exe $(DEFINES) --include S:/FinalProject/Visual/build-visual-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -IS:/FinalProject/Visual/visual -ID:/Qt/6.4.2/mingw_64/include -ID:/Qt/6.4.2/mingw_64/include/QtWidgets -ID:/Qt/6.4.2/mingw_64/include/QtGui -ID:/Qt/6.4.2/mingw_64/include/QtSql -ID:/Qt/6.4.2/mingw_64/include/QtCore -I. -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -ID:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\visual\shadowwindow.h -o debug\moc_shadowwindow.cpp
@@ -3978,6 +4178,40 @@ debug/detailsetwindow.o: ../visual/Windows/Detail/detailsetwindow.cpp ../visual/
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QFileDialog \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qfiledialog.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
+		../visual/Computer/computer.h \
+		../visual/Computer/baseboard.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlQuery \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqlquery.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlglobal.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsql-config.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlexports.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqldatabase.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QBuffer \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qbuffer.h \
+		../visual/Computer/detail.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlDatabase \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QTextStream \
+		../visual/Computer/detailinfo.h \
+		D:/Qt/6.4.2/mingw_64/include/QtGui/QPixmap \
+		../visual/Computer/cpu.h \
+		../visual/Computer/memorychip.h \
+		../visual/Computer/storage.h \
+		../visual/Computer/gpu.h \
 		ui_detailsetwindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QVariant \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
@@ -4002,7 +4236,6 @@ debug/detailsetwindow.o: ../visual/Windows/Detail/detailsetwindow.cpp ../visual/
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qpromise.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/qinputmethod.h \
-		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication_platform.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QLabel \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qlabel.h \
@@ -4160,7 +4393,37 @@ debug/helpmewindow.o: ../visual/Windows/Other/helpmewindow.cpp ../visual/Windows
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
-		ui_helpmewindow.h
+		ui_helpmewindow.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QVariant \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qapplication.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qcoreapplication.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qeventloop.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qjnitypes.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfuture.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfutureinterface.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qmutex.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qtsan_impl.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qresultstore.h \
+		../visual/exception \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfuture_impl.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qthreadpool.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qthread.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qelapsedtimer.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qrunnable.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qexception.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qpromise.h \
+		D:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication.h \
+		D:/Qt/6.4.2/mingw_64/include/QtGui/qinputmethod.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
+		D:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QLabel \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qlabel.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qframe.h \
+		D:/Qt/6.4.2/mingw_64/include/QtGui/qpicture.h \
+		D:/Qt/6.4.2/mingw_64/include/QtGui/qtextdocument.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\helpmewindow.o ..\visual\Windows\Other\helpmewindow.cpp
 
 debug/registrationwindow.o: ../visual/Windows/Other/registrationwindow.cpp ../visual/Windows/Other/registrationwindow.h \
@@ -4300,6 +4563,57 @@ debug/registrationwindow.o: ../visual/Windows/Other/registrationwindow.cpp ../vi
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QFileDialog \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qfiledialog.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QTextStream \
+		../visual/User/user.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDate \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QRandomGenerator \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qrandom.h \
+		../visual/Computer/computer.h \
+		../visual/Computer/baseboard.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlQuery \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqlquery.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlglobal.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsql-config.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlexports.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqldatabase.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QBuffer \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qbuffer.h \
+		../visual/Computer/detail.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlDatabase \
+		../visual/Computer/detailinfo.h \
+		D:/Qt/6.4.2/mingw_64/include/QtGui/QPixmap \
+		../visual/Computer/cpu.h \
+		../visual/Computer/memorychip.h \
+		../visual/Computer/storage.h \
+		../visual/Computer/gpu.h \
+		../visual/Chating/chat.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QQueue \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qqueue.h \
+		../visual/Chating/message.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDateTime \
+		../visual/Exception/exceptions.h \
+		../visual/Database/mssql.h \
+		../visual/Data/telegram.h \
+		../visual/Data/adress.h \
+		../visual/Data/delivery.h \
+		../visual/Data/review.h \
+		../visual/Data/bankcard.h \
 		ui_registrationwindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QVariant \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
@@ -4324,7 +4638,6 @@ debug/registrationwindow.o: ../visual/Windows/Other/registrationwindow.cpp ../vi
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qpromise.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/qinputmethod.h \
-		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication_platform.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QFrame \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qframe.h \
@@ -4515,7 +4828,10 @@ debug/telegramwindow.o: ../visual/Windows/Other/telegramwindow.cpp ../visual/Win
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qlabel.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qframe.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/qpicture.h \
-		D:/Qt/6.4.2/mingw_64/include/QtGui/qtextdocument.h
+		D:/Qt/6.4.2/mingw_64/include/QtGui/qtextdocument.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QPushButton \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractbutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\telegramwindow.o ..\visual\Windows\Other\telegramwindow.cpp
 
 debug/userdatawindow.o: ../visual/Windows/User/Data/userdatawindow.cpp ../visual/Windows/User/Data/userdatawindow.h \
@@ -4655,6 +4971,55 @@ debug/userdatawindow.o: ../visual/Windows/User/Data/userdatawindow.cpp ../visual
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../visual/User/user.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDate \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QRandomGenerator \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qrandom.h \
+		../visual/Computer/computer.h \
+		../visual/Computer/baseboard.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlQuery \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqlquery.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlglobal.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsql-config.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlexports.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqldatabase.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QBuffer \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qbuffer.h \
+		../visual/Computer/detail.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlDatabase \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QTextStream \
+		../visual/Computer/detailinfo.h \
+		D:/Qt/6.4.2/mingw_64/include/QtGui/QPixmap \
+		../visual/Computer/cpu.h \
+		../visual/Computer/memorychip.h \
+		../visual/Computer/storage.h \
+		../visual/Computer/gpu.h \
+		../visual/Chating/chat.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QQueue \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qqueue.h \
+		../visual/Chating/message.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDateTime \
+		../visual/Exception/exceptions.h \
+		../visual/Database/mssql.h \
+		../visual/Data/telegram.h \
+		../visual/Data/adress.h \
+		../visual/Data/delivery.h \
+		../visual/Data/review.h \
+		../visual/Data/bankcard.h \
 		ui_userdatawindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QVariant \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
@@ -4679,12 +5044,9 @@ debug/userdatawindow.o: ../visual/Windows/User/Data/userdatawindow.cpp ../visual
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qpromise.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/qinputmethod.h \
-		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication_platform.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QDateEdit \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qdatetimeedit.h \
-		D:/Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
-		D:/Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/qvalidator.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qregularexpression.h \
@@ -4843,6 +5205,17 @@ debug/mybankcardwindow.o: ../visual/Windows/User/mybankcardwindow.cpp ../visual/
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		../visual/Windows/bankcardwindow.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../visual/Data/bankcard.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDate \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
 		ui_mybankcardwindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QVariant \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
@@ -4867,15 +5240,9 @@ debug/mybankcardwindow.o: ../visual/Windows/User/mybankcardwindow.cpp ../visual/
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qpromise.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/qinputmethod.h \
-		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication_platform.h \
-		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QHeaderView \
-		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qheaderview.h \
-		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qframe.h \
-		D:/Qt/6.4.2/mingw_64/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/6.4.2/mingw_64/include/QtCore/qitemselectionmodel.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QComboBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qcombobox.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qstyleoption.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
@@ -4887,6 +5254,13 @@ debug/mybankcardwindow.o: ../visual/Windows/User/mybankcardwindow.cpp ../visual/
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabbar.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qrubberband.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qframe.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qabstractitemmodel.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QHeaderView \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qheaderview.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qitemselectionmodel.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QLabel \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qlabel.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/qpicture.h \
@@ -5416,6 +5790,8 @@ debug/adresswindow.o: ../visual/Windows/adresswindow.cpp ../visual/Windows/adres
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		../visual/Data/adress.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
 		ui_adresswindow.h \
@@ -5598,6 +5974,8 @@ debug/bankcardwindow.o: ../visual/Windows/bankcardwindow.cpp ../visual/Windows/b
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		../visual/Data/bankcard.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QDate \
@@ -6171,15 +6549,66 @@ debug/main.o: ../visual/main.cpp ../visual/shadowwindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
-		../visual/Windows/bankcardwindow.h \
+		../visual/Windows/Other/registrationwindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QDialog \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qdialog.h \
-		../visual/Data/bankcard.h \
-		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
-		D:/Qt/6.4.2/mingw_64/include/QtCore/QDate \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QFileDialog \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qfiledialog.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QTextStream \
+		../visual/User/user.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDate \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QRandomGenerator \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qrandom.h \
+		../visual/Computer/computer.h \
+		../visual/Computer/baseboard.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlQuery \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqlquery.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlglobal.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsql-config.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlexports.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqldatabase.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QBuffer \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qbuffer.h \
+		../visual/Computer/detail.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlDatabase \
+		../visual/Computer/detailinfo.h \
+		D:/Qt/6.4.2/mingw_64/include/QtGui/QPixmap \
+		../visual/Computer/cpu.h \
+		../visual/Computer/memorychip.h \
+		../visual/Computer/storage.h \
+		../visual/Computer/gpu.h \
+		../visual/Chating/chat.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QQueue \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qqueue.h \
+		../visual/Chating/message.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDateTime \
+		../visual/Exception/exceptions.h \
+		../visual/Database/mssql.h \
+		../visual/Data/telegram.h \
+		../visual/Data/adress.h \
+		../visual/Data/delivery.h \
+		../visual/Data/review.h \
+		../visual/Data/bankcard.h \
+		../visual/Windows/Other/telegramwindow.h \
+		../visual/Windows/Detail/detailsetwindow.h \
+		../visual/Windows/User/Data/userdatawindow.h \
+		../visual/Windows/User/mybankcardwindow.h \
+		../visual/Windows/bankcardwindow.h \
+		../visual/Windows/User/myreviewwindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qapplication.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qcoreapplication.h \
@@ -6343,15 +6772,66 @@ debug/shadowwindow.o: ../visual/shadowwindow.cpp ../visual/shadowwindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
-		../visual/Windows/bankcardwindow.h \
+		../visual/Windows/Other/registrationwindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QDialog \
 		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qdialog.h \
-		../visual/Data/bankcard.h \
-		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
-		D:/Qt/6.4.2/mingw_64/include/QtCore/QDate \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/QFileDialog \
+		D:/Qt/6.4.2/mingw_64/include/QtWidgets/qfiledialog.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QTextStream \
+		../visual/User/user.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDate \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QRandomGenerator \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qrandom.h \
+		../visual/Computer/computer.h \
+		../visual/Computer/baseboard.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlQuery \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqlquery.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlglobal.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsql-config.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qtsqlexports.h \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/qsqldatabase.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QBuffer \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qbuffer.h \
+		../visual/Computer/detail.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QString \
+		D:/Qt/6.4.2/mingw_64/include/QtSql/QSqlDatabase \
+		../visual/Computer/detailinfo.h \
+		D:/Qt/6.4.2/mingw_64/include/QtGui/QPixmap \
+		../visual/Computer/cpu.h \
+		../visual/Computer/memorychip.h \
+		../visual/Computer/storage.h \
+		../visual/Computer/gpu.h \
+		../visual/Chating/chat.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QQueue \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/qqueue.h \
+		../visual/Chating/message.h \
+		D:/Qt/6.4.2/mingw_64/include/QtCore/QDateTime \
+		../visual/Exception/exceptions.h \
+		../visual/Database/mssql.h \
+		../visual/Data/telegram.h \
+		../visual/Data/adress.h \
+		../visual/Data/delivery.h \
+		../visual/Data/review.h \
+		../visual/Data/bankcard.h \
+		../visual/Windows/Other/telegramwindow.h \
+		../visual/Windows/Detail/detailsetwindow.h \
+		../visual/Windows/User/Data/userdatawindow.h \
+		../visual/Windows/User/mybankcardwindow.h \
+		../visual/Windows/bankcardwindow.h \
+		../visual/Windows/User/myreviewwindow.h \
 		ui_shadowwindow.h \
 		D:/Qt/6.4.2/mingw_64/include/QtCore/QVariant \
 		D:/Qt/6.4.2/mingw_64/include/QtGui/QAction \

@@ -36,8 +36,12 @@ namespace ShadowScreen {
             return type;
         }
 
+        Adress Delivery::getAdress() const {
+            return adress;
+        }
+
         QString Delivery::toString() const {
-            return title + "|" +  + "|" + adress.toString();
+            return title + "|" + "|" + adress.toString();
 
             // ????
         }

@@ -12,35 +12,33 @@ namespace ShadowScreen {
             enum TypeDelivery{
                     Ukrposhta,
                     NovaPoshta,
-                    Meest };
-        //fields
+                    Meest
+            };
+
             QString title;
             TypeDelivery type;
             Adress adress;
+
         public:
-        //constructs
             Delivery(QString title, TypeDelivery type, Adress adress);
             Delivery(TypeDelivery type, Adress adress);
             Delivery();
 
-        //methods
             void setTitle(QString title);
             void setTypeDelivery(TypeDelivery type);
             void setAdress(Adress adress);
+
             QString getTitle() const;
             TypeDelivery getTypeDelivery() const;
+
+
+
             QString toString() const;
-        //overload methods
             void init(QString title, TypeDelivery type, Adress adress);
             void init(TypeDelivery type, Adress adress);
 
-        //overload operators
             bool operator==(const Delivery &rhs) const;
             bool operator!=(const Delivery &rhs) const;
-        /*
-        operator !=
-        operator ==
-        */
         };
     }
 }
