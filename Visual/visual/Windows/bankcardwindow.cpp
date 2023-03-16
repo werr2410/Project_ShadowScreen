@@ -29,6 +29,8 @@ void BankcardWindow::on_pushButton_add_clicked() {
 
         box.setText("numbercard isn't invalid");
         box.exec();
+
+        return;
     }
 
     QDate expirationDate = QDate(year, month, 0);
@@ -36,6 +38,8 @@ void BankcardWindow::on_pushButton_add_clicked() {
     bankcard = Data::Bankcard((title.isEmpty() ? "no title" : title), number, expirationDate);
 
     emit SendBankcard(bankcard);
+
+    close();
 }
 
 

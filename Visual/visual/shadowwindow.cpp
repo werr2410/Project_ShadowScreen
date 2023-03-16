@@ -10,6 +10,7 @@ ShadowWindow::ShadowWindow(QWidget *parent) :
     detailset = new DetailSetWindow(this);
     aboutme = new UserDataWindow(this);
     telegram = new TelegramWindow(this);
+    bankcard = new MyBankcardWindow(this);
 
     // regist
     connect(regist, &RegistrationWindow::registrationSuccess, this, &ShadowWindow::onRegistrationSuccess); // regist -> main
@@ -25,6 +26,10 @@ ShadowWindow::ShadowWindow(QWidget *parent) :
     // telegram
     connect(this, &ShadowWindow::SendTelegram, telegram, &TelegramWindow::getTelegram);         // main     -> telegram
 
+    // my bankcard
+    //connect(this, &ShadowWindow::SendBankcard, bankcard, &MyBankcardWindow::getBankcard);       // main     -> bankcard
+    connect(bankcard, &MyBankcardWindow::sendToMainBankcard, this, &ShadowWindow::getBankcard); // bankcard -> main
+
     regist->show();
 }
 
@@ -33,6 +38,7 @@ ShadowWindow::~ShadowWindow() {
     delete detailset;
     delete aboutme;
     delete telegram;
+    delete bankcard;
 
     delete ui;
 }
@@ -156,13 +162,18 @@ void ShadowWindow::getAboutMe(User user) {
     ui->label_username_set->setText(user.getUsername());
 }
 
+void ShadowWindow::getBankcard(QVector<Bankcard> bankcard) {
+    user.setBankcard(bankcard);
+
+    this->bankcard->close();
+}
+
 void ShadowWindow::on_pushButton_CPU_clicked() {
     Detail* dt = new CPU(user.getComputer().getCPU());
     DetailInfo* dtinfo = new CPU(user.getComputer().getCPU());
     emit SendDatainfo(dt, dtinfo);
     detailset->show();
 }
-
 
 void ShadowWindow::on_pushButton_GPU_clicked() {
     Detail* dt = new GPU(user.getComputer().getGPU());
@@ -172,7 +183,6 @@ void ShadowWindow::on_pushButton_GPU_clicked() {
 
 }
 
-
 void ShadowWindow::on_pushButton_STORAGE_clicked() {
     Detail* dt = new Storage(user.getComputer().getStorage());
     DetailInfo* dtinfo = new Storage(user.getComputer().getStorage());
@@ -181,7 +191,6 @@ void ShadowWindow::on_pushButton_STORAGE_clicked() {
 
 }
 
-
 void ShadowWindow::on_pushButton_MEMORYCHIP_clicked() {
     Detail* dt = new Memorychip(user.getComputer().getMemorychip());
     DetailInfo* dtinfo = new Memorychip(user.getComputer().getMemorychip());
@@ -189,14 +198,12 @@ void ShadowWindow::on_pushButton_MEMORYCHIP_clicked() {
     detailset->show();
 }
 
-
 void ShadowWindow::on_pushButton_BASEBOARD_clicked() {
     Detail* dt = new Baseboard(user.getComputer().getBaseboard());
     DetailInfo* dtinfo = new Baseboard(user.getComputer().getBaseboard());
     emit SendDatainfo(dt, dtinfo);
     detailset->show();
 }
-
 
 void ShadowWindow::on_pushButton_AboutMe_clicked() {
    emit SendAboutMe(user);
@@ -208,5 +215,11 @@ void ShadowWindow::on_pushButton_Telegram_clicked() {
     emit SendTelegram(user.getTelegram());
 
     telegram->show();
+}
+
+void ShadowWindow::on_pushButton_MyBankcard_clicked() {
+    emit SendBankcard(user.getBankcard());
+
+    bankcard->show();
 }
 

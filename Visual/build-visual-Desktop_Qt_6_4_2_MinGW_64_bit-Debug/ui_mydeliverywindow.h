@@ -55,7 +55,7 @@ public:
         label->setGeometry(QRect(460, 52, 49, 12));
         label_2 = new QLabel(MyDeliveryWindow);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(460, 16, 49, 20));
+        label_2->setGeometry(QRect(460, 16, 101, 20));
         textEdit = new QTextEdit(MyDeliveryWindow);
         textEdit->setObjectName("textEdit");
         textEdit->setGeometry(QRect(460, 72, 121, 27));
@@ -87,7 +87,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
         ___qtablewidgetitem2->setText(QCoreApplication::translate("MyDeliveryWindow", "Adress", nullptr));
         label->setText(QCoreApplication::translate("MyDeliveryWindow", "Title:", nullptr));
-        label_2->setText(QCoreApplication::translate("MyDeliveryWindow", "Delete:", nullptr));
+        label_2->setText(QCoreApplication::translate("MyDeliveryWindow", "- - - - DELETE - - - -", nullptr));
         pushButton->setText(QCoreApplication::translate("MyDeliveryWindow", "delete", nullptr));
         label_3->setText(QCoreApplication::translate("MyDeliveryWindow", "Type Delivery:", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MyDeliveryWindow", "add new Delivery", nullptr));

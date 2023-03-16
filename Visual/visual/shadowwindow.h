@@ -10,6 +10,8 @@
 
 #include "Windows/User/Data/userdatawindow.h"
 
+#include "Windows/User/mybankcardwindow.h"
+
 
 #include "User/user.h"
 
@@ -40,6 +42,9 @@ private:
     // Data window
     UserDataWindow* aboutme;
 
+    // my bankcard
+    MyBankcardWindow* bankcard;
+
     void setUser(User user);
     void initComputer(Computer computer);
     void setImageDetails();
@@ -54,6 +59,9 @@ public slots:
     // about me
     void getAboutMe(ShadowScreen::user::User user);
 
+    // my bankcard
+    void getBankcard(QVector<ShadowScreen::Data::Bankcard> bankcard);
+
 private slots:
     void on_pushButton_CPU_clicked();
     void on_pushButton_GPU_clicked();
@@ -65,6 +73,8 @@ private slots:
 
     void on_pushButton_Telegram_clicked();
 
+    void on_pushButton_MyBankcard_clicked();
+
 signals:
     // detail set
     void SendDatainfo(ShadowScreen::user::Detail* data, ShadowScreen::computer::DetailInfo* datainfo);
@@ -74,6 +84,9 @@ signals:
 
     // telegram
     void SendTelegram(ShadowScreen::Data::Telegram telegram);
+
+    // my bankcard
+    void SendBankcard(QVector<Bankcard> bankcard);
 
 };
 #endif // SHADOWWINDOW_H
