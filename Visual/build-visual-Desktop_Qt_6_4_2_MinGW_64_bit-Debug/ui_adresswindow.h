@@ -63,10 +63,10 @@ public:
         textEdit_Number->setGeometry(QRect(80, 120, 171, 26));
         pushButton = new QPushButton(AdressWindow);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(40, 190, 90, 24));
+        pushButton->setGeometry(QRect(28, 190, 98, 24));
         pushButton_2 = new QPushButton(AdressWindow);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(150, 190, 100, 24));
+        pushButton_2->setGeometry(QRect(147, 190, 103, 24));
 
         retranslateUi(AdressWindow);
 

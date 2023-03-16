@@ -11,7 +11,7 @@
 #include "Windows/User/Data/userdatawindow.h"
 
 #include "Windows/User/mybankcardwindow.h"
-
+#include "Windows/User/myreviewwindow.h"
 
 #include "User/user.h"
 
@@ -42,8 +42,10 @@ private:
     // Data window
     UserDataWindow* aboutme;
 
-    // my bankcard
+    // my user data
     MyBankcardWindow* bankcard;
+    MyReviewWindow* review;
+
 
     void setUser(User user);
     void initComputer(Computer computer);
@@ -68,12 +70,12 @@ private slots:
     void on_pushButton_STORAGE_clicked();
     void on_pushButton_MEMORYCHIP_clicked();
     void on_pushButton_BASEBOARD_clicked();
-
     void on_pushButton_AboutMe_clicked();
-
     void on_pushButton_Telegram_clicked();
-
     void on_pushButton_MyBankcard_clicked();
+
+
+    void on_pushButton_MyReview_clicked();
 
 signals:
     // detail set
@@ -86,7 +88,9 @@ signals:
     void SendTelegram(ShadowScreen::Data::Telegram telegram);
 
     // my bankcard
-    void SendBankcard(QVector<Bankcard> bankcard);
+    void SendBankcard(QVector<ShadowScreen::Data::Bankcard> bankcard);
 
+    // my review
+    void SendReview(int count, float mark);
 };
 #endif // SHADOWWINDOW_H

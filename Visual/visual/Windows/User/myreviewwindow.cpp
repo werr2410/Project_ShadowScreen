@@ -3,20 +3,21 @@
 
 MyReviewWindow::MyReviewWindow(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::MyReviewWindow)
-{
+    ui(new Ui::MyReviewWindow) {
     ui->setupUi(this);
 
     count = 0;
     mark = 0;
 }
 
-MyReviewWindow::~MyReviewWindow()
-{
+MyReviewWindow::~MyReviewWindow() {
     delete ui;
 }
 
 void MyReviewWindow::on_pushButton_close_clicked() {
+    count = 0;
+    mark = 0;
+
     close();
 }
 

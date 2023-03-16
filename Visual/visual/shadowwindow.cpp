@@ -11,6 +11,7 @@ ShadowWindow::ShadowWindow(QWidget *parent) :
     aboutme = new UserDataWindow(this);
     telegram = new TelegramWindow(this);
     bankcard = new MyBankcardWindow(this);
+    review = new MyReviewWindow(this);
 
     // regist
     connect(regist, &RegistrationWindow::registrationSuccess, this, &ShadowWindow::onRegistrationSuccess); // regist -> main
@@ -30,6 +31,9 @@ ShadowWindow::ShadowWindow(QWidget *parent) :
     //connect(this, &ShadowWindow::SendBankcard, bankcard, &MyBankcardWindow::getBankcard);       // main     -> bankcard
     connect(bankcard, &MyBankcardWindow::sendToMainBankcard, this, &ShadowWindow::getBankcard); // bankcard -> main
 
+    // my review
+    connect(this, &ShadowWindow::SendReview, review, &MyReviewWindow::getCountMark);            //  main    -> review
+
     regist->show();
 }
 
@@ -39,6 +43,7 @@ ShadowWindow::~ShadowWindow() {
     delete aboutme;
     delete telegram;
     delete bankcard;
+    delete review;
 
     delete ui;
 }
@@ -223,3 +228,19 @@ void ShadowWindow::on_pushButton_MyBankcard_clicked() {
     bankcard->show();
 }
 
+void ShadowWindow::on_pushButton_MyReview_clicked() {
+    int count = user.getReview().length();
+    float res = 0.f;
+
+    for(const auto &x : user.getReview())
+       res += x.getMark();
+
+    if(count != 0)
+        res /= count;
+    else
+        res = 0;
+
+    emit SendReview(count, res);
+
+    review->show();
+}
