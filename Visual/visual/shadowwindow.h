@@ -4,7 +4,13 @@
 #include <QMainWindow>
 
 #include "Windows/Other/registrationwindow.h"
+#include "Windows/Other/telegramwindow.h"
+
 #include "Windows/Detail/detailsetwindow.h"
+
+#include "Windows/User/Data/userdatawindow.h"
+
+
 #include "User/user.h"
 
 QT_BEGIN_NAMESPACE
@@ -13,8 +19,7 @@ QT_END_NAMESPACE
 
 using namespace ShadowScreen::user;
 
-class ShadowWindow : public QMainWindow
-{
+class ShadowWindow : public QMainWindow {
     Q_OBJECT
 
 public:
@@ -25,14 +30,29 @@ private:
     Ui::ShadowWindow *ui;
     User user;
 
+    // other window
     RegistrationWindow* regist;
+    TelegramWindow* telegram;
+
+    // detail window
     DetailSetWindow* detailset;
+
+    // Data window
+    UserDataWindow* aboutme;
 
     void setUser(User user);
     void initComputer(Computer computer);
+    void setImageDetails();
 
 public slots:
+    // registration
     void onRegistrationSuccess(QString username, QString password);
+
+    // detail info
+    void getDetailInfo(QString desc, QString status, QPixmap image, bool isSale, QString type);
+
+    // about me
+    void getAboutMe(ShadowScreen::user::User user);
 
 private slots:
     void on_pushButton_CPU_clicked();
@@ -41,9 +61,19 @@ private slots:
     void on_pushButton_MEMORYCHIP_clicked();
     void on_pushButton_BASEBOARD_clicked();
 
+    void on_pushButton_AboutMe_clicked();
+
+    void on_pushButton_Telegram_clicked();
+
 signals:
+    // detail set
     void SendDatainfo(ShadowScreen::user::Detail* data, ShadowScreen::computer::DetailInfo* datainfo);
 
+    // about me
+    void SendAboutMe(ShadowScreen::user::User user);
+
+    // telegram
+    void SendTelegram(ShadowScreen::Data::Telegram telegram);
 
 };
 #endif // SHADOWWINDOW_H

@@ -6,11 +6,6 @@ DetailSetWindow::DetailSetWindow(QWidget *parent) :
     ui(new Ui::DetailSetWindow)
 {
     ui->setupUi(this);
-}
-
-DetailSetWindow::~DetailSetWindow()
-{
-    delete ui;
 
     description = "";
     status = "";
@@ -18,11 +13,20 @@ DetailSetWindow::~DetailSetWindow()
     isSale = false;
 }
 
+DetailSetWindow::~DetailSetWindow()
+{
+    delete ui;
+
+}
+
 void DetailSetWindow::init() {
 
     this->description = "";
     this->status = "";
     this->isSale = false;
+    this->image = QPixmap();
+    this->type = "";
+
 
     ui->textEdit_Mnufacturer->setReadOnly(true);
     ui->textEdit_Field1->setReadOnly(true);
@@ -49,6 +53,8 @@ void DetailSetWindow::init() {
 
 void DetailSetWindow::receiveData(Detail *data, DetailInfo* datainfo) {
     init();
+
+    type = data->type();
 
     if(data->type() == "cpu") {
         CPU* cpu = dynamic_cast<CPU*>(data);
@@ -149,7 +155,9 @@ void DetailSetWindow::on_pushButton_Save_clicked() {
     this->description = ui->textEdit_Description->toPlainText();
     this->status = ui->textEdit_Status->toPlainText();
 
+   //emit sendDetailInfo(description, status, image, isSale, type);
 
+    close();
 }
 
 

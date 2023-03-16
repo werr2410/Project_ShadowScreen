@@ -3,23 +3,38 @@
 
 ShadowWindow::ShadowWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::ShadowWindow)
-{
+    ui(new Ui::ShadowWindow) {
     ui->setupUi(this);
 
     regist = new RegistrationWindow(this);
     detailset = new DetailSetWindow(this);
+    aboutme = new UserDataWindow(this);
+    telegram = new TelegramWindow(this);
 
-    connect(regist, &RegistrationWindow::registrationSuccess, this, &ShadowWindow::onRegistrationSuccess);
-    connect(this, &ShadowWindow::SendDatainfo, detailset, &DetailSetWindow::receiveData);
+    // regist
+    connect(regist, &RegistrationWindow::registrationSuccess, this, &ShadowWindow::onRegistrationSuccess); // regist -> main
+
+    // detail set
+    connect(detailset, &DetailSetWindow::sendDetailInfo, this, &ShadowWindow::getDetailInfo);   //  detail  -> main
+    connect(this, &ShadowWindow::SendDatainfo, detailset, &DetailSetWindow::receiveData);       //  main    -> detail
+
+    // about me
+    connect(this, &ShadowWindow::SendAboutMe, aboutme, &UserDataWindow::getUserData);           // main     -> aboutme
+    connect(aboutme, &UserDataWindow::sendUserData, this,  &ShadowWindow::getAboutMe);          // aboutme  -> main
+
+    // telegram
+    connect(this, &ShadowWindow::SendTelegram, telegram, &TelegramWindow::getTelegram);         // main     -> telegram
 
     regist->show();
 }
 
 ShadowWindow::~ShadowWindow() {
-    delete ui;
-
     delete regist;
+    delete detailset;
+    delete aboutme;
+    delete telegram;
+
+    delete ui;
 }
 
 void ShadowWindow::setUser(User user) {
@@ -44,6 +59,14 @@ void ShadowWindow::initComputer(Computer computer) {
     ui->label_image_storage                 ->setPixmap(computer.getStorage().getImage());
 }
 
+void ShadowWindow::setImageDetails() {
+    ui->label_IMAGE_baseboard->setPixmap(user.getComputer().getBaseboard().getImage());
+    ui->label_IMAGE_cpu->setPixmap(user.getComputer().getCPU().getImage());
+    ui->label_IMAGE_gpu->setPixmap(user.getComputer().getGPU().getImage());
+    ui->label_IMAGE_memorychip->setPixmap(user.getComputer().getMemorychip().getImage());
+    ui->label_image_storage->setPixmap(user.getComputer().getStorage().getImage());
+}
+
 void ShadowWindow::onRegistrationSuccess(QString username, QString password)
 {
     user.setUsername(username);
@@ -55,10 +78,83 @@ void ShadowWindow::onRegistrationSuccess(QString username, QString password)
 
     qDebug() << user.getUsername();
     qDebug() << user.getPassword();
+
+    ui->label_username_set->setText(user.getUsername());
 }
 
+void ShadowWindow::getDetailInfo(QString desc, QString status, QPixmap image, bool isSale, QString type) {
+    Computer comp = user.getComputer();
 
+    if(type == "cpu") {
 
+        CPU obj = comp.getCPU();
+
+        obj.setDescription(desc);
+        obj.setStatus(status);
+        obj.setImage(image);
+        obj.setIsSale(isSale);
+
+        comp.setCPU(obj);
+    }
+    else if (type == "gpu") {
+        GPU obj = comp.getGPU();
+
+        obj.setDescription(desc);
+        obj.setStatus(status);
+        obj.setImage(image);
+        obj.setIsSale(isSale);
+
+        comp.setGPU(obj);
+    }
+    else if (type == "diskdrive"){
+        Storage obj = comp.getStorage();
+
+        obj.setDescription(desc);
+        obj.setStatus(status);
+        obj.setImage(image);
+        obj.setIsSale(isSale);
+
+        comp.setStorage(obj);
+    }
+    else if (type == "Memorychip") {
+        Memorychip obj = comp.getMemorychip();
+
+        obj.setDescription(desc);
+        obj.setStatus(status);
+        obj.setImage(image);
+        obj.setIsSale(isSale);
+
+        comp.setMemorychip(obj);
+    }
+    else  {
+        Baseboard obj = comp.getBaseboard();
+
+        obj.setDescription(desc);
+        obj.setStatus(status);
+        obj.setImage(image);
+        obj.setIsSale(isSale);
+
+        comp.setBaseboard(obj);
+    }
+
+    user.setComputer(comp);
+
+    setImageDetails();
+}
+
+void ShadowWindow::getAboutMe(User user) {
+    this->user.setUsername(user.getUsername());
+    this->user.setPassword(user.getPassword());
+
+    this->user.setName(user.getName());
+    this->user.setSurname(user.getSurname());
+    this->user.setMiddlename(user.getMiddlename());
+
+    this->user.setEmail(user.getEmail());
+    this->user.setBirthDay(user.getBirthday());
+
+    ui->label_username_set->setText(user.getUsername());
+}
 
 void ShadowWindow::on_pushButton_CPU_clicked() {
     Detail* dt = new CPU(user.getComputer().getCPU());
@@ -99,5 +195,18 @@ void ShadowWindow::on_pushButton_BASEBOARD_clicked() {
     DetailInfo* dtinfo = new Baseboard(user.getComputer().getBaseboard());
     emit SendDatainfo(dt, dtinfo);
     detailset->show();
+}
+
+
+void ShadowWindow::on_pushButton_AboutMe_clicked() {
+   emit SendAboutMe(user);
+
+    aboutme->show();
+}
+
+void ShadowWindow::on_pushButton_Telegram_clicked() {
+    emit SendTelegram(user.getTelegram());
+
+    telegram->show();
 }
 

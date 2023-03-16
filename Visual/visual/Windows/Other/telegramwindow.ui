@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>241</width>
-    <height>136</height>
+    <width>182</width>
+    <height>147</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,9 +16,9 @@
   <widget class="QLabel" name="label_Username">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>30</y>
-     <width>71</width>
+     <x>23</x>
+     <y>17</y>
+     <width>70</width>
      <height>16</height>
     </rect>
    </property>
@@ -29,9 +29,9 @@
   <widget class="QLabel" name="label_Usercode">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>60</y>
-     <width>71</width>
+     <x>23</x>
+     <y>47</y>
+     <width>70</width>
      <height>16</height>
     </rect>
    </property>
@@ -42,9 +42,9 @@
   <widget class="QLabel" name="label_Chat">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>90</y>
-     <width>71</width>
+     <x>23</x>
+     <y>77</y>
+     <width>70</width>
      <height>16</height>
     </rect>
    </property>
@@ -55,9 +55,9 @@
   <widget class="QLabel" name="label_username_set">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>30</y>
-     <width>121</width>
+     <x>90</x>
+     <y>17</y>
+     <width>171</width>
      <height>16</height>
     </rect>
    </property>
@@ -68,27 +68,40 @@
   <widget class="QLabel" name="label_usercode_set">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>60</y>
-     <width>111</width>
-     <height>16</height>
+     <x>90</x>
+     <y>45</y>
+     <width>171</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
     <string>usercode</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_6">
+  <widget class="QLabel" name="label_Chat_set">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>90</y>
-     <width>111</width>
+     <x>90</x>
+     <y>77</y>
+     <width>171</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
     <string>chat</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_close">
+   <property name="geometry">
+    <rect>
+     <x>18</x>
+     <y>107</y>
+     <width>140</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>close</string>
    </property>
   </widget>
  </widget>

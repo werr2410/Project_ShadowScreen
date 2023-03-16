@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -24,31 +25,35 @@ public:
     QLabel *label_Chat;
     QLabel *label_username_set;
     QLabel *label_usercode_set;
-    QLabel *label_6;
+    QLabel *label_Chat_set;
+    QPushButton *pushButton_close;
 
     void setupUi(QDialog *TelegramWindow)
     {
         if (TelegramWindow->objectName().isEmpty())
             TelegramWindow->setObjectName("TelegramWindow");
-        TelegramWindow->resize(241, 136);
+        TelegramWindow->resize(182, 147);
         label_Username = new QLabel(TelegramWindow);
         label_Username->setObjectName("label_Username");
-        label_Username->setGeometry(QRect(30, 30, 71, 16));
+        label_Username->setGeometry(QRect(23, 17, 70, 16));
         label_Usercode = new QLabel(TelegramWindow);
         label_Usercode->setObjectName("label_Usercode");
-        label_Usercode->setGeometry(QRect(30, 60, 71, 16));
+        label_Usercode->setGeometry(QRect(23, 47, 70, 16));
         label_Chat = new QLabel(TelegramWindow);
         label_Chat->setObjectName("label_Chat");
-        label_Chat->setGeometry(QRect(30, 90, 71, 16));
+        label_Chat->setGeometry(QRect(23, 77, 70, 16));
         label_username_set = new QLabel(TelegramWindow);
         label_username_set->setObjectName("label_username_set");
-        label_username_set->setGeometry(QRect(100, 30, 121, 16));
+        label_username_set->setGeometry(QRect(90, 17, 171, 16));
         label_usercode_set = new QLabel(TelegramWindow);
         label_usercode_set->setObjectName("label_usercode_set");
-        label_usercode_set->setGeometry(QRect(100, 60, 111, 16));
-        label_6 = new QLabel(TelegramWindow);
-        label_6->setObjectName("label_6");
-        label_6->setGeometry(QRect(100, 90, 111, 16));
+        label_usercode_set->setGeometry(QRect(90, 45, 171, 20));
+        label_Chat_set = new QLabel(TelegramWindow);
+        label_Chat_set->setObjectName("label_Chat_set");
+        label_Chat_set->setGeometry(QRect(90, 77, 171, 16));
+        pushButton_close = new QPushButton(TelegramWindow);
+        pushButton_close->setObjectName("pushButton_close");
+        pushButton_close->setGeometry(QRect(18, 107, 140, 24));
 
         retranslateUi(TelegramWindow);
 
@@ -63,7 +68,8 @@ public:
         label_Chat->setText(QCoreApplication::translate("TelegramWindow", "Chat:", nullptr));
         label_username_set->setText(QCoreApplication::translate("TelegramWindow", "username", nullptr));
         label_usercode_set->setText(QCoreApplication::translate("TelegramWindow", "usercode", nullptr));
-        label_6->setText(QCoreApplication::translate("TelegramWindow", "chat", nullptr));
+        label_Chat_set->setText(QCoreApplication::translate("TelegramWindow", "chat", nullptr));
+        pushButton_close->setText(QCoreApplication::translate("TelegramWindow", "close", nullptr));
     } // retranslateUi
 
 };

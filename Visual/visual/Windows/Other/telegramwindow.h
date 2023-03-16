@@ -15,14 +15,21 @@ class TelegramWindow : public QDialog {
 
 public:
     explicit TelegramWindow(QWidget *parent = nullptr);
-    TelegramWindow(Data::Telegram telegram);
-
     ~TelegramWindow();
 
 private:
     Ui::TelegramWindow *ui;
 
-    void initFields(Data::Telegram telegram);
+    Data::Telegram telegram;
+
+
+    void initField();
+
+public slots:
+
+    void getTelegram(ShadowScreen::Data::Telegram telegram);
+private slots:
+    void on_pushButton_close_clicked();
 };
 
 #endif // TELEGRAMWINDOW_H

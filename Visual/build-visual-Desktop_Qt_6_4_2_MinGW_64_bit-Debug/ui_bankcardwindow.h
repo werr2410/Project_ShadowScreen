@@ -29,7 +29,7 @@ public:
     QSpinBox *spinBox_Year;
     QSpinBox *spinBox_Month;
     QTextEdit *textEdit_Title;
-    QTextEdit *textEdit_2;
+    QTextEdit *textEdit_Number;
     QPushButton *pushButton_add;
     QPushButton *pushButton_cancel;
 
@@ -53,20 +53,20 @@ public:
         label_Month->setGeometry(QRect(170, 150, 49, 16));
         spinBox_Year = new QSpinBox(BankcardWindow);
         spinBox_Year->setObjectName("spinBox_Year");
-        spinBox_Year->setGeometry(QRect(70, 150, 61, 20));
+        spinBox_Year->setGeometry(QRect(72, 146, 61, 24));
         spinBox_Year->setMinimum(2000);
         spinBox_Year->setMaximum(2200);
         spinBox_Month = new QSpinBox(BankcardWindow);
         spinBox_Month->setObjectName("spinBox_Month");
-        spinBox_Month->setGeometry(QRect(220, 150, 61, 20));
+        spinBox_Month->setGeometry(QRect(220, 146, 61, 25));
         spinBox_Month->setMinimum(1);
         spinBox_Month->setMaximum(12);
         textEdit_Title = new QTextEdit(BankcardWindow);
         textEdit_Title->setObjectName("textEdit_Title");
         textEdit_Title->setGeometry(QRect(110, 40, 171, 30));
-        textEdit_2 = new QTextEdit(BankcardWindow);
-        textEdit_2->setObjectName("textEdit_2");
-        textEdit_2->setGeometry(QRect(110, 80, 171, 30));
+        textEdit_Number = new QTextEdit(BankcardWindow);
+        textEdit_Number->setObjectName("textEdit_Number");
+        textEdit_Number->setGeometry(QRect(110, 80, 171, 30));
         pushButton_add = new QPushButton(BankcardWindow);
         pushButton_add->setObjectName("pushButton_add");
         pushButton_add->setGeometry(QRect(30, 200, 121, 24));

@@ -50,38 +50,53 @@ namespace ShadowScreen {
             setTelegram(ShadowScreen::Data::Telegram());
         }
 
+        User::User(bool autocomp) {
+            setUsername("username");
+            setPassword("password");
+            setName("unknown");
+            setSurname("unknown");
+            setMiddlename("unknown");
+            setHashcode(ShadowScreen::user::User::generateHashcode());
+            setStartUse(QDateTime().currentDateTime());
+            setAdress(Adress());
+            setBirthDay(QDate().currentDate());
+            setComputer(ShadowScreen::computer::Computer());
+            setEmail("unk@now.n");
+            setTelegram(ShadowScreen::Data::Telegram());
+        }
+
         User::User() : User(NO_LOGIN_USER, NO_LOGIN_USER) { }
 
         void User::setName(QString name) {
-            if(name.isEmpty())
+            if(name == "")
                 throw new Exception::UserDataInvalidException();
 
             this->name = name.trimmed();
         }
 
         void User::setSurname(QString surname) {
-            if(surname.isEmpty())
+            if(surname == "")
                 throw new Exception::UserDataInvalidException();
 
             this->surname = surname.trimmed();
         }
 
         void User::setMiddlename(QString middlename) {
-            if(middlename.isEmpty())
+            if(middlename == "")
                 throw new Exception::UserDataInvalidException();
 
             this->middlename = middlename.trimmed();
         }
 
         void User::setEmail(QString email) {
-            if(isInvalidEmail(email) == false || isUniqueEmail(email) == false)
-                throw new Exception::UserDataInvalidException();
+            //if(isInvalidEmail(email) == false || isUniqueEmail(email) == false)
+             //   throw new Exception::UserDataInvalidException();
 
             this->email = email.trimmed();
         }
 
         void User::setPassword(QString password) {
-            if(password.isEmpty())
+            if(password == "")
                 throw new Exception::UserDataInvalidException();
 
             // дело пользователя
@@ -90,7 +105,7 @@ namespace ShadowScreen {
         }
 
         void User::setUsername(QString username) {
-            if(username.isEmpty())
+            if(username == "")
                 throw new Exception::UserDataInvalidException();
 
             this->username = username;

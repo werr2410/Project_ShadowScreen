@@ -79,6 +79,7 @@ namespace ShadowScreen {
 
         public:
             User(QString username, QString password);
+            User(bool autocomp);
             User();
 
             void setName(QString name);

@@ -23,6 +23,7 @@ public:
 private:
     Ui::DetailSetWindow *ui;
 
+    QString type;
     QPixmap image;
     QString description;
     QString status;
@@ -37,6 +38,9 @@ private slots:
     void on_pushButton_File_clicked();
     void on_pushButton_Save_clicked();
     void on_radioButton_Sale_clicked();
+
+signals:
+    void sendDetailInfo(QString desc, QString status, QPixmap image, bool isSale, QString type);
 };
 
 #endif // DETAILSETWINDOW_H
