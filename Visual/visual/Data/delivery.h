@@ -7,14 +7,14 @@ namespace ShadowScreen {
 
     namespace Data {
 
+    enum TypeDelivery{
+            Ukrposhta,
+            NovaPoshta,
+            Meest
+    };
+
         class Delivery
         {
-            enum TypeDelivery{
-                    Ukrposhta,
-                    NovaPoshta,
-                    Meest
-            };
-
             QString title;
             TypeDelivery type;
             Adress adress;
@@ -30,7 +30,7 @@ namespace ShadowScreen {
 
             QString getTitle() const;
             TypeDelivery getTypeDelivery() const;
-
+            Adress getAdress() const;
 
 
             QString toString() const;

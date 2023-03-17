@@ -14,13 +14,16 @@ ReviewWindow::~ReviewWindow() {
 }
 
 void ReviewWindow::on_pushButton_add_clicked() {
-    QString title, description;
-    int mark = 0;
+    review.setTitle(ui->textEdit_Title->toPlainText());
+    review.setDescription(ui->textEdit_description->toPlainText());
+    review.setMark(ui->spinBox_mark->value());
 
-    title = ui->textEdit_Title->placeholderText();
-    description = ui->textEdit_2->placeholderText();
-    mark = ui->spinBox_mark->value();
+    initField();
+}
 
-    review = Data::Review(title.isEmpty() ? "unknown" : title, description, mark);
+
+void ReviewWindow::on_pushButton_cancel_clicked()
+{
+
 }
 

@@ -12,6 +12,7 @@ ShadowWindow::ShadowWindow(QWidget *parent) :
     telegram = new TelegramWindow(this);
     bankcard = new MyBankcardWindow(this);
     review = new MyReviewWindow(this);
+    delivery = new MyDeliveryWindow(this);
 
     // regist
     connect(regist, &RegistrationWindow::registrationSuccess, this, &ShadowWindow::onRegistrationSuccess); // regist -> main
@@ -28,11 +29,14 @@ ShadowWindow::ShadowWindow(QWidget *parent) :
     connect(this, &ShadowWindow::SendTelegram, telegram, &TelegramWindow::getTelegram);         // main     -> telegram
 
     // my bankcard
-    //connect(this, &ShadowWindow::SendBankcard, bankcard, &MyBankcardWindow::getBankcard);       // main     -> bankcard
     connect(bankcard, &MyBankcardWindow::sendToMainBankcard, this, &ShadowWindow::getBankcard); // bankcard -> main
 
     // my review
     connect(this, &ShadowWindow::SendReview, review, &MyReviewWindow::getCountMark);            //  main    -> review
+
+    // my delivery
+    connect(this, &ShadowWindow::SendDelivery, delivery, &MyDeliveryWindow::getDeliveryList);   // main     -> delivery
+    connect(delivery, &MyDeliveryWindow::setDeliveryList, this, &ShadowWindow::SendDelivery);   // delivery -> delivery
 
     regist->show();
 }
@@ -44,6 +48,7 @@ ShadowWindow::~ShadowWindow() {
     delete telegram;
     delete bankcard;
     delete review;
+    delete delivery;
 
     delete ui;
 }
@@ -173,6 +178,12 @@ void ShadowWindow::getBankcard(QVector<Bankcard> bankcard) {
     this->bankcard->close();
 }
 
+void ShadowWindow::getDelivery(QList<Data::Delivery> delivery) {
+    user.setDelivery(delivery);
+
+    this->delivery->close();
+}
+
 void ShadowWindow::on_pushButton_CPU_clicked() {
     Detail* dt = new CPU(user.getComputer().getCPU());
     DetailInfo* dtinfo = new CPU(user.getComputer().getCPU());
@@ -244,3 +255,10 @@ void ShadowWindow::on_pushButton_MyReview_clicked() {
 
     review->show();
 }
+
+void ShadowWindow::on_pushButton_MyDelivery_clicked() {
+    emit SendDelivery(user.getDelivery());
+
+    delivery->show();
+}
+

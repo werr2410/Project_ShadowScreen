@@ -32,7 +32,7 @@ namespace ShadowScreen {
             return title;
         }
 
-        Delivery::TypeDelivery Delivery::getTypeDelivery() const {
+        TypeDelivery Delivery::getTypeDelivery() const {
             return type;
         }
 

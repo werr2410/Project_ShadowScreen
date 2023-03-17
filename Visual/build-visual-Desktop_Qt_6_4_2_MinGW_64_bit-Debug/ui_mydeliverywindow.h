@@ -27,17 +27,21 @@ public:
     QTableWidget *tableWidget;
     QLabel *label;
     QLabel *label_2;
-    QTextEdit *textEdit;
-    QPushButton *pushButton;
+    QTextEdit *textEdit_Titl_delete;
+    QPushButton *pushButton_Delete;
     QLabel *label_3;
-    QComboBox *comboBox;
-    QPushButton *pushButton_2;
+    QComboBox *comboBox_Type;
+    QPushButton *pushButton_Add;
+    QPushButton *pushButton_close;
+    QLabel *label_4;
+    QComboBox *comboBox_Order;
+    QPushButton *pushButton_Add_2;
 
     void setupUi(QDialog *MyDeliveryWindow)
     {
         if (MyDeliveryWindow->objectName().isEmpty())
             MyDeliveryWindow->setObjectName("MyDeliveryWindow");
-        MyDeliveryWindow->resize(608, 264);
+        MyDeliveryWindow->resize(596, 286);
         tableWidget = new QTableWidget(MyDeliveryWindow);
         if (tableWidget->columnCount() < 3)
             tableWidget->setColumnCount(3);
@@ -56,21 +60,38 @@ public:
         label_2 = new QLabel(MyDeliveryWindow);
         label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(460, 16, 101, 20));
-        textEdit = new QTextEdit(MyDeliveryWindow);
-        textEdit->setObjectName("textEdit");
-        textEdit->setGeometry(QRect(460, 72, 121, 27));
-        pushButton = new QPushButton(MyDeliveryWindow);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(460, 174, 121, 24));
+        textEdit_Titl_delete = new QTextEdit(MyDeliveryWindow);
+        textEdit_Titl_delete->setObjectName("textEdit_Titl_delete");
+        textEdit_Titl_delete->setGeometry(QRect(460, 72, 121, 27));
+        pushButton_Delete = new QPushButton(MyDeliveryWindow);
+        pushButton_Delete->setObjectName("pushButton_Delete");
+        pushButton_Delete->setGeometry(QRect(460, 174, 121, 24));
         label_3 = new QLabel(MyDeliveryWindow);
         label_3->setObjectName("label_3");
         label_3->setGeometry(QRect(460, 112, 81, 12));
-        comboBox = new QComboBox(MyDeliveryWindow);
-        comboBox->setObjectName("comboBox");
-        comboBox->setGeometry(QRect(460, 132, 121, 20));
-        pushButton_2 = new QPushButton(MyDeliveryWindow);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(20, 220, 560, 24));
+        comboBox_Type = new QComboBox(MyDeliveryWindow);
+        comboBox_Type->addItem(QString());
+        comboBox_Type->addItem(QString());
+        comboBox_Type->addItem(QString());
+        comboBox_Type->setObjectName("comboBox_Type");
+        comboBox_Type->setGeometry(QRect(460, 132, 121, 25));
+        pushButton_Add = new QPushButton(MyDeliveryWindow);
+        pushButton_Add->setObjectName("pushButton_Add");
+        pushButton_Add->setGeometry(QRect(410, 210, 171, 24));
+        pushButton_close = new QPushButton(MyDeliveryWindow);
+        pushButton_close->setObjectName("pushButton_close");
+        pushButton_close->setGeometry(QRect(10, 247, 570, 24));
+        label_4 = new QLabel(MyDeliveryWindow);
+        label_4->setObjectName("label_4");
+        label_4->setGeometry(QRect(10, 215, 49, 16));
+        comboBox_Order = new QComboBox(MyDeliveryWindow);
+        comboBox_Order->addItem(QString());
+        comboBox_Order->addItem(QString());
+        comboBox_Order->setObjectName("comboBox_Order");
+        comboBox_Order->setGeometry(QRect(80, 210, 211, 24));
+        pushButton_Add_2 = new QPushButton(MyDeliveryWindow);
+        pushButton_Add_2->setObjectName("pushButton_Add_2");
+        pushButton_Add_2->setGeometry(QRect(300, 210, 101, 24));
 
         retranslateUi(MyDeliveryWindow);
 
@@ -88,9 +109,19 @@ public:
         ___qtablewidgetitem2->setText(QCoreApplication::translate("MyDeliveryWindow", "Adress", nullptr));
         label->setText(QCoreApplication::translate("MyDeliveryWindow", "Title:", nullptr));
         label_2->setText(QCoreApplication::translate("MyDeliveryWindow", "- - - - DELETE - - - -", nullptr));
-        pushButton->setText(QCoreApplication::translate("MyDeliveryWindow", "delete", nullptr));
+        pushButton_Delete->setText(QCoreApplication::translate("MyDeliveryWindow", "delete", nullptr));
         label_3->setText(QCoreApplication::translate("MyDeliveryWindow", "Type Delivery:", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MyDeliveryWindow", "add new Delivery", nullptr));
+        comboBox_Type->setItemText(0, QCoreApplication::translate("MyDeliveryWindow", "Ukrposhta", nullptr));
+        comboBox_Type->setItemText(1, QCoreApplication::translate("MyDeliveryWindow", "Novaposhta", nullptr));
+        comboBox_Type->setItemText(2, QCoreApplication::translate("MyDeliveryWindow", "Meest", nullptr));
+
+        pushButton_Add->setText(QCoreApplication::translate("MyDeliveryWindow", "add new Delivery", nullptr));
+        pushButton_close->setText(QCoreApplication::translate("MyDeliveryWindow", "close and save", nullptr));
+        label_4->setText(QCoreApplication::translate("MyDeliveryWindow", "Order by:", nullptr));
+        comboBox_Order->setItemText(0, QCoreApplication::translate("MyDeliveryWindow", "Title", nullptr));
+        comboBox_Order->setItemText(1, QCoreApplication::translate("MyDeliveryWindow", "Adress", nullptr));
+
+        pushButton_Add_2->setText(QCoreApplication::translate("MyDeliveryWindow", "Order", nullptr));
     } // retranslateUi
 
 };

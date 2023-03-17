@@ -27,7 +27,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_ShadowWindow_t {
-    uint offsetsAndSizes[78];
+    uint offsetsAndSizes[88];
     char stringdata0[13];
     char stringdata1[13];
     char stringdata2[1];
@@ -47,26 +47,31 @@ struct qt_meta_stringdata_ShadowWindow_t {
     char stringdata16[11];
     char stringdata17[6];
     char stringdata18[5];
-    char stringdata19[22];
-    char stringdata20[9];
+    char stringdata19[13];
+    char stringdata20[36];
     char stringdata21[9];
-    char stringdata22[14];
-    char stringdata23[5];
-    char stringdata24[7];
-    char stringdata25[6];
-    char stringdata26[7];
-    char stringdata27[5];
-    char stringdata28[11];
-    char stringdata29[12];
-    char stringdata30[26];
-    char stringdata31[26];
-    char stringdata32[30];
-    char stringdata33[33];
-    char stringdata34[32];
-    char stringdata35[30];
-    char stringdata36[31];
+    char stringdata22[22];
+    char stringdata23[9];
+    char stringdata24[9];
+    char stringdata25[14];
+    char stringdata26[5];
+    char stringdata27[7];
+    char stringdata28[6];
+    char stringdata29[7];
+    char stringdata30[5];
+    char stringdata31[11];
+    char stringdata32[12];
+    char stringdata33[12];
+    char stringdata34[26];
+    char stringdata35[26];
+    char stringdata36[30];
     char stringdata37[33];
-    char stringdata38[31];
+    char stringdata38[32];
+    char stringdata39[30];
+    char stringdata40[31];
+    char stringdata41[33];
+    char stringdata42[31];
+    char stringdata43[33];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_ShadowWindow_t::offsetsAndSizes) + ofs), len 
@@ -91,26 +96,31 @@ Q_CONSTINIT static const qt_meta_stringdata_ShadowWindow_t qt_meta_stringdata_Sh
         QT_MOC_LITERAL(256, 10),  // "SendReview"
         QT_MOC_LITERAL(267, 5),  // "count"
         QT_MOC_LITERAL(273, 4),  // "mark"
-        QT_MOC_LITERAL(278, 21),  // "onRegistrationSuccess"
-        QT_MOC_LITERAL(300, 8),  // "username"
-        QT_MOC_LITERAL(309, 8),  // "password"
-        QT_MOC_LITERAL(318, 13),  // "getDetailInfo"
-        QT_MOC_LITERAL(332, 4),  // "desc"
-        QT_MOC_LITERAL(337, 6),  // "status"
-        QT_MOC_LITERAL(344, 5),  // "image"
-        QT_MOC_LITERAL(350, 6),  // "isSale"
-        QT_MOC_LITERAL(357, 4),  // "type"
-        QT_MOC_LITERAL(362, 10),  // "getAboutMe"
-        QT_MOC_LITERAL(373, 11),  // "getBankcard"
-        QT_MOC_LITERAL(385, 25),  // "on_pushButton_CPU_clicked"
-        QT_MOC_LITERAL(411, 25),  // "on_pushButton_GPU_clicked"
-        QT_MOC_LITERAL(437, 29),  // "on_pushButton_STORAGE_clicked"
-        QT_MOC_LITERAL(467, 32),  // "on_pushButton_MEMORYCHIP_clicked"
-        QT_MOC_LITERAL(500, 31),  // "on_pushButton_BASEBOARD_clicked"
-        QT_MOC_LITERAL(532, 29),  // "on_pushButton_AboutMe_clicked"
-        QT_MOC_LITERAL(562, 30),  // "on_pushButton_Telegram_clicked"
-        QT_MOC_LITERAL(593, 32),  // "on_pushButton_MyBankcard_clicked"
-        QT_MOC_LITERAL(626, 30)   // "on_pushButton_MyReview_clicked"
+        QT_MOC_LITERAL(278, 12),  // "SendDelivery"
+        QT_MOC_LITERAL(291, 35),  // "QList<ShadowScreen::Data::Del..."
+        QT_MOC_LITERAL(327, 8),  // "delivery"
+        QT_MOC_LITERAL(336, 21),  // "onRegistrationSuccess"
+        QT_MOC_LITERAL(358, 8),  // "username"
+        QT_MOC_LITERAL(367, 8),  // "password"
+        QT_MOC_LITERAL(376, 13),  // "getDetailInfo"
+        QT_MOC_LITERAL(390, 4),  // "desc"
+        QT_MOC_LITERAL(395, 6),  // "status"
+        QT_MOC_LITERAL(402, 5),  // "image"
+        QT_MOC_LITERAL(408, 6),  // "isSale"
+        QT_MOC_LITERAL(415, 4),  // "type"
+        QT_MOC_LITERAL(420, 10),  // "getAboutMe"
+        QT_MOC_LITERAL(431, 11),  // "getBankcard"
+        QT_MOC_LITERAL(443, 11),  // "getDelivery"
+        QT_MOC_LITERAL(455, 25),  // "on_pushButton_CPU_clicked"
+        QT_MOC_LITERAL(481, 25),  // "on_pushButton_GPU_clicked"
+        QT_MOC_LITERAL(507, 29),  // "on_pushButton_STORAGE_clicked"
+        QT_MOC_LITERAL(537, 32),  // "on_pushButton_MEMORYCHIP_clicked"
+        QT_MOC_LITERAL(570, 31),  // "on_pushButton_BASEBOARD_clicked"
+        QT_MOC_LITERAL(602, 29),  // "on_pushButton_AboutMe_clicked"
+        QT_MOC_LITERAL(632, 30),  // "on_pushButton_Telegram_clicked"
+        QT_MOC_LITERAL(663, 32),  // "on_pushButton_MyBankcard_clicked"
+        QT_MOC_LITERAL(696, 30),  // "on_pushButton_MyReview_clicked"
+        QT_MOC_LITERAL(727, 32)   // "on_pushButton_MyDelivery_clicked"
     },
     "ShadowWindow",
     "SendDatainfo",
@@ -131,6 +141,9 @@ Q_CONSTINIT static const qt_meta_stringdata_ShadowWindow_t qt_meta_stringdata_Sh
     "SendReview",
     "count",
     "mark",
+    "SendDelivery",
+    "QList<ShadowScreen::Data::Delivery>",
+    "delivery",
     "onRegistrationSuccess",
     "username",
     "password",
@@ -142,6 +155,7 @@ Q_CONSTINIT static const qt_meta_stringdata_ShadowWindow_t qt_meta_stringdata_Sh
     "type",
     "getAboutMe",
     "getBankcard",
+    "getDelivery",
     "on_pushButton_CPU_clicked",
     "on_pushButton_GPU_clicked",
     "on_pushButton_STORAGE_clicked",
@@ -150,7 +164,8 @@ Q_CONSTINIT static const qt_meta_stringdata_ShadowWindow_t qt_meta_stringdata_Sh
     "on_pushButton_AboutMe_clicked",
     "on_pushButton_Telegram_clicked",
     "on_pushButton_MyBankcard_clicked",
-    "on_pushButton_MyReview_clicked"
+    "on_pushButton_MyReview_clicked",
+    "on_pushButton_MyDelivery_clicked"
 };
 #undef QT_MOC_LITERAL
 } // unnamed namespace
@@ -161,34 +176,37 @@ Q_CONSTINIT static const uint qt_meta_data_ShadowWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
+      21,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       5,       // signalCount
+       6,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    2,  122,    2, 0x06,    1 /* Public */,
-       7,    1,  127,    2, 0x06,    4 /* Public */,
-      10,    1,  130,    2, 0x06,    6 /* Public */,
-      13,    1,  133,    2, 0x06,    8 /* Public */,
-      16,    2,  136,    2, 0x06,   10 /* Public */,
+       1,    2,  140,    2, 0x06,    1 /* Public */,
+       7,    1,  145,    2, 0x06,    4 /* Public */,
+      10,    1,  148,    2, 0x06,    6 /* Public */,
+      13,    1,  151,    2, 0x06,    8 /* Public */,
+      16,    2,  154,    2, 0x06,   10 /* Public */,
+      19,    1,  159,    2, 0x06,   13 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-      19,    2,  141,    2, 0x0a,   13 /* Public */,
-      22,    5,  146,    2, 0x0a,   16 /* Public */,
-      28,    1,  157,    2, 0x0a,   22 /* Public */,
-      29,    1,  160,    2, 0x0a,   24 /* Public */,
-      30,    0,  163,    2, 0x08,   26 /* Private */,
-      31,    0,  164,    2, 0x08,   27 /* Private */,
-      32,    0,  165,    2, 0x08,   28 /* Private */,
-      33,    0,  166,    2, 0x08,   29 /* Private */,
-      34,    0,  167,    2, 0x08,   30 /* Private */,
-      35,    0,  168,    2, 0x08,   31 /* Private */,
-      36,    0,  169,    2, 0x08,   32 /* Private */,
-      37,    0,  170,    2, 0x08,   33 /* Private */,
-      38,    0,  171,    2, 0x08,   34 /* Private */,
+      22,    2,  162,    2, 0x0a,   15 /* Public */,
+      25,    5,  167,    2, 0x0a,   18 /* Public */,
+      31,    1,  178,    2, 0x0a,   24 /* Public */,
+      32,    1,  181,    2, 0x0a,   26 /* Public */,
+      33,    1,  184,    2, 0x0a,   28 /* Public */,
+      34,    0,  187,    2, 0x08,   30 /* Private */,
+      35,    0,  188,    2, 0x08,   31 /* Private */,
+      36,    0,  189,    2, 0x08,   32 /* Private */,
+      37,    0,  190,    2, 0x08,   33 /* Private */,
+      38,    0,  191,    2, 0x08,   34 /* Private */,
+      39,    0,  192,    2, 0x08,   35 /* Private */,
+      40,    0,  193,    2, 0x08,   36 /* Private */,
+      41,    0,  194,    2, 0x08,   37 /* Private */,
+      42,    0,  195,    2, 0x08,   38 /* Private */,
+      43,    0,  196,    2, 0x08,   39 /* Private */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3, 0x80000000 | 5,    4,    6,
@@ -196,12 +214,15 @@ Q_CONSTINIT static const uint qt_meta_data_ShadowWindow[] = {
     QMetaType::Void, 0x80000000 | 11,   12,
     QMetaType::Void, 0x80000000 | 14,   15,
     QMetaType::Void, QMetaType::Int, QMetaType::Float,   17,   18,
+    QMetaType::Void, 0x80000000 | 20,   21,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::QString, QMetaType::QString,   20,   21,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QPixmap, QMetaType::Bool, QMetaType::QString,   23,   24,   25,   26,   27,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,   23,   24,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QPixmap, QMetaType::Bool, QMetaType::QString,   26,   27,   28,   29,   30,
     QMetaType::Void, 0x80000000 | 8,    9,
     QMetaType::Void, 0x80000000 | 14,   15,
+    QMetaType::Void, 0x80000000 | 20,   21,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -241,6 +262,9 @@ Q_CONSTINIT const QMetaObject ShadowWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         QtPrivate::TypeAndForceComplete<float, std::false_type>,
+        // method 'SendDelivery'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QList<ShadowScreen::Data::Delivery>, std::false_type>,
         // method 'onRegistrationSuccess'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
@@ -258,6 +282,9 @@ Q_CONSTINIT const QMetaObject ShadowWindow::staticMetaObject = { {
         // method 'getBankcard'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QVector<ShadowScreen::Data::Bankcard>, std::false_type>,
+        // method 'getDelivery'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QList<ShadowScreen::Data::Delivery>, std::false_type>,
         // method 'on_pushButton_CPU_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_GPU_clicked'
@@ -275,6 +302,8 @@ Q_CONSTINIT const QMetaObject ShadowWindow::staticMetaObject = { {
         // method 'on_pushButton_MyBankcard_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_MyReview_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_pushButton_MyDelivery_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -291,19 +320,22 @@ void ShadowWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 2: _t->SendTelegram((*reinterpret_cast< std::add_pointer_t<ShadowScreen::Data::Telegram>>(_a[1]))); break;
         case 3: _t->SendBankcard((*reinterpret_cast< std::add_pointer_t<QList<ShadowScreen::Data::Bankcard>>>(_a[1]))); break;
         case 4: _t->SendReview((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<float>>(_a[2]))); break;
-        case 5: _t->onRegistrationSuccess((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
-        case 6: _t->getDetailInfo((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QPixmap>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[5]))); break;
-        case 7: _t->getAboutMe((*reinterpret_cast< std::add_pointer_t<ShadowScreen::user::User>>(_a[1]))); break;
-        case 8: _t->getBankcard((*reinterpret_cast< std::add_pointer_t<QList<ShadowScreen::Data::Bankcard>>>(_a[1]))); break;
-        case 9: _t->on_pushButton_CPU_clicked(); break;
-        case 10: _t->on_pushButton_GPU_clicked(); break;
-        case 11: _t->on_pushButton_STORAGE_clicked(); break;
-        case 12: _t->on_pushButton_MEMORYCHIP_clicked(); break;
-        case 13: _t->on_pushButton_BASEBOARD_clicked(); break;
-        case 14: _t->on_pushButton_AboutMe_clicked(); break;
-        case 15: _t->on_pushButton_Telegram_clicked(); break;
-        case 16: _t->on_pushButton_MyBankcard_clicked(); break;
-        case 17: _t->on_pushButton_MyReview_clicked(); break;
+        case 5: _t->SendDelivery((*reinterpret_cast< std::add_pointer_t<QList<ShadowScreen::Data::Delivery>>>(_a[1]))); break;
+        case 6: _t->onRegistrationSuccess((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
+        case 7: _t->getDetailInfo((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QPixmap>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[5]))); break;
+        case 8: _t->getAboutMe((*reinterpret_cast< std::add_pointer_t<ShadowScreen::user::User>>(_a[1]))); break;
+        case 9: _t->getBankcard((*reinterpret_cast< std::add_pointer_t<QList<ShadowScreen::Data::Bankcard>>>(_a[1]))); break;
+        case 10: _t->getDelivery((*reinterpret_cast< std::add_pointer_t<QList<ShadowScreen::Data::Delivery>>>(_a[1]))); break;
+        case 11: _t->on_pushButton_CPU_clicked(); break;
+        case 12: _t->on_pushButton_GPU_clicked(); break;
+        case 13: _t->on_pushButton_STORAGE_clicked(); break;
+        case 14: _t->on_pushButton_MEMORYCHIP_clicked(); break;
+        case 15: _t->on_pushButton_BASEBOARD_clicked(); break;
+        case 16: _t->on_pushButton_AboutMe_clicked(); break;
+        case 17: _t->on_pushButton_Telegram_clicked(); break;
+        case 18: _t->on_pushButton_MyBankcard_clicked(); break;
+        case 19: _t->on_pushButton_MyReview_clicked(); break;
+        case 20: _t->on_pushButton_MyDelivery_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -343,6 +375,13 @@ void ShadowWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
                 return;
             }
         }
+        {
+            using _t = void (ShadowWindow::*)(QList<ShadowScreen::Data::Delivery> );
+            if (_t _q_method = &ShadowWindow::SendDelivery; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 5;
+                return;
+            }
+        }
     }
 }
 
@@ -365,13 +404,13 @@ int ShadowWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 21)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 21;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
+        if (_id < 21)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 18;
+        _id -= 21;
     }
     return _id;
 }
@@ -409,6 +448,13 @@ void ShadowWindow::SendReview(int _t1, float _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 4, _a);
+}
+
+// SIGNAL 5
+void ShadowWindow::SendDelivery(QList<ShadowScreen::Data::Delivery> _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 5, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

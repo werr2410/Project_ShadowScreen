@@ -31,6 +31,10 @@ void DeliveryWindow::getDelivery(ShadowScreen::Data::Delivery delivery) {
 }
 
 void DeliveryWindow::on_pushButton_add_clicked() {
+
+    delivery.setTypeDelivery((ShadowScreen::Data::TypeDelivery)(ui->comboBox_TypeDelivery->currentIndex()));
+    delivery.setTitle(ui->textEdit_Title->toPlainText());
+
     emit SendDelivery(delivery);
 
     close();

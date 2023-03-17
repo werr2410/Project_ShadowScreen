@@ -10,6 +10,7 @@
 
 #include "Windows/User/Data/userdatawindow.h"
 
+#include "Windows/User/mydeliverywindow.h"
 #include "Windows/User/mybankcardwindow.h"
 #include "Windows/User/myreviewwindow.h"
 
@@ -45,7 +46,7 @@ private:
     // my user data
     MyBankcardWindow* bankcard;
     MyReviewWindow* review;
-
+    MyDeliveryWindow* delivery;
 
     void setUser(User user);
     void initComputer(Computer computer);
@@ -64,6 +65,9 @@ public slots:
     // my bankcard
     void getBankcard(QVector<ShadowScreen::Data::Bankcard> bankcard);
 
+    // my delivery
+    void getDelivery(QList<ShadowScreen::Data::Delivery> delivery);
+
 private slots:
     void on_pushButton_CPU_clicked();
     void on_pushButton_GPU_clicked();
@@ -73,9 +77,8 @@ private slots:
     void on_pushButton_AboutMe_clicked();
     void on_pushButton_Telegram_clicked();
     void on_pushButton_MyBankcard_clicked();
-
-
     void on_pushButton_MyReview_clicked();
+    void on_pushButton_MyDelivery_clicked();
 
 signals:
     // detail set
@@ -92,5 +95,8 @@ signals:
 
     // my review
     void SendReview(int count, float mark);
+
+    // my delivery
+    void SendDelivery(QList<ShadowScreen::Data::Delivery> delivery);
 };
 #endif // SHADOWWINDOW_H
