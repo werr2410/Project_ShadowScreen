@@ -27,7 +27,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_ShadowWindow_t {
-    uint offsetsAndSizes[88];
+    uint offsetsAndSizes[96];
     char stringdata0[13];
     char stringdata1[13];
     char stringdata2[1];
@@ -62,16 +62,20 @@ struct qt_meta_stringdata_ShadowWindow_t {
     char stringdata31[11];
     char stringdata32[12];
     char stringdata33[12];
-    char stringdata34[26];
-    char stringdata35[26];
-    char stringdata36[30];
-    char stringdata37[33];
-    char stringdata38[32];
+    char stringdata34[12];
+    char stringdata35[27];
+    char stringdata36[7];
+    char stringdata37[26];
+    char stringdata38[26];
     char stringdata39[30];
-    char stringdata40[31];
-    char stringdata41[33];
-    char stringdata42[31];
-    char stringdata43[33];
+    char stringdata40[33];
+    char stringdata41[32];
+    char stringdata42[30];
+    char stringdata43[31];
+    char stringdata44[33];
+    char stringdata45[31];
+    char stringdata46[33];
+    char stringdata47[33];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_ShadowWindow_t::offsetsAndSizes) + ofs), len 
@@ -111,16 +115,20 @@ Q_CONSTINIT static const qt_meta_stringdata_ShadowWindow_t qt_meta_stringdata_Sh
         QT_MOC_LITERAL(420, 10),  // "getAboutMe"
         QT_MOC_LITERAL(431, 11),  // "getBankcard"
         QT_MOC_LITERAL(443, 11),  // "getDelivery"
-        QT_MOC_LITERAL(455, 25),  // "on_pushButton_CPU_clicked"
-        QT_MOC_LITERAL(481, 25),  // "on_pushButton_GPU_clicked"
-        QT_MOC_LITERAL(507, 29),  // "on_pushButton_STORAGE_clicked"
-        QT_MOC_LITERAL(537, 32),  // "on_pushButton_MEMORYCHIP_clicked"
-        QT_MOC_LITERAL(570, 31),  // "on_pushButton_BASEBOARD_clicked"
-        QT_MOC_LITERAL(602, 29),  // "on_pushButton_AboutMe_clicked"
-        QT_MOC_LITERAL(632, 30),  // "on_pushButton_Telegram_clicked"
-        QT_MOC_LITERAL(663, 32),  // "on_pushButton_MyBankcard_clicked"
-        QT_MOC_LITERAL(696, 30),  // "on_pushButton_MyReview_clicked"
-        QT_MOC_LITERAL(727, 32)   // "on_pushButton_MyDelivery_clicked"
+        QT_MOC_LITERAL(455, 11),  // "getReviewUI"
+        QT_MOC_LITERAL(467, 26),  // "ShadowScreen::Data::Review"
+        QT_MOC_LITERAL(494, 6),  // "review"
+        QT_MOC_LITERAL(501, 25),  // "on_pushButton_CPU_clicked"
+        QT_MOC_LITERAL(527, 25),  // "on_pushButton_GPU_clicked"
+        QT_MOC_LITERAL(553, 29),  // "on_pushButton_STORAGE_clicked"
+        QT_MOC_LITERAL(583, 32),  // "on_pushButton_MEMORYCHIP_clicked"
+        QT_MOC_LITERAL(616, 31),  // "on_pushButton_BASEBOARD_clicked"
+        QT_MOC_LITERAL(648, 29),  // "on_pushButton_AboutMe_clicked"
+        QT_MOC_LITERAL(678, 30),  // "on_pushButton_Telegram_clicked"
+        QT_MOC_LITERAL(709, 32),  // "on_pushButton_MyBankcard_clicked"
+        QT_MOC_LITERAL(742, 30),  // "on_pushButton_MyReview_clicked"
+        QT_MOC_LITERAL(773, 32),  // "on_pushButton_MyDelivery_clicked"
+        QT_MOC_LITERAL(806, 32)   // "on_pushButton_MyReview_2_clicked"
     },
     "ShadowWindow",
     "SendDatainfo",
@@ -156,6 +164,9 @@ Q_CONSTINIT static const qt_meta_stringdata_ShadowWindow_t qt_meta_stringdata_Sh
     "getAboutMe",
     "getBankcard",
     "getDelivery",
+    "getReviewUI",
+    "ShadowScreen::Data::Review",
+    "review",
     "on_pushButton_CPU_clicked",
     "on_pushButton_GPU_clicked",
     "on_pushButton_STORAGE_clicked",
@@ -165,7 +176,8 @@ Q_CONSTINIT static const qt_meta_stringdata_ShadowWindow_t qt_meta_stringdata_Sh
     "on_pushButton_Telegram_clicked",
     "on_pushButton_MyBankcard_clicked",
     "on_pushButton_MyReview_clicked",
-    "on_pushButton_MyDelivery_clicked"
+    "on_pushButton_MyDelivery_clicked",
+    "on_pushButton_MyReview_2_clicked"
 };
 #undef QT_MOC_LITERAL
 } // unnamed namespace
@@ -176,7 +188,7 @@ Q_CONSTINIT static const uint qt_meta_data_ShadowWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-      21,   14, // methods
+      23,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -184,29 +196,31 @@ Q_CONSTINIT static const uint qt_meta_data_ShadowWindow[] = {
        6,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    2,  140,    2, 0x06,    1 /* Public */,
-       7,    1,  145,    2, 0x06,    4 /* Public */,
-      10,    1,  148,    2, 0x06,    6 /* Public */,
-      13,    1,  151,    2, 0x06,    8 /* Public */,
-      16,    2,  154,    2, 0x06,   10 /* Public */,
-      19,    1,  159,    2, 0x06,   13 /* Public */,
+       1,    2,  152,    2, 0x06,    1 /* Public */,
+       7,    1,  157,    2, 0x06,    4 /* Public */,
+      10,    1,  160,    2, 0x06,    6 /* Public */,
+      13,    1,  163,    2, 0x06,    8 /* Public */,
+      16,    2,  166,    2, 0x06,   10 /* Public */,
+      19,    1,  171,    2, 0x06,   13 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-      22,    2,  162,    2, 0x0a,   15 /* Public */,
-      25,    5,  167,    2, 0x0a,   18 /* Public */,
-      31,    1,  178,    2, 0x0a,   24 /* Public */,
-      32,    1,  181,    2, 0x0a,   26 /* Public */,
-      33,    1,  184,    2, 0x0a,   28 /* Public */,
-      34,    0,  187,    2, 0x08,   30 /* Private */,
-      35,    0,  188,    2, 0x08,   31 /* Private */,
-      36,    0,  189,    2, 0x08,   32 /* Private */,
-      37,    0,  190,    2, 0x08,   33 /* Private */,
-      38,    0,  191,    2, 0x08,   34 /* Private */,
-      39,    0,  192,    2, 0x08,   35 /* Private */,
-      40,    0,  193,    2, 0x08,   36 /* Private */,
-      41,    0,  194,    2, 0x08,   37 /* Private */,
-      42,    0,  195,    2, 0x08,   38 /* Private */,
-      43,    0,  196,    2, 0x08,   39 /* Private */,
+      22,    2,  174,    2, 0x0a,   15 /* Public */,
+      25,    5,  179,    2, 0x0a,   18 /* Public */,
+      31,    1,  190,    2, 0x0a,   24 /* Public */,
+      32,    1,  193,    2, 0x0a,   26 /* Public */,
+      33,    1,  196,    2, 0x0a,   28 /* Public */,
+      34,    1,  199,    2, 0x0a,   30 /* Public */,
+      37,    0,  202,    2, 0x08,   32 /* Private */,
+      38,    0,  203,    2, 0x08,   33 /* Private */,
+      39,    0,  204,    2, 0x08,   34 /* Private */,
+      40,    0,  205,    2, 0x08,   35 /* Private */,
+      41,    0,  206,    2, 0x08,   36 /* Private */,
+      42,    0,  207,    2, 0x08,   37 /* Private */,
+      43,    0,  208,    2, 0x08,   38 /* Private */,
+      44,    0,  209,    2, 0x08,   39 /* Private */,
+      45,    0,  210,    2, 0x08,   40 /* Private */,
+      46,    0,  211,    2, 0x08,   41 /* Private */,
+      47,    0,  212,    2, 0x08,   42 /* Private */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3, 0x80000000 | 5,    4,    6,
@@ -222,6 +236,8 @@ Q_CONSTINIT static const uint qt_meta_data_ShadowWindow[] = {
     QMetaType::Void, 0x80000000 | 8,    9,
     QMetaType::Void, 0x80000000 | 14,   15,
     QMetaType::Void, 0x80000000 | 20,   21,
+    QMetaType::Void, 0x80000000 | 35,   36,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -285,6 +301,9 @@ Q_CONSTINIT const QMetaObject ShadowWindow::staticMetaObject = { {
         // method 'getDelivery'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QList<ShadowScreen::Data::Delivery>, std::false_type>,
+        // method 'getReviewUI'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<ShadowScreen::Data::Review, std::false_type>,
         // method 'on_pushButton_CPU_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_GPU_clicked'
@@ -304,6 +323,8 @@ Q_CONSTINIT const QMetaObject ShadowWindow::staticMetaObject = { {
         // method 'on_pushButton_MyReview_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_MyDelivery_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_pushButton_MyReview_2_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -326,16 +347,18 @@ void ShadowWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 8: _t->getAboutMe((*reinterpret_cast< std::add_pointer_t<ShadowScreen::user::User>>(_a[1]))); break;
         case 9: _t->getBankcard((*reinterpret_cast< std::add_pointer_t<QList<ShadowScreen::Data::Bankcard>>>(_a[1]))); break;
         case 10: _t->getDelivery((*reinterpret_cast< std::add_pointer_t<QList<ShadowScreen::Data::Delivery>>>(_a[1]))); break;
-        case 11: _t->on_pushButton_CPU_clicked(); break;
-        case 12: _t->on_pushButton_GPU_clicked(); break;
-        case 13: _t->on_pushButton_STORAGE_clicked(); break;
-        case 14: _t->on_pushButton_MEMORYCHIP_clicked(); break;
-        case 15: _t->on_pushButton_BASEBOARD_clicked(); break;
-        case 16: _t->on_pushButton_AboutMe_clicked(); break;
-        case 17: _t->on_pushButton_Telegram_clicked(); break;
-        case 18: _t->on_pushButton_MyBankcard_clicked(); break;
-        case 19: _t->on_pushButton_MyReview_clicked(); break;
-        case 20: _t->on_pushButton_MyDelivery_clicked(); break;
+        case 11: _t->getReviewUI((*reinterpret_cast< std::add_pointer_t<ShadowScreen::Data::Review>>(_a[1]))); break;
+        case 12: _t->on_pushButton_CPU_clicked(); break;
+        case 13: _t->on_pushButton_GPU_clicked(); break;
+        case 14: _t->on_pushButton_STORAGE_clicked(); break;
+        case 15: _t->on_pushButton_MEMORYCHIP_clicked(); break;
+        case 16: _t->on_pushButton_BASEBOARD_clicked(); break;
+        case 17: _t->on_pushButton_AboutMe_clicked(); break;
+        case 18: _t->on_pushButton_Telegram_clicked(); break;
+        case 19: _t->on_pushButton_MyBankcard_clicked(); break;
+        case 20: _t->on_pushButton_MyReview_clicked(); break;
+        case 21: _t->on_pushButton_MyDelivery_clicked(); break;
+        case 22: _t->on_pushButton_MyReview_2_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -404,13 +427,13 @@ int ShadowWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 21)
+        if (_id < 23)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 21;
+        _id -= 23;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 21)
+        if (_id < 23)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 21;
+        _id -= 23;
     }
     return _id;
 }

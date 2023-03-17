@@ -6,13 +6,14 @@ ShadowWindow::ShadowWindow(QWidget *parent) :
     ui(new Ui::ShadowWindow) {
     ui->setupUi(this);
 
-    regist = new RegistrationWindow(this);
-    detailset = new DetailSetWindow(this);
-    aboutme = new UserDataWindow(this);
-    telegram = new TelegramWindow(this);
-    bankcard = new MyBankcardWindow(this);
-    review = new MyReviewWindow(this);
-    delivery = new MyDeliveryWindow(this);
+    regist      = new RegistrationWindow(this);
+    detailset   = new DetailSetWindow(this);
+    aboutme     = new UserDataWindow(this);
+    telegram    = new TelegramWindow(this);
+    bankcard    = new MyBankcardWindow(this);
+    review      = new MyReviewWindow(this);
+    delivery    = new MyDeliveryWindow(this);
+    reviewadd   = new ReviewWindow(this);
 
     // regist
     connect(regist, &RegistrationWindow::registrationSuccess, this, &ShadowWindow::onRegistrationSuccess); // regist -> main
@@ -36,7 +37,11 @@ ShadowWindow::ShadowWindow(QWidget *parent) :
 
     // my delivery
     connect(this, &ShadowWindow::SendDelivery, delivery, &MyDeliveryWindow::getDeliveryList);   // main     -> delivery
-    connect(delivery, &MyDeliveryWindow::setDeliveryList, this, &ShadowWindow::SendDelivery);   // delivery -> delivery
+    connect(delivery, &MyDeliveryWindow::setDeliveryList, this, &ShadowWindow::SendDelivery);   // delivery -> main
+
+    // review
+    connect(reviewadd, &ReviewWindow::SendReview, this, &ShadowWindow::getReviewUI);            // review   -> main
+
 
     regist->show();
 }
@@ -49,6 +54,7 @@ ShadowWindow::~ShadowWindow() {
     delete bankcard;
     delete review;
     delete delivery;
+    delete reviewadd;
 
     delete ui;
 }
@@ -184,6 +190,14 @@ void ShadowWindow::getDelivery(QList<Data::Delivery> delivery) {
     this->delivery->close();
 }
 
+void ShadowWindow::getReviewUI(Data::Review review) {
+    QList<Review> a = user.getReview();
+
+    a.push_back(review);
+
+    user.setReviews(a);
+}
+
 void ShadowWindow::on_pushButton_CPU_clicked() {
     Detail* dt = new CPU(user.getComputer().getCPU());
     DetailInfo* dtinfo = new CPU(user.getComputer().getCPU());
@@ -260,5 +274,9 @@ void ShadowWindow::on_pushButton_MyDelivery_clicked() {
     emit SendDelivery(user.getDelivery());
 
     delivery->show();
+}
+
+void ShadowWindow::on_pushButton_MyReview_2_clicked() {
+    reviewadd->show();
 }
 

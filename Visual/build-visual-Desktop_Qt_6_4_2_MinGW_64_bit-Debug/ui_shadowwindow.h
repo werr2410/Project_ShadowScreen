@@ -89,6 +89,7 @@ public:
     QLabel *label_IMAGE_Seacrh;
     QLabel *label_IMAGE_myComputer;
     QLabel *label_IMAGE_profile;
+    QPushButton *pushButton_MyReview_2;
     QMenuBar *menubar;
     QMenu *menuUser;
     QMenu *menuData;
@@ -283,6 +284,9 @@ public:
         label_IMAGE_profile = new QLabel(centralwidget);
         label_IMAGE_profile->setObjectName("label_IMAGE_profile");
         label_IMAGE_profile->setGeometry(QRect(1000, 550, 151, 31));
+        pushButton_MyReview_2 = new QPushButton(centralwidget);
+        pushButton_MyReview_2->setObjectName("pushButton_MyReview_2");
+        pushButton_MyReview_2->setGeometry(QRect(870, 386, 401, 24));
         ShadowWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ShadowWindow);
         menubar->setObjectName("menubar");
@@ -375,6 +379,7 @@ public:
         label_IMAGE_Seacrh->setText(QCoreApplication::translate("ShadowWindow", "Image ", nullptr));
         label_IMAGE_myComputer->setText(QCoreApplication::translate("ShadowWindow", "Image ", nullptr));
         label_IMAGE_profile->setText(QCoreApplication::translate("ShadowWindow", "Image ", nullptr));
+        pushButton_MyReview_2->setText(QCoreApplication::translate("ShadowWindow", "add review youself(test) ", nullptr));
         menuUser->setTitle(QCoreApplication::translate("ShadowWindow", "User", nullptr));
         menuData->setTitle(QCoreApplication::translate("ShadowWindow", "Data", nullptr));
         menuDelivery->setTitle(QCoreApplication::translate("ShadowWindow", "Delivery", nullptr));

@@ -697,6 +697,19 @@
      <string>Image </string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_MyReview_2">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>386</y>
+      <width>401</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>add review youself(test) </string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

@@ -8,6 +8,7 @@
 
 #include "Windows/Detail/detailsetwindow.h"
 
+#include "Windows/reviewwindow.h"
 #include "Windows/User/Data/userdatawindow.h"
 
 #include "Windows/User/mydeliverywindow.h"
@@ -31,22 +32,24 @@ public:
 
 private:
     Ui::ShadowWindow *ui;
+
     User user;
 
     // other window
-    RegistrationWindow* regist;
-    TelegramWindow* telegram;
+    RegistrationWindow*     regist;
+    TelegramWindow*         telegram;
 
     // detail window
-    DetailSetWindow* detailset;
+    DetailSetWindow*        detailset;
 
     // Data window
-    UserDataWindow* aboutme;
+    UserDataWindow*         aboutme;
+    ReviewWindow*           reviewadd;
 
     // my user data
-    MyBankcardWindow* bankcard;
-    MyReviewWindow* review;
-    MyDeliveryWindow* delivery;
+    MyBankcardWindow*       bankcard;
+    MyReviewWindow*         review;
+    MyDeliveryWindow*       delivery;
 
     void setUser(User user);
     void initComputer(Computer computer);
@@ -68,6 +71,9 @@ public slots:
     // my delivery
     void getDelivery(QList<ShadowScreen::Data::Delivery> delivery);
 
+    // review
+    void getReviewUI(ShadowScreen::Data::Review review);
+
 private slots:
     void on_pushButton_CPU_clicked();
     void on_pushButton_GPU_clicked();
@@ -79,6 +85,8 @@ private slots:
     void on_pushButton_MyBankcard_clicked();
     void on_pushButton_MyReview_clicked();
     void on_pushButton_MyDelivery_clicked();
+
+    void on_pushButton_MyReview_2_clicked();
 
 signals:
     // detail set
