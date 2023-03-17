@@ -58,6 +58,8 @@ private:
     MyReviewWindow*         review;
     MyDeliveryWindow*       delivery;
 
+    // MEGA MANUAL
+    HelpmeWindow*           helpme;
 
     // IMAGES
 

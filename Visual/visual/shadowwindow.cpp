@@ -21,6 +21,7 @@ ShadowWindow::ShadowWindow(QWidget *parent) :
     delivery    = new MyDeliveryWindow  (this);
     reviewadd   = new ReviewWindow      (this);
     showimage   = new ImageShowWindow   (this);
+    helpme      = new HelpmeWindow      (this);
 
     // regist
     connect(regist, &RegistrationWindow::registrationSuccess, this, &ShadowWindow::onRegistrationSuccess);  // regist   -> main
@@ -65,6 +66,7 @@ ShadowWindow::~ShadowWindow() {
     delete review;
     delete delivery;
     delete reviewadd;
+    delete helpme;
     delete showimage;
 
     delete ui;
@@ -391,14 +393,10 @@ void ShadowWindow::on_pushButton_MyReview_2_clicked() {
 }
 
 void ShadowWindow::on_pushButton_HelpMe_clicked() {
-    HelpmeWindow help;
-
-    help.show();
+    helpme->open();
 }
 
 void ShadowWindow::on_pushButton_Manual_clicked() {
-    HelpmeWindow help;
-
-    help.show();
+    helpme->open();
 }
 

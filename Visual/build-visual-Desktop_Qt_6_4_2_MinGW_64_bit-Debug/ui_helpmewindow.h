@@ -38,7 +38,7 @@ public:
     void retranslateUi(QDialog *HelpmeWindow)
     {
         HelpmeWindow->setWindowTitle(QCoreApplication::translate("HelpmeWindow", "Dialog", nullptr));
-        label->setText(QCoreApplication::translate("HelpmeWindow", "think yourself", nullptr));
+        label->setText(QCoreApplication::translate("HelpmeWindow", "no data", nullptr));
     } // retranslateUi
 
 };
