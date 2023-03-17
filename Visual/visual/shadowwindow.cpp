@@ -6,22 +6,10 @@ ShadowWindow::ShadowWindow(QWidget *parent) :
     ui(new Ui::ShadowWindow) {
     ui->setupUi(this);
 
-    // image
-    image_computer      = QPixmap("png/computer.png").scaled(71, 41);
-    image_profile       = QPixmap("png/user.png").scaled(71, 41);
-    image_search        = QPixmap("png/search.png").scaled(71, 41);
-
-    image_review_bad    = QPixmap("png/review-bad.png").scaled(140, 140);
-    image_review_normal = QPixmap("png/review-normal.png").scaled(140, 140);
-    image_review_great  = QPixmap("png/review-great").scaled(140, 140);
-
-
-    // set low image
-    ui->label_IMAGE_Seacrh      ->setPixmap(image_search);
-    ui->label_IMAGE_myComputer  ->setPixmap(image_computer);
-    ui->label_IMAGE_profile     ->setPixmap(image_profile);
-
-    // set Detail image
+    //image
+    image_review_bad    = QPixmap(path_image_review_bad)    .scaled(120, 120);
+    image_review_normal = QPixmap(path_image_review_normal) .scaled(120, 120);
+    image_review_great  = QPixmap(path_image_review_great)  .scaled(120, 120);
 
     // ui's
     regist      = new RegistrationWindow(this);
@@ -32,6 +20,7 @@ ShadowWindow::ShadowWindow(QWidget *parent) :
     review      = new MyReviewWindow    (this);
     delivery    = new MyDeliveryWindow  (this);
     reviewadd   = new ReviewWindow      (this);
+    showimage   = new ImageShowWindow   (this);
 
     // regist
     connect(regist, &RegistrationWindow::registrationSuccess, this, &ShadowWindow::onRegistrationSuccess);  // regist   -> main
@@ -60,6 +49,9 @@ ShadowWindow::ShadowWindow(QWidget *parent) :
     // review
     connect(reviewadd, &ReviewWindow::SendReview, this, &ShadowWindow::getReviewUI);                        // review   -> main
 
+    // image show
+    connect(this, &ShadowWindow::SendImage, showimage, &ImageShowWindow::getPixmap);
+
     // anytime always regist/login
     regist->show();
 }
@@ -73,6 +65,7 @@ ShadowWindow::~ShadowWindow() {
     delete review;
     delete delivery;
     delete reviewadd;
+    delete showimage;
 
     delete ui;
 }
@@ -92,24 +85,75 @@ void ShadowWindow::initComputer(Computer computer) {
     ui->label_manufacturer_set_storage      ->setText(computer.getStorage().getModel());
     ui->label_manufacturer_set_baseboard    ->setText(computer.getBaseboard().getManufacturer());
 
-    ui->label_IMAGE_baseboard               ->setPixmap(QPixmap(computer.getBaseboard().getImage().scaled(QSize(61, 41))));
-    ui->label_IMAGE_cpu                     ->setPixmap(QPixmap(computer.getCPU().getImage().scaled(QSize(61, 41))));
-    ui->label_IMAGE_gpu                     ->setPixmap(QPixmap(computer.getGPU().getImage().scaled(QSize(61, 41))));
-    ui->label_IMAGE_memorychip              ->setPixmap(QPixmap(computer.getMemorychip().getImage().scaled(QSize(61, 41))));
-    ui->label_image_storage                 ->setPixmap(QPixmap(computer.getStorage().getImage().scaled(QSize(61, 41))));
+    QPixmap baseboard = computer.getBaseboard().getImage();
+    QPixmap cpu = computer.getCPU().getImage();
+    QPixmap gpu = computer.getGPU().getImage();
+    QPixmap memorychip = computer.getMemorychip().getImage();
+    QPixmap storage = computer.getStorage().getImage();
+
+    auto t1 = computer.getBaseboard();
+    t1.setImage(baseboard);
+
+    auto t2 = computer.getCPU();
+    t1.setImage(cpu);
+
+    auto t3 = computer.getGPU();
+    t1.setImage(gpu);
+
+    auto t4 = computer.getMemorychip();
+    t1.setImage(memorychip);
+
+    auto t5 = computer.getStorage();
+    t1.setImage(storage);
+
+    computer.init(t1, t5, t4, t2, t3);
+
+    ui->label_IMAGE_baseboard               ->setPixmap(QPixmap(baseboard).scaled(QSize(61, 41)));
+    ui->label_IMAGE_cpu                     ->setPixmap(QPixmap(cpu).scaled(QSize(61, 41)));
+    ui->label_IMAGE_gpu                     ->setPixmap(QPixmap(gpu).scaled(QSize(61, 41)));
+    ui->label_IMAGE_memorychip              ->setPixmap(QPixmap(memorychip).scaled(QSize(61, 41)));
+    ui->label_image_storage                 ->setPixmap(QPixmap(storage).scaled(QSize(61, 41)));
 }
 
 void ShadowWindow::setImageDetails() {
-    ui->label_IMAGE_baseboard               ->setPixmap(QPixmap(user.getComputer().getBaseboard().getImage().scaled(QSize(61, 41))));
-    ui->label_IMAGE_cpu                     ->setPixmap(QPixmap(user.getComputer().getCPU().getImage().scaled(QSize(61, 41))));
-    ui->label_IMAGE_gpu                     ->setPixmap(QPixmap(user.getComputer().getGPU().getImage().scaled(QSize(61, 41))));
-    ui->label_IMAGE_memorychip              ->setPixmap(QPixmap(user.getComputer().getMemorychip().getImage().scaled(QSize(61, 41))));
-    ui->label_image_storage                 ->setPixmap(QPixmap(user.getComputer().getStorage().getImage().scaled(QSize(61, 41))));
+    QPixmap baseboard = user.getComputer().getBaseboard().getImage();
+    QPixmap cpu = user.getComputer().getCPU().getImage();
+    QPixmap gpu = user.getComputer().getGPU().getImage();
+    QPixmap memorychip = user.getComputer().getMemorychip().getImage();
+    QPixmap storage = user.getComputer().getStorage().getImage();
+
+    auto t1 = user.getComputer().getBaseboard();
+    t1.setImage(baseboard);
+
+    auto t2 = user.getComputer().getCPU();
+    t1.setImage(cpu);
+
+    auto t3 = user.getComputer().getGPU();
+    t1.setImage(gpu);
+
+    auto t4 = user.getComputer().getMemorychip();
+    t1.setImage(memorychip);
+
+    auto t5 = user.getComputer().getStorage();
+    t1.setImage(storage);
+
+    user.getComputer().init(t1, t5, t4, t2, t3);
+
+    ui->label_IMAGE_baseboard               ->setPixmap(QPixmap(baseboard).scaled(QSize(61, 41)));
+    ui->label_IMAGE_cpu                     ->setPixmap(QPixmap(cpu).scaled(QSize(61, 41)));
+    ui->label_IMAGE_gpu                     ->setPixmap(QPixmap(gpu).scaled(QSize(61, 41)));
+    ui->label_IMAGE_memorychip              ->setPixmap(QPixmap(memorychip).scaled(QSize(61, 41)));
+    ui->label_image_storage                 ->setPixmap(QPixmap(storage).scaled(QSize(61, 41)));
 }
 
-void ShadowWindow::updateReviewImage()
-{
-
+void ShadowWindow::updateReviewImage(int mark) {
+    if(mark >= 0 && mark <= 3)  {
+        ui->label_IMAGE_review->setPixmap(this->image_review_bad);
+    } else if(mark >= 4 && mark <= 8) {
+        ui->label_IMAGE_review->setPixmap(this->image_review_normal);
+    } else {
+        ui->label_IMAGE_review->setPixmap(this->image_review_great);
+    }
 }
 
 void ShadowWindow::onRegistrationSuccess(QString username, QString password)
@@ -228,11 +272,17 @@ void ShadowWindow::getReviewUI(Data::Review review) {
     if(user.getReview().length() != 0) mark /= user.getReview().length();
 
     ui->label_reviwcount_set->setText(QString().setNum(mark));
+    this->updateReviewImage(mark);
 }
 
 void ShadowWindow::on_pushButton_CPU_clicked() {
     Detail* dt = new CPU(user.getComputer().getCPU());
     DetailInfo* dtinfo = new CPU(user.getComputer().getCPU());
+    if(ui->label_IMAGE_cpu->pixmap().isNull() == false) {
+        showimage->open();
+
+        emit SendImage(ui->label_IMAGE_cpu->pixmap());
+    }
     emit SendDatainfo(dt, dtinfo);
     detailset->show();
 }
@@ -240,6 +290,13 @@ void ShadowWindow::on_pushButton_CPU_clicked() {
 void ShadowWindow::on_pushButton_GPU_clicked() {
     Detail* dt = new GPU(user.getComputer().getGPU());
     DetailInfo* dtinfo = new GPU(user.getComputer().getGPU());
+
+    if(ui->label_IMAGE_gpu->pixmap().isNull() == false) {
+        showimage->open();
+
+        emit SendImage(ui->label_IMAGE_gpu->pixmap());
+    }
+
     emit SendDatainfo(dt, dtinfo);
     detailset->show();
 
@@ -248,6 +305,13 @@ void ShadowWindow::on_pushButton_GPU_clicked() {
 void ShadowWindow::on_pushButton_STORAGE_clicked() {
     Detail* dt = new Storage(user.getComputer().getStorage());
     DetailInfo* dtinfo = new Storage(user.getComputer().getStorage());
+
+    if(ui->label_image_storage->pixmap().isNull() == false) {
+        showimage->open();
+
+        emit SendImage(ui->label_image_storage->pixmap());
+    }
+
     emit SendDatainfo(dt, dtinfo);
     detailset->show();
 
@@ -256,6 +320,13 @@ void ShadowWindow::on_pushButton_STORAGE_clicked() {
 void ShadowWindow::on_pushButton_MEMORYCHIP_clicked() {
     Detail* dt = new Memorychip(user.getComputer().getMemorychip());
     DetailInfo* dtinfo = new Memorychip(user.getComputer().getMemorychip());
+
+    if(ui->label_IMAGE_memorychip->pixmap().isNull() == false) {
+        showimage->open();
+
+        emit SendImage(ui->label_IMAGE_memorychip->pixmap());
+    }
+
     emit SendDatainfo(dt, dtinfo);
     detailset->show();
 }
@@ -263,6 +334,13 @@ void ShadowWindow::on_pushButton_MEMORYCHIP_clicked() {
 void ShadowWindow::on_pushButton_BASEBOARD_clicked() {
     Detail* dt = new Baseboard(user.getComputer().getBaseboard());
     DetailInfo* dtinfo = new Baseboard(user.getComputer().getBaseboard());
+
+    if(ui->label_IMAGE_baseboard->pixmap().isNull() == false) {
+        showimage->open();
+
+        emit SendImage(ui->label_IMAGE_baseboard->pixmap());
+    }
+
     emit SendDatainfo(dt, dtinfo);
     detailset->show();
 }

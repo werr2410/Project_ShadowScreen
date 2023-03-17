@@ -29,6 +29,7 @@ SOURCES += \
     User/user.cpp \
     Windows/Detail/detailsetwindow.cpp \
     Windows/Other/helpmewindow.cpp \
+    Windows/Other/imageshowwindow.cpp \
     Windows/Other/registrationwindow.cpp \
     Windows/Other/telegramwindow.cpp \
     Windows/User/Data/userdatawindow.cpp \
@@ -64,6 +65,7 @@ HEADERS += \
     User/user.h \
     Windows/Detail/detailsetwindow.h \
     Windows/Other/helpmewindow.h \
+    Windows/Other/imageshowwindow.h \
     Windows/Other/registrationwindow.h \
     Windows/Other/telegramwindow.h \
     Windows/User/Data/userdatawindow.h \
@@ -79,6 +81,7 @@ HEADERS += \
 FORMS += \
     Windows/Detail/detailsetwindow.ui \
     Windows/Other/helpmewindow.ui \
+    Windows/Other/imageshowwindow.ui \
     Windows/Other/registrationwindow.ui \
     Windows/Other/telegramwindow.ui \
     Windows/User/Data/userdatawindow.ui \
