@@ -6,43 +6,61 @@ ShadowWindow::ShadowWindow(QWidget *parent) :
     ui(new Ui::ShadowWindow) {
     ui->setupUi(this);
 
+    // image
+    image_computer      = QPixmap("png/computer.png").scaled(71, 41);
+    image_profile       = QPixmap("png/user.png").scaled(71, 41);
+    image_search        = QPixmap("png/search.png").scaled(71, 41);
+
+    image_review_bad    = QPixmap("png/review-bad.png").scaled(140, 140);
+    image_review_normal = QPixmap("png/review-normal.png").scaled(140, 140);
+    image_review_great  = QPixmap("png/review-great").scaled(140, 140);
+
+
+    // set low image
+    ui->label_IMAGE_Seacrh      ->setPixmap(image_search);
+    ui->label_IMAGE_myComputer  ->setPixmap(image_computer);
+    ui->label_IMAGE_profile     ->setPixmap(image_profile);
+
+    // set Detail image
+
+    // ui's
     regist      = new RegistrationWindow(this);
-    detailset   = new DetailSetWindow(this);
-    aboutme     = new UserDataWindow(this);
-    telegram    = new TelegramWindow(this);
-    bankcard    = new MyBankcardWindow(this);
-    review      = new MyReviewWindow(this);
-    delivery    = new MyDeliveryWindow(this);
-    reviewadd   = new ReviewWindow(this);
+    detailset   = new DetailSetWindow   (this);
+    aboutme     = new UserDataWindow    (this);
+    telegram    = new TelegramWindow    (this);
+    bankcard    = new MyBankcardWindow  (this);
+    review      = new MyReviewWindow    (this);
+    delivery    = new MyDeliveryWindow  (this);
+    reviewadd   = new ReviewWindow      (this);
 
     // regist
-    connect(regist, &RegistrationWindow::registrationSuccess, this, &ShadowWindow::onRegistrationSuccess); // regist -> main
+    connect(regist, &RegistrationWindow::registrationSuccess, this, &ShadowWindow::onRegistrationSuccess);  // regist   -> main
 
     // detail set
-    connect(detailset, &DetailSetWindow::sendDetailInfo, this, &ShadowWindow::getDetailInfo);   //  detail  -> main
-    connect(this, &ShadowWindow::SendDatainfo, detailset, &DetailSetWindow::receiveData);       //  main    -> detail
+    connect(detailset, &DetailSetWindow::sendDetailInfo, this, &ShadowWindow::getDetailInfo);               //  detail  -> main
+    connect(this, &ShadowWindow::SendDatainfo, detailset, &DetailSetWindow::receiveData);                   //  main    -> detail
 
     // about me
-    connect(this, &ShadowWindow::SendAboutMe, aboutme, &UserDataWindow::getUserData);           // main     -> aboutme
-    connect(aboutme, &UserDataWindow::sendUserData, this,  &ShadowWindow::getAboutMe);          // aboutme  -> main
+    connect(this, &ShadowWindow::SendAboutMe, aboutme, &UserDataWindow::getUserData);                       // main     -> aboutme
+    connect(aboutme, &UserDataWindow::sendUserData, this,  &ShadowWindow::getAboutMe);                      // aboutme  -> main
 
     // telegram
-    connect(this, &ShadowWindow::SendTelegram, telegram, &TelegramWindow::getTelegram);         // main     -> telegram
+    connect(this, &ShadowWindow::SendTelegram, telegram, &TelegramWindow::getTelegram);                     // main     -> telegram
 
     // my bankcard
-    connect(bankcard, &MyBankcardWindow::sendToMainBankcard, this, &ShadowWindow::getBankcard); // bankcard -> main
+    connect(bankcard, &MyBankcardWindow::sendToMainBankcard, this, &ShadowWindow::getBankcard);             // bankcard -> main
 
     // my review
-    connect(this, &ShadowWindow::SendReview, review, &MyReviewWindow::getCountMark);            //  main    -> review
+    connect(this, &ShadowWindow::SendReview, review, &MyReviewWindow::getCountMark);                        //  main    -> review
 
     // my delivery
-    connect(this, &ShadowWindow::SendDelivery, delivery, &MyDeliveryWindow::getDeliveryList);   // main     -> delivery
-    connect(delivery, &MyDeliveryWindow::setDeliveryList, this, &ShadowWindow::SendDelivery);   // delivery -> main
+    connect(this, &ShadowWindow::SendDelivery, delivery, &MyDeliveryWindow::getDeliveryList);               // main     -> delivery
+    connect(delivery, &MyDeliveryWindow::setDeliveryList, this, &ShadowWindow::SendDelivery);               // delivery -> main
 
     // review
-    connect(reviewadd, &ReviewWindow::SendReview, this, &ShadowWindow::getReviewUI);            // review   -> main
+    connect(reviewadd, &ReviewWindow::SendReview, this, &ShadowWindow::getReviewUI);                        // review   -> main
 
-
+    // anytime always regist/login
     regist->show();
 }
 
@@ -74,19 +92,24 @@ void ShadowWindow::initComputer(Computer computer) {
     ui->label_manufacturer_set_storage      ->setText(computer.getStorage().getModel());
     ui->label_manufacturer_set_baseboard    ->setText(computer.getBaseboard().getManufacturer());
 
-    ui->label_IMAGE_baseboard               ->setPixmap(computer.getBaseboard().getImage());
-    ui->label_IMAGE_cpu                     ->setPixmap(computer.getCPU().getImage());
-    ui->label_IMAGE_gpu                     ->setPixmap(computer.getGPU().getImage());
-    ui->label_IMAGE_memorychip              ->setPixmap(computer.getMemorychip().getImage());
-    ui->label_image_storage                 ->setPixmap(computer.getStorage().getImage());
+    ui->label_IMAGE_baseboard               ->setPixmap(QPixmap(computer.getBaseboard().getImage().scaled(QSize(61, 41))));
+    ui->label_IMAGE_cpu                     ->setPixmap(QPixmap(computer.getCPU().getImage().scaled(QSize(61, 41))));
+    ui->label_IMAGE_gpu                     ->setPixmap(QPixmap(computer.getGPU().getImage().scaled(QSize(61, 41))));
+    ui->label_IMAGE_memorychip              ->setPixmap(QPixmap(computer.getMemorychip().getImage().scaled(QSize(61, 41))));
+    ui->label_image_storage                 ->setPixmap(QPixmap(computer.getStorage().getImage().scaled(QSize(61, 41))));
 }
 
 void ShadowWindow::setImageDetails() {
-    ui->label_IMAGE_baseboard->setPixmap(user.getComputer().getBaseboard().getImage());
-    ui->label_IMAGE_cpu->setPixmap(user.getComputer().getCPU().getImage());
-    ui->label_IMAGE_gpu->setPixmap(user.getComputer().getGPU().getImage());
-    ui->label_IMAGE_memorychip->setPixmap(user.getComputer().getMemorychip().getImage());
-    ui->label_image_storage->setPixmap(user.getComputer().getStorage().getImage());
+    ui->label_IMAGE_baseboard               ->setPixmap(QPixmap(user.getComputer().getBaseboard().getImage().scaled(QSize(61, 41))));
+    ui->label_IMAGE_cpu                     ->setPixmap(QPixmap(user.getComputer().getCPU().getImage().scaled(QSize(61, 41))));
+    ui->label_IMAGE_gpu                     ->setPixmap(QPixmap(user.getComputer().getGPU().getImage().scaled(QSize(61, 41))));
+    ui->label_IMAGE_memorychip              ->setPixmap(QPixmap(user.getComputer().getMemorychip().getImage().scaled(QSize(61, 41))));
+    ui->label_image_storage                 ->setPixmap(QPixmap(user.getComputer().getStorage().getImage().scaled(QSize(61, 41))));
+}
+
+void ShadowWindow::updateReviewImage()
+{
+
 }
 
 void ShadowWindow::onRegistrationSuccess(QString username, QString password)

@@ -155,7 +155,7 @@ void DetailSetWindow::on_pushButton_Save_clicked() {
     this->description = ui->textEdit_Description->toPlainText();
     this->status = ui->textEdit_Status->toPlainText();
 
-   //emit sendDetailInfo(description, status, image, isSale, type);
+    emit sendDetailInfo(description, status, image, isSale, type);
 
     close();
 }

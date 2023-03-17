@@ -1,6 +1,20 @@
 #ifndef SHADOWWINDOW_H
 #define SHADOWWINDOW_H
 
+#define path_image_search           "png/low/search.png"
+#define path_image_computer         "png/low/computer.png"
+#define path_image_profile          "png/low/profile.png"
+
+#define path_image_review_bad       "png/Review/bad.png"
+#define path_image_review_normal    "png/Review/normal.png"
+#define path_image_review_great     "png/Review/great.png"
+
+#define path_image_cpu              "png/Detail/cpu.png"
+#define path_image_gpu              "png/Detail/gpu.png"
+#define path_image_baseboard        "png/Detail/baseboard.png"
+#define path_image_storage          "png/Detail/storage.png"
+#define path_image_memorychip       "png/Detail/memorychip.png"
+
 #include <QMainWindow>
 
 #include "Windows/Other/registrationwindow.h"
@@ -52,9 +66,27 @@ private:
     MyReviewWindow*         review;
     MyDeliveryWindow*       delivery;
 
+
+    // IMAGES
+    QPixmap image_search;
+    QPixmap image_computer;
+    QPixmap image_profile;
+
+    QPixmap image_review_bad;
+    QPixmap image_review_normal;
+    QPixmap image_review_great;
+
+    // IMAGE DETAIL
+    QPixmap image_cpu_static;
+    QPixmap image_gpu_static;
+    QPixmap image_storage_static;
+    QPixmap image_memorychip_static;
+    QPixmap image_baseboard_static;
+
     void setUser(User user);
     void initComputer(Computer computer);
     void setImageDetails();
+    void updateReviewImage();
 
 public slots:
     // registration
@@ -86,11 +118,8 @@ private slots:
     void on_pushButton_MyBankcard_clicked();
     void on_pushButton_MyReview_clicked();
     void on_pushButton_MyDelivery_clicked();
-
     void on_pushButton_MyReview_2_clicked();
-
     void on_pushButton_HelpMe_clicked();
-
     void on_pushButton_Manual_clicked();
 
 signals:
