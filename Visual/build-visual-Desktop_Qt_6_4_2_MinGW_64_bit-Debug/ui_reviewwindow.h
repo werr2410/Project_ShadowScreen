@@ -25,7 +25,7 @@ public:
     QLabel *label_Title;
     QLabel *label_Description;
     QTextEdit *textEdit_Title;
-    QTextEdit *textEdit_2;
+    QTextEdit *textEdit_description;
     QLabel *label_Mark;
     QSpinBox *spinBox_mark;
     QPushButton *pushButton_add;
@@ -46,9 +46,9 @@ public:
         textEdit_Title = new QTextEdit(ReviewWindow);
         textEdit_Title->setObjectName("textEdit_Title");
         textEdit_Title->setGeometry(QRect(31, 43, 256, 27));
-        textEdit_2 = new QTextEdit(ReviewWindow);
-        textEdit_2->setObjectName("textEdit_2");
-        textEdit_2->setGeometry(QRect(31, 103, 256, 87));
+        textEdit_description = new QTextEdit(ReviewWindow);
+        textEdit_description->setObjectName("textEdit_description");
+        textEdit_description->setGeometry(QRect(31, 103, 256, 87));
         label_Mark = new QLabel(ReviewWindow);
         label_Mark->setObjectName("label_Mark");
         label_Mark->setGeometry(QRect(30, 200, 40, 30));

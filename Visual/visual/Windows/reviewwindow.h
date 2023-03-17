@@ -18,12 +18,19 @@ public:
     explicit ReviewWindow(QWidget *parent = nullptr);
     ~ReviewWindow();
 
+signals:
+    void SendReview(ShadowScreen::Data::Review review);
+
 private slots:
     void on_pushButton_add_clicked();
+    void on_pushButton_cancel_clicked();
 
 private:
     Ui::ReviewWindow *ui;
     Data::Review review;
+
+    void initField();
 };
+
 
 #endif // REVIEWWINDOW_H
