@@ -5,6 +5,7 @@
 
 #include "Windows/Other/registrationwindow.h"
 #include "Windows/Other/telegramwindow.h"
+#include "Windows/Other/helpmewindow.h"
 
 #include "Windows/Detail/detailsetwindow.h"
 
@@ -87,6 +88,10 @@ private slots:
     void on_pushButton_MyDelivery_clicked();
 
     void on_pushButton_MyReview_2_clicked();
+
+    void on_pushButton_HelpMe_clicked();
+
+    void on_pushButton_Manual_clicked();
 
 signals:
     // detail set

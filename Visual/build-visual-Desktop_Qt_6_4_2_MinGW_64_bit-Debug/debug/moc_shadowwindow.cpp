@@ -27,7 +27,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_ShadowWindow_t {
-    uint offsetsAndSizes[96];
+    uint offsetsAndSizes[100];
     char stringdata0[13];
     char stringdata1[13];
     char stringdata2[1];
@@ -76,6 +76,8 @@ struct qt_meta_stringdata_ShadowWindow_t {
     char stringdata45[31];
     char stringdata46[33];
     char stringdata47[33];
+    char stringdata48[29];
+    char stringdata49[29];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_ShadowWindow_t::offsetsAndSizes) + ofs), len 
@@ -128,7 +130,9 @@ Q_CONSTINIT static const qt_meta_stringdata_ShadowWindow_t qt_meta_stringdata_Sh
         QT_MOC_LITERAL(709, 32),  // "on_pushButton_MyBankcard_clicked"
         QT_MOC_LITERAL(742, 30),  // "on_pushButton_MyReview_clicked"
         QT_MOC_LITERAL(773, 32),  // "on_pushButton_MyDelivery_clicked"
-        QT_MOC_LITERAL(806, 32)   // "on_pushButton_MyReview_2_clicked"
+        QT_MOC_LITERAL(806, 32),  // "on_pushButton_MyReview_2_clicked"
+        QT_MOC_LITERAL(839, 28),  // "on_pushButton_HelpMe_clicked"
+        QT_MOC_LITERAL(868, 28)   // "on_pushButton_Manual_clicked"
     },
     "ShadowWindow",
     "SendDatainfo",
@@ -177,7 +181,9 @@ Q_CONSTINIT static const qt_meta_stringdata_ShadowWindow_t qt_meta_stringdata_Sh
     "on_pushButton_MyBankcard_clicked",
     "on_pushButton_MyReview_clicked",
     "on_pushButton_MyDelivery_clicked",
-    "on_pushButton_MyReview_2_clicked"
+    "on_pushButton_MyReview_2_clicked",
+    "on_pushButton_HelpMe_clicked",
+    "on_pushButton_Manual_clicked"
 };
 #undef QT_MOC_LITERAL
 } // unnamed namespace
@@ -188,7 +194,7 @@ Q_CONSTINIT static const uint qt_meta_data_ShadowWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-      23,   14, // methods
+      25,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -196,31 +202,33 @@ Q_CONSTINIT static const uint qt_meta_data_ShadowWindow[] = {
        6,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    2,  152,    2, 0x06,    1 /* Public */,
-       7,    1,  157,    2, 0x06,    4 /* Public */,
-      10,    1,  160,    2, 0x06,    6 /* Public */,
-      13,    1,  163,    2, 0x06,    8 /* Public */,
-      16,    2,  166,    2, 0x06,   10 /* Public */,
-      19,    1,  171,    2, 0x06,   13 /* Public */,
+       1,    2,  164,    2, 0x06,    1 /* Public */,
+       7,    1,  169,    2, 0x06,    4 /* Public */,
+      10,    1,  172,    2, 0x06,    6 /* Public */,
+      13,    1,  175,    2, 0x06,    8 /* Public */,
+      16,    2,  178,    2, 0x06,   10 /* Public */,
+      19,    1,  183,    2, 0x06,   13 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-      22,    2,  174,    2, 0x0a,   15 /* Public */,
-      25,    5,  179,    2, 0x0a,   18 /* Public */,
-      31,    1,  190,    2, 0x0a,   24 /* Public */,
-      32,    1,  193,    2, 0x0a,   26 /* Public */,
-      33,    1,  196,    2, 0x0a,   28 /* Public */,
-      34,    1,  199,    2, 0x0a,   30 /* Public */,
-      37,    0,  202,    2, 0x08,   32 /* Private */,
-      38,    0,  203,    2, 0x08,   33 /* Private */,
-      39,    0,  204,    2, 0x08,   34 /* Private */,
-      40,    0,  205,    2, 0x08,   35 /* Private */,
-      41,    0,  206,    2, 0x08,   36 /* Private */,
-      42,    0,  207,    2, 0x08,   37 /* Private */,
-      43,    0,  208,    2, 0x08,   38 /* Private */,
-      44,    0,  209,    2, 0x08,   39 /* Private */,
-      45,    0,  210,    2, 0x08,   40 /* Private */,
-      46,    0,  211,    2, 0x08,   41 /* Private */,
-      47,    0,  212,    2, 0x08,   42 /* Private */,
+      22,    2,  186,    2, 0x0a,   15 /* Public */,
+      25,    5,  191,    2, 0x0a,   18 /* Public */,
+      31,    1,  202,    2, 0x0a,   24 /* Public */,
+      32,    1,  205,    2, 0x0a,   26 /* Public */,
+      33,    1,  208,    2, 0x0a,   28 /* Public */,
+      34,    1,  211,    2, 0x0a,   30 /* Public */,
+      37,    0,  214,    2, 0x08,   32 /* Private */,
+      38,    0,  215,    2, 0x08,   33 /* Private */,
+      39,    0,  216,    2, 0x08,   34 /* Private */,
+      40,    0,  217,    2, 0x08,   35 /* Private */,
+      41,    0,  218,    2, 0x08,   36 /* Private */,
+      42,    0,  219,    2, 0x08,   37 /* Private */,
+      43,    0,  220,    2, 0x08,   38 /* Private */,
+      44,    0,  221,    2, 0x08,   39 /* Private */,
+      45,    0,  222,    2, 0x08,   40 /* Private */,
+      46,    0,  223,    2, 0x08,   41 /* Private */,
+      47,    0,  224,    2, 0x08,   42 /* Private */,
+      48,    0,  225,    2, 0x08,   43 /* Private */,
+      49,    0,  226,    2, 0x08,   44 /* Private */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3, 0x80000000 | 5,    4,    6,
@@ -237,6 +245,8 @@ Q_CONSTINIT static const uint qt_meta_data_ShadowWindow[] = {
     QMetaType::Void, 0x80000000 | 14,   15,
     QMetaType::Void, 0x80000000 | 20,   21,
     QMetaType::Void, 0x80000000 | 35,   36,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -325,6 +335,10 @@ Q_CONSTINIT const QMetaObject ShadowWindow::staticMetaObject = { {
         // method 'on_pushButton_MyDelivery_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_MyReview_2_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_pushButton_HelpMe_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_pushButton_Manual_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -359,6 +373,8 @@ void ShadowWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 20: _t->on_pushButton_MyReview_clicked(); break;
         case 21: _t->on_pushButton_MyDelivery_clicked(); break;
         case 22: _t->on_pushButton_MyReview_2_clicked(); break;
+        case 23: _t->on_pushButton_HelpMe_clicked(); break;
+        case 24: _t->on_pushButton_Manual_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -427,13 +443,13 @@ int ShadowWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 23)
+        if (_id < 25)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 23;
+        _id -= 25;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 23)
+        if (_id < 25)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 23;
+        _id -= 25;
     }
     return _id;
 }

@@ -196,6 +196,15 @@ void ShadowWindow::getReviewUI(Data::Review review) {
     a.push_back(review);
 
     user.setReviews(a);
+
+    float mark = 0;
+
+    for(const Review &x : user.getReview())
+        mark += x.getMark();
+
+    if(user.getReview().length() != 0) mark /= user.getReview().length();
+
+    ui->label_reviwcount_set->setText(QString().setNum(mark));
 }
 
 void ShadowWindow::on_pushButton_CPU_clicked() {
@@ -278,5 +287,17 @@ void ShadowWindow::on_pushButton_MyDelivery_clicked() {
 
 void ShadowWindow::on_pushButton_MyReview_2_clicked() {
     reviewadd->show();
+}
+
+void ShadowWindow::on_pushButton_HelpMe_clicked() {
+    HelpmeWindow help;
+
+    help.show();
+}
+
+void ShadowWindow::on_pushButton_Manual_clicked() {
+    HelpmeWindow help;
+
+    help.show();
 }
 
