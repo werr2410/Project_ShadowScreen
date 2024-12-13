@@ -1,22 +1,16 @@
-					Shadow Screen
+Shadow Screen
 
-Приложение для купли-продажи комплектующих работающих прямо сейчас в компьютере. Они автоматически определяются и вносятся в базу данных. Информация по компонентам не большая(1 - 3 поля), по этому пользователю нужно будет вручную вноситься данные о них(автоматические параметры изменять нельзя). Изменяемые параметры это картинка, состояние. Так же отдельным типом изменяемых параметров это параметры для изменения которых нужно подтверждения тех. Поддержки и максимально заполненная информация о детали. Продавать можно не все комплектующие, это выбирает сам пользователь. Для сборки пользователя выделено отдельную вкладку(всего их три). Также любой другой пользователь может нажать на кнопку которая переводит его в Браузер где уже введено неизменяемые параметры. Это основная фича, пользователь  может сравнить и проверить на сколько правильно заполненные данные о детали. Из-за этого приложение по размерам как мобильное (~1/4 от всего экрана). Снизу находиться быстрое меню между тремя вкладками: поиск, моя сборка, моя сборка. Выбранная вкладка подсвечивается цветом который выбрал пользователь в своем профиле. 
+An application for buying and selling components that are currently working in the computer. They are automatically detected and added to the database. The information on components is minimal (1-3 fields), so the user will need to manually enter data about them (automatic parameters cannot be changed). Editable parameters include the image and condition. Another type of editable parameter is those that require technical support confirmation and the most complete information about the part. Not all components can be sold; this is chosen by the user. A separate tab is provided for the user's build (there are three tabs in total). Any other user can click a button that will redirect them to a browser where the unchangeable parameters are already entered. This is the main feature: the user can compare and check how correctly the part data is filled out. As a result, the application is roughly the size of a mobile app (~1/4 of the screen). At the bottom is a quick menu between the three tabs: Search, My Build, and My Build. The selected tab is highlighted in the color chosen by the user in their profile.
 
-Вкладка «Поиск»:
-	Сверху находиться поле для ввода текста. Сразу под ним выпадающий список с
-	критерию(~звезды, просмотры, рейтинг автора и тд), на этой же высоте количество результатов
-	Ниже высвечиваться объявления в нужной сортировки.
+Search Tab:
+At the top, there is a text input field. Immediately below it is a dropdown list with criteria (~stars, views, author rating, etc.), and at the same height, the number of results.
+Below, ads will be displayed in the necessary sorting.
 
-Вкладка «Моя сборка»:
-  	Сверху высвечивается аватара и его имя( Так же само будут выглядеть профили для других пользователей,
-  	но для них нажатие на деталь будут переводить на ссылку детали, а   не на настройку и статистику).
-  	Они высвечиваются в том же стиле, что и объявления в первой вкладке. При нажатии можно будет изменить информацию о ней.
+My Build Tab:
+At the top, the avatar and name of the user are displayed (other users will have the same profile view, but clicking on the part will redirect them to the part’s link, not to settings or statistics).
+They are displayed in the same style as the ads in the first tab. Clicking will allow the user to change the information about the part.
 
-Вкладка «Мой профиль»:
-  	Сверху фотография и имя пользователя. Так же отдельные вкладки как чаты, мой способы доставки, мои карты,
-  	о мне, статистика купленных и проданных деталей, получить универсальный код.
+My Profile Tab:
+At the top, there is a photo and name of the user. There are also separate tabs such as chats, delivery methods, my cards, about me, statistics of purchased and sold parts, and a universal code.
 
-  
-Так же любой пользователь может получить код что бы авторизоваться в телеграмме. Для автоматических ответов пользователям.
-
-
+Additionally, any user can receive a code to authenticate in Telegram for automated responses to users.
